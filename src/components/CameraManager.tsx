@@ -33,7 +33,11 @@ const CameraManager = forwardRef(({ perspectiveCameraRef, orthographicCameraRef 
     // Only do it for the orthographic camera, since the viewport must be fullscreen once the user is viewing
     // the desk (perspective camera)
     if (activeCameraType == CameraType.Orthographic) {
-        three.gl.setViewport(450 / 1920 * window.innerWidth, 0, window.innerWidth, window.innerHeight);
+        if (window.innerWidth < 1280) {
+            three.gl.setViewport(0, 0, window.innerWidth, window.innerHeight);
+        } else {
+            three.gl.setViewport(450 / 1920 * window.innerWidth, 0, window.innerWidth, window.innerHeight);
+        }
     }
 
     // Once the cameras have loaded, set their properties
