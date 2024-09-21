@@ -4,8 +4,7 @@ import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
 
 import roomScene from "../assets/models/Portfolio.glb";
-import Selection from './Selection';
-import { Outline } from '@react-three/postprocessing';
+import ClickableItem from './ClickableItem';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -159,7 +158,6 @@ type GLTFResult = GLTF & {
 type RoomProps = {
   group: JSX.IntrinsicElements['group'],
   chairVisible: boolean,
-  onItemClicked: (item: Item) => void
 }
 
 
@@ -168,15 +166,19 @@ export enum Item {
   Education,
   Experience,
   Projects,
+  Certifications,
   About,
 }
 
 
-const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
+const Room = ({ group, chairVisible }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
 
   return (
     <a.group {...group} dispose={null}>
+      <ClickableItem
+        item={Item.Certifications}
+      >
       <group position={[-1.608, 7.471, -0.07]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
         <mesh
           castShadow
@@ -227,8 +229,9 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
           material={materials.star}
           position={[2.288, -4.577, 6.865]}
         />
-      </group>
-      <Selection
+        </group>
+      </ClickableItem>
+      <ClickableItem
         item={Item.Education}
       >
       <group position={[-1.992, 7.494, 3.341]} rotation={[Math.PI / 2, -0.592, 0]}>
@@ -262,7 +265,7 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
           </group>
         </group>
         </group>
-      </Selection>
+      </ClickableItem>
       <group position={[-1.585, 5.069, -3.908]} rotation={[Math.PI / 2, 0, 0.5]}>
         <group rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
@@ -433,7 +436,7 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
         material={materials.Floor}
         position={[0.173, -7.065, 0.212]}
       />
-      <Selection
+      <ClickableItem
         item={Item.Resume}
       >
         <group position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
@@ -468,7 +471,7 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
             rotation={[0, 1.571, 0]}
           />
         </group>
-      </Selection>
+      </ClickableItem>
       <group position={[1.65, 4.463, -0.005]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
         <group position={[-0.989, -0.076, -0.307]} rotation={[0.123, 0, 0]}>
           <mesh
@@ -659,6 +662,9 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
           rotation={[0, 0, -Math.PI / 2]}
         />
       </group>
+      <ClickableItem
+        item={Item.Projects}
+      >
       <group position={[0.736, 4.486, -3.247]} rotation={[0, -0.556, 0]}>
         <mesh
           castShadow
@@ -703,7 +709,11 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
           position={[-4.621, -6.773, 0.846]}
           rotation={[0, 1.571, 0]}
         />
-      </group>
+        </group>
+      </ClickableItem>
+      <ClickableItem
+        item={Item.Experience}
+      >
       <group position={[1.03, 4.472, 2.837]}>
         <mesh
           castShadow
@@ -729,7 +739,8 @@ const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
           position={[-4.577, -6.837, -2.288]}
           rotation={[-Math.PI, 1.08, -Math.PI]}
         />
-      </group>
+        </group>
+      </ClickableItem>
       <group position={[1.494, 4.472, 2.966]}>
         <group position={[-6.725, -6.344, -1.792]} rotation={[-0.109, -0.11, 0.099]}>
           <mesh

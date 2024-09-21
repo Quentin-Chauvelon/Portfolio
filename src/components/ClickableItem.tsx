@@ -1,22 +1,25 @@
 import React, { useContext } from 'react'
 import { Item } from './Room'
-import { Outline, Select } from '@react-three/postprocessing'
+import { Select } from './Selection'
 import { ItemClickedContext } from '../pages/Scene'
 
 export type ClickableItemProps = {
-    item: Item,
-    onHover: (hovered: boolean) => void,
+    item: Item
 }
 
-const ClickableItem = ({ item, onHover, ...props }: ClickableItemProps & JSX.IntrinsicElements["group"]) => {
+const ClickableItem = ({ item, ...props }: ClickableItemProps & JSX.IntrinsicElements["group"]) => {
+    const [hovered, setHovered] = React.useState(false);
+
     const onItemClicked = useContext(ItemClickedContext);
 
     const onPointerEnter = () => {
-        onHover(true);
+        setHovered(true);
+        document.body.style.cursor = 'pointer';
     }
 
     const onPointerLeave = () => {
-        onHover(false);
+        setHovered(false);
+        document.body.style.cursor = 'auto';
     }
 
     const onClick = () => {
@@ -24,14 +27,18 @@ const ClickableItem = ({ item, onHover, ...props }: ClickableItemProps & JSX.Int
     }
 
     return (
-        <Select enabled>
-            <group
-                {...props}
-                onPointerEnter={onPointerEnter}
-                onPointerLeave={onPointerLeave}
-                onClick={onClick}
-            />
-        </Select>
+        <>
+            <Select enabled={!hovered} group='default'>
+                <Select enabled={hovered} group='hovered'>
+                    <group
+                        {...props}
+                        onPointerEnter={onPointerEnter}
+                        onPointerLeave={onPointerLeave}
+                        onClick={onClick}
+                    />
+                </Select>
+            </Select>
+        </>
     )
 }
 

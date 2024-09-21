@@ -10,6 +10,8 @@ import Light from '../components/Light'
 import Floor from '../components/Floor'
 import CameraManager, { CameraRefType } from '../components/CameraManager'
 import { LoadingScreen } from '../pages/LoadingScreen'
+import { EffectComposer } from '@react-three/postprocessing'
+import { MultiOutline, SelectionTest } from '../components/Selection'
 
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
@@ -40,14 +42,32 @@ const Scene = () => {
                     <Light />
 
                     <ItemClickedContext.Provider value={onItemClicked}>
+                        <SelectionTest>
+                            <EffectComposer enabled={true} autoClear={false}>
+                                <MultiOutline
+                                    group={"default"}
+                                    blur
+                                    edgeStrength={10}
+                                    pulseSpeed={0.3}
+                                    selectionLayer={9}
+                                />
+                                <MultiOutline
+                                    group={"hovered"}
+                                    selectionLayer={10}
+                                    blur
+                                    edgeStrength={20}
+                                    pulseSpeed={0.3}
+                                    visibleEdgeColor={"#462cc7" as unknown as number} // Converting string to number to fix remove type error
+                                />
+                            </EffectComposer>
                         <Room
                             group={{
                                 position: [0, 0, -15],
                                 rotation: [0.7 * Math.PI / 4, -Math.PI / 4, 0]
                             }}
-                            chairVisible={chairVisible}
-                            onItemClicked={onItemClicked}
+                                chairVisible={chairVisible}
                         />
+                        </SelectionTest>
                     </ItemClickedContext.Provider>
 
                     <Floor />
