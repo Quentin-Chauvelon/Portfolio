@@ -1,5 +1,3 @@
-import CameraManager from "./CameraManager"
-
 type HeroLinkProps = {
   link: string,
   icon: string
@@ -8,10 +6,10 @@ type HeroLinkProps = {
 const HeroLink = ({ link, icon }: HeroLinkProps) => {
   return (
     <>
-      <div className='group h-full aspect-square group bg-gradient-to-r bg-[#004e89] rounded-full p-1'>
+      <div className='group h-full aspect-square group bg-gradient-to-r bg-[--hero-section-buttons-color] rounded-full p-[0.2rem]'>
         <a href={link} target='_blank'>
-          <div className='aspect-square p-4 flex justify-center items-center bg-[#9bc7ec] group-hover:bg-transparent rounded-full transition-colors duration-200'>
-            <i className={"fa fa-brands " + icon + " text-[#004e89] group-hover:text-white rounded-full transition-colors duration-200"}></i>
+          <div className='aspect-square flex justify-center items-center bg-[--bg-light] group-hover:bg-transparent rounded-full'>
+            <i className={"fa fa-brands " + icon + " text-[--hero-section-buttons-color] group-hover:text-white rounded-full"}></i>
           </div>
         </a>
       </div >

@@ -5,6 +5,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl;
+    @apply smh:text-base mdh:text-xl lgh:text-2xl;
+  }
+}
+
+:root {
+  font-family: Montserrat, Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --bg-light: #9bc7ec;
+  --bg-scene-light: #4d91ff;
+  --bg-dark: #2f4a75;
+  --bg-scene-dark: #243756;
+
+  --hero-section-width: 45%;
+  --hero-section-left: 12%;
+  --hero-section-buttons-color: #004e89;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @property --bg-gradient-from {
   syntax: '<color>';
   initial-value: #004e89;
@@ -17,29 +47,9 @@
   inherits: false;
 }
 
-:root {
-  font-family: Montserrat, Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  --bg-color: #b9deff;
---bg-light: #9bc7ec;
-  --bg-scene-light: #4d91ff;
-  --bg-dark: #2f4a75;
-  --bg-scene-dark: #243756;
-
-  --hero-section-width: 45%;
-  --hero-section-left: 12%;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.gradient-bp {
+  @apply from-sky-400 to-purple-600;
 }
-
 .gradient-animation,
 .gradient-animation h2 {
   transition: --bg-gradient-from 0.25s, --bg-gradient-to 0.25s, --bg-gradient-deg 1s;
@@ -54,7 +64,6 @@
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 #root {
@@ -71,53 +80,4 @@ a {
 
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
