@@ -23,12 +23,16 @@
   font-weight: 400;
 
   --bg-color: #b9deff;
-  --room-width: 40%;
-  --room-right-offset: 10%;
+--bg-light: #9bc7ec;
+  --bg-scene-light: #4d91ff;
+  --bg-dark: #2f4a75;
+  --bg-scene-dark: #243756;
+
+  --hero-section-width: 45%;
+  --hero-section-left: 12%;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -56,7 +60,7 @@ body {
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-color);
+  background-color: var(--bg-light);
 }
 
 a {

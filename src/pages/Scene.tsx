@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
@@ -10,7 +10,6 @@ import Light from '../components/Light'
 import Floor from '../components/Floor'
 import CameraManager, { CameraRefType } from '../components/CameraManager'
 import { LoadingScreen } from '../pages/LoadingScreen'
-import { log } from 'three/webgpu'
 
 const Scene = () => {
     const [chairVisible, setChairVisible] = useState(true);
@@ -20,8 +19,8 @@ const Scene = () => {
     return (
         <>
             <Canvas
-                // camera={{ position: [-1, -1, 10], fov: 40 }}
-                style={{ width: 'var(--room-width)', height: '100vh', right: 'var(--room-right-offset)', top: 0, position: 'absolute' }}
+                camera={{ position: [-1, -1, 10], fov: 40, aspect: 5 }}
+                style={{ position: 'absolute' }}
                 shadows={true}
             >
                 <CameraManager {...{
@@ -41,6 +40,7 @@ const Scene = () => {
                         }}
                         chairVisible={chairVisible}
                     />
+
                     <Floor />
                 </Suspense>
             </Canvas >
