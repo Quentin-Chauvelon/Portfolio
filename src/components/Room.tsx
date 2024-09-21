@@ -4,7 +4,8 @@ import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
 
 import roomScene from "../assets/models/Portfolio.glb";
-
+import Selection from './Selection';
+import { Outline } from '@react-three/postprocessing';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -157,11 +158,21 @@ type GLTFResult = GLTF & {
 
 type RoomProps = {
   group: JSX.IntrinsicElements['group'],
-  chairVisible: boolean
+  chairVisible: boolean,
+  onItemClicked: (item: Item) => void
 }
 
 
-const Room = ({ group, chairVisible }: RoomProps) => {
+export enum Item {
+  Resume,
+  Education,
+  Experience,
+  Projects,
+  About,
+}
+
+
+const Room = ({ group, chairVisible, onItemClicked }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
 
   return (
@@ -217,6 +228,9 @@ const Room = ({ group, chairVisible }: RoomProps) => {
           position={[2.288, -4.577, 6.865]}
         />
       </group>
+      <Selection
+        item={Item.Education}
+      >
       <group position={[-1.992, 7.494, 3.341]} rotation={[Math.PI / 2, -0.592, 0]}>
         <group rotation={[Math.PI / 2, -0.497, -Math.PI]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
@@ -247,7 +261,8 @@ const Room = ({ group, chairVisible }: RoomProps) => {
             </group>
           </group>
         </group>
-      </group>
+        </group>
+      </Selection>
       <group position={[-1.585, 5.069, -3.908]} rotation={[Math.PI / 2, 0, 0.5]}>
         <group rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
@@ -418,38 +433,42 @@ const Room = ({ group, chairVisible }: RoomProps) => {
         material={materials.Floor}
         position={[0.173, -7.065, 0.212]}
       />
-      <group position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
-        <group position={[-3.838, -5.066, -1.905]}>
+      <Selection
+        item={Item.Resume}
+      >
+        <group position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
+          <group position={[-3.838, -5.066, -1.905]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube011.geometry}
+              material={materials.Monitor}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube011_1.geometry}
+              material={materials.MonitorScreen}
+            />
+          </group>
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube011.geometry}
+            geometry={nodes.MonitorStand.geometry}
             material={materials.Monitor}
+            position={[-3.545, -4.431, -1.904]}
+            rotation={[0, 1.571, 0]}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube011_1.geometry}
-            material={materials.MonitorScreen}
+            geometry={nodes.MonitorStandFoot.geometry}
+            material={materials.Monitor}
+            position={[-3.58, -4.431, -1.901]}
+            rotation={[0, 1.571, 0]}
           />
         </group>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.MonitorStand.geometry}
-          material={materials.Monitor}
-          position={[-3.545, -4.431, -1.904]}
-          rotation={[0, 1.571, 0]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.MonitorStandFoot.geometry}
-          material={materials.Monitor}
-          position={[-3.58, -4.431, -1.901]}
-          rotation={[0, 1.571, 0]}
-        />
-      </group>
+      </Selection>
       <group position={[1.65, 4.463, -0.005]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
         <group position={[-0.989, -0.076, -0.307]} rotation={[0.123, 0, 0]}>
           <mesh

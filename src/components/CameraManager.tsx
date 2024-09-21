@@ -1,4 +1,4 @@
-import { OrthographicCamera, PerspectiveCamera } from '@react-three/drei';
+import { OrthographicCamera, PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import * as THREE from 'three';
@@ -43,8 +43,6 @@ const CameraManager = forwardRef(({ perspectiveCameraRef, orthographicCameraRef 
     // Once the cameras have loaded, set their properties
     useEffect(() => {
         if (perspectiveCameraRef.current) {
-            // perspectiveCameraRef.current.position.set(3.5, -0.5, -15.5);
-            // perspectiveCameraRef.current.rotation.set(0.8 * Math.PI / 4, 1.02 * Math.PI / 4, -0.08 * Math.PI / 4);
             perspectiveCameraRef.current.position.set(3.5, 1.3, -14.5);
             perspectiveCameraRef.current.rotation.set(0.2 * Math.PI / 4, 1 * Math.PI / 4, 0.33 * Math.PI / 4);
         }

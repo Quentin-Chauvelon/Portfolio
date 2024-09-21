@@ -16,6 +16,7 @@
   font-family: Montserrat, Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  /* overflow: hidden; */
 
   --bg-light: #9bc7ec;
   --bg-scene-light: #4d91ff;
@@ -38,9 +39,9 @@
 
 @property --bg-gradient-from {
   syntax: '<color>';
-    initial-value: #004e89;
-      inherits: false;
-    }
+  initial-value: #004e89;
+  inherits: false;
+}
 
 @property --bg-gradient-to {
   syntax: '<color>';
@@ -61,6 +62,7 @@
     inherits: false;
   }
 }
+
 .gradient-bp {
   @apply from-sky-400 to-purple-600;
 }
@@ -77,7 +79,6 @@
 }
 
 @media screen and (max-width: 1280px) {
-
   .gradient-animation,
   .gradient-animation h2 {
     transition: --bg-gradient-from 0.25s, --bg-gradient-to 0.25s, --bg-gradient-deg 1s;
@@ -89,6 +90,7 @@
     --bg-gradient-to: #004e89;
   }
 }
+
 body {
   width: 100%;
   height: 100%;

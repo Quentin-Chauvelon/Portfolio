@@ -11,6 +11,12 @@ type HeroProps = {
 
 const Hero = ({ cameraManagerRef, chairVisible }: HeroProps) => {
     function cameraToDeskAnimation() {
+        if (window.innerHeight > window.innerWidth * 1.5) {
+            // TODO: use toast instead of alert?
+            alert("This portfolio is currently not optimized for portrait mode, please rotate your device. Thanks!");
+            return;
+        }
+
         cameraManagerRef.current?.setActiveCamera(CameraType.Perspective);
 
         chairVisible(false);
@@ -19,14 +25,16 @@ const Hero = ({ cameraManagerRef, chairVisible }: HeroProps) => {
             x: 0, y: 0, z: 21,
             rX: 0, rY: 0, rZ: 0,
             heroSectionLeft: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--hero-section-left")),
-            viewportWidth: 450
+            viewportWidth: window.innerWidth > 1280 ? 450 / 1920 * window.innerWidth : 0
         };
+
+        const heroSection = document.querySelector('#hero-section-container') as HTMLElement;
 
         const tween = new Tween(values)
             .to({
                 x: 3.5, y: 1.3, z: -14.5,
                 rX: 0.2 * Math.PI / 4, rY: 1 * Math.PI / 4, rZ: 0.33 * Math.PI / 4,
-                heroSectionLeft: -50,
+                heroSectionLeft: -100,
                 viewportWidth: 0
             }, 3000)
             .easing(Easing.Quartic.InOut)
@@ -35,7 +43,7 @@ const Hero = ({ cameraManagerRef, chairVisible }: HeroProps) => {
                 cameraManagerRef.current?.setCameraRotation(values.rX, values.rY, values.rZ);
                 cameraManagerRef.current?.setViewportX(values.viewportWidth);
 
-                document.documentElement.style.setProperty("--hero-section-left", values.heroSectionLeft + '%');
+                heroSection.style.left = values.heroSectionLeft + '%';
             })
             .onComplete(() => {
                 (document.querySelector('#hero-section-container') as HTMLElement).style.display = 'none';
@@ -57,7 +65,7 @@ const Hero = ({ cameraManagerRef, chairVisible }: HeroProps) => {
 
     return (
         <section id="hero-section-container" className="relative flex flex-col gap-8 justify-between xl:justify-normal items-center xl:items-stretch xl:top-[--hero-section-top] xl:left-[--hero-section-left] w-full xl:w-[--hero-section-width] h-full xl:h-[calc(100%-var(--hero-section-top))] text-[#f4faff] font-extrabold leading-none">
-            <div className='flex flex-wrap w-full text-6xl mt-4 xl:mt-0 ml-24 xl:ml-0'>
+            <div className='flex flex-wrap w-full text-4xl md:text-6xl mt-4 xl:mt-0 pl-12 xl:pl-0'>
                 <h1 className='w-full'>Hi, I'm&nbsp;</h1>
                 <h1 className="ml-2 xl:ml-0 bg-gradient-to-r gradient-bp bg-clip-text text-transparent [text-shadow:_-7px_-7px_#e9f0f7] xl:[text-shadow:_0_0_rgba(0,0,0,0)] shadow-white;">Quentin</h1>
                 <h1>&nbsp;👋</h1>
