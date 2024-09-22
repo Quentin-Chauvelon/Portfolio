@@ -157,7 +157,7 @@ type GLTFResult = GLTF & {
 
 type RoomProps = {
   group: JSX.IntrinsicElements['group'],
-  chairVisible: boolean,
+  portfolioOpened: boolean,
 }
 
 
@@ -171,7 +171,7 @@ export enum Item {
 }
 
 
-const Room = ({ group, chairVisible }: RoomProps) => {
+const Room = ({ group, portfolioOpened }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
 
   return (
@@ -850,7 +850,7 @@ const Room = ({ group, chairVisible }: RoomProps) => {
           position={[-6.63, -6.579, -1.641]}
         />
       </group>
-      <group visible={chairVisible} position={[-0.179, 3.382, 1.701]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
+      <group visible={portfolioOpened} position={[-0.179, 3.382, 1.701]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
         <mesh
           castShadow
           receiveShadow

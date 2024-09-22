@@ -6,10 +6,10 @@ import { CameraType, CameraRefType } from '../components/CameraManager'
 
 type HeroProps = {
     cameraManagerRef: React.MutableRefObject<CameraRefType | undefined>
-    chairVisible: (visible: boolean) => void
+    portfolioOpened: (visible: boolean) => void
 }
 
-const Hero = ({ cameraManagerRef, chairVisible }: HeroProps) => {
+const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
     function cameraToDeskAnimation() {
         if (window.innerHeight > window.innerWidth * 1.5) {
             // TODO: use toast instead of alert?
@@ -19,7 +19,7 @@ const Hero = ({ cameraManagerRef, chairVisible }: HeroProps) => {
 
         cameraManagerRef.current?.setActiveCamera(CameraType.Perspective);
 
-        chairVisible(false);
+        portfolioOpened(true);
 
         const values = {
             x: 0, y: 0, z: 21,

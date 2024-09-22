@@ -1,4 +1,4 @@
-import { OrthographicCamera, PerspectiveCamera, OrbitControls } from '@react-three/drei';
+import { OrthographicCamera, PerspectiveCamera } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import * as THREE from 'three';
@@ -28,6 +28,8 @@ const CameraManager = forwardRef(({ perspectiveCameraRef, orthographicCameraRef 
     const [activeCameraType, setActiveCameraType] = useState(CameraType.Orthographic);
 
     const three = useThree();
+
+    three.gl.outputColorSpace = THREE.SRGBColorSpace;
 
     // Update the viewport width based on the screen width, this is called everytime the screen is resized
     // Only do it for the orthographic camera, since the viewport must be fullscreen once the user is viewing

@@ -16,7 +16,7 @@ import { MultiOutline, SelectionTest } from '../components/Selection'
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
 const Scene = () => {
-    const [chairVisible, setChairVisible] = useState(true);
+    const [portfolioOpened, setportfolioOpened] = useState(false);
 
     const cameraManager = useRef<CameraRefType>();
 
@@ -32,6 +32,7 @@ const Scene = () => {
                 camera={{ position: [-1, -1, 10], fov: 40, aspect: 5 }}
                 style={{ position: 'absolute' }}
                 shadows={true}
+                linear={true}
             >
                 <CameraManager {...{
                     perspectiveCameraRef: useRef<THREE.PerspectiveCamera>() as React.MutableRefObject<THREE.PerspectiveCamera>,
@@ -45,11 +46,11 @@ const Scene = () => {
 
                     <ItemClickedContext.Provider value={onItemClicked}>
                         <SelectionTest>
-                            <EffectComposer enabled={true} autoClear={false}>
+                            <EffectComposer enabled={portfolioOpened} autoClear={false} >
                                 <MultiOutline
                                     group={"default"}
                                     blur
-                                    edgeStrength={10}
+                                    edgeStrength={15}
                                     pulseSpeed={0.3}
                                     selectionLayer={9}
                                 />
@@ -57,9 +58,9 @@ const Scene = () => {
                                     group={"hovered"}
                                     selectionLayer={10}
                                     blur
-                                    edgeStrength={20}
+                                    edgeStrength={50}
                                     pulseSpeed={0.3}
-                                    visibleEdgeColor={"#462cc7" as unknown as number} // Converting string to number to fix remove type error
+                                    visibleEdgeColor={"#6a00ff" as unknown as number} // Converting string to number to fix remove type error
                                 />
                             </EffectComposer>
                         <Room
@@ -67,7 +68,7 @@ const Scene = () => {
                                 position: [0, 0, -15],
                                 rotation: [0.7 * Math.PI / 4, -Math.PI / 4, 0]
                             }}
-                                chairVisible={chairVisible}
+                                portfolioOpened={portfolioOpened}
                         />
                         </SelectionTest>
                     </ItemClickedContext.Provider>
@@ -78,7 +79,7 @@ const Scene = () => {
 
             <Hero
                 cameraManagerRef={cameraManager}
-                chairVisible={setChairVisible}
+                portfolioOpened={setportfolioOpened}
             />
         </>
     )

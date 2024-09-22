@@ -1,7 +1,6 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useHelper } from '@react-three/drei'
-import { Color, DirectionalLight, DirectionalLightHelper } from 'three'
-import { log } from 'three/webgpu';
+import { DirectionalLight, DirectionalLightHelper } from 'three'
 
 const Light = () => {
     const dirLight = useRef(new DirectionalLight(0xffffff, 1));
