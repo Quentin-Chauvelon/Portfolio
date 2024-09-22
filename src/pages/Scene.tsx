@@ -50,9 +50,10 @@ const Scene = () => {
                                 <MultiOutline
                                     group={"default"}
                                     blur
-                                    edgeStrength={15}
+                                    edgeStrength={25}
                                     pulseSpeed={0.3}
                                     selectionLayer={9}
+                                    visibleEdgeColor={"#ffff00" as unknown as number} // Converting string to number to fix remove type error
                                 />
                                 <MultiOutline
                                     group={"hovered"}

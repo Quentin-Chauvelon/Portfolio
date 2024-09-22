@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { useGLTF } from '@react-three/drei'
+import { Box, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
 
@@ -22,11 +22,6 @@ type GLTFResult = GLTF & {
     Sphere_bood_0: THREE.Mesh
     Sphere_roope_0: THREE.Mesh
     Torus_hat_0: THREE.Mesh
-    Object_0002: THREE.Mesh
-    Object_3002: THREE.Mesh
-    Object_4003: THREE.Mesh
-    Object_1003: THREE.Mesh
-    Object_2002: THREE.Mesh
     Object_11002: THREE.Mesh
     Object_0003: THREE.Mesh
     Object_2003: THREE.Mesh
@@ -58,7 +53,6 @@ type GLTFResult = GLTF & {
     Cube009_1: THREE.Mesh
     Cube002: THREE.Mesh
     Cube002_1: THREE.Mesh
-    CTCI: THREE.Mesh
     Cube012: THREE.Mesh
     Cube012_1: THREE.Mesh
     Cube013: THREE.Mesh
@@ -73,9 +67,9 @@ type GLTFResult = GLTF & {
     Maze_Floor: THREE.Mesh
     Cube: THREE.Mesh
     Cube001: THREE.Mesh
-    Plane: THREE.Mesh
-    Plane001: THREE.Mesh
-    Plane002: THREE.Mesh
+    Paper_1: THREE.Mesh
+    Paper_2: THREE.Mesh
+    Paper_3: THREE.Mesh
     Cylinder004: THREE.Mesh
     Cylinder004_1: THREE.Mesh
     Cylinder004_2: THREE.Mesh
@@ -95,7 +89,6 @@ type GLTFResult = GLTF & {
     defaultMaterial: THREE.Mesh
     defaultMaterial001: THREE.Mesh
     defaultMaterial002: THREE.Mesh
-    Object_1001: THREE.Mesh
     Clock_Frame: THREE.Mesh
     Marker_1: THREE.Mesh
     Marker_2: THREE.Mesh
@@ -103,6 +96,49 @@ type GLTFResult = GLTF & {
     Second_Hand: THREE.Mesh
     Window: THREE.Mesh
     Mat: THREE.Mesh
+    Avatar: THREE.Mesh
+    Avatar_Stand: THREE.Mesh
+    ['@']: THREE.Mesh
+    Cylinder: THREE.Mesh
+    Cylinder001: THREE.Mesh
+    Cylinder002: THREE.Mesh
+    Cylinder003: THREE.Mesh
+    ['E-commerce']: THREE.Mesh
+    hotdog_house_Do_do_0: THREE.Mesh
+    hotdog_house_Do_do_0001: THREE.Mesh
+    hotdog_house_Kem_0: THREE.Mesh
+    hotdog_house_Trang_0: THREE.Mesh
+    hotdog_house_Trang_0001: THREE.Mesh
+    hotdog_house_Xam_xanh_0: THREE.Mesh
+    hotdog_house_Xanh_Kinh_0: THREE.Mesh
+    hotdog_house_Xanh_la_0: THREE.Mesh
+    icescream_house_Trang_0001: THREE.Mesh
+    pizzaria_Burger_Shop_Coffee_House_Black_0001: THREE.Mesh
+    pizzaria_Burger_Shop_Coffee_House_Brown_Dam_0001: THREE.Mesh
+    pizzaria_Burger_Shop_Coffee_House_White_0001: THREE.Mesh
+    pizzaria_Do_do_0001: THREE.Mesh
+    pizzaria_Do_do_0002: THREE.Mesh
+    BODY_BODY_0: THREE.Mesh
+    bottom_07___Default_0: THREE.Mesh
+    bottom_BOTTOM_0: THREE.Mesh
+    BOX_METAL_METALL_0: THREE.Mesh
+    BUMPER_FRONT_PLASTIC_0: THREE.Mesh
+    BUMPER_FRONT_INNER_BOTTOM_0: THREE.Mesh
+    CABIN_PLASTIC_METALL_0: THREE.Mesh
+    CABIN_PLASTIC_PLASTIC_0: THREE.Mesh
+    GLASS_GLASS_0: THREE.Mesh
+    interior_VOID_0: THREE.Mesh
+    LIGHTS_LIGHT_0: THREE.Mesh
+    LIGHTS_LIGHTS_GLASS_0: THREE.Mesh
+    wheel_003_RIM_0: THREE.Mesh
+    wheel_003_TIRE_0: THREE.Mesh
+    wheel_004_RIM_0: THREE.Mesh
+    wheel_004_TIRE_0: THREE.Mesh
+    wheel_01_RIM_0: THREE.Mesh
+    wheel_01_TIRE_0: THREE.Mesh
+    wheel_02_RIM_0: THREE.Mesh
+    wheel_02_TIRE_0: THREE.Mesh
+    Plane: THREE.Mesh
   }
   materials: {
     Wall: THREE.MeshPhysicalMaterial
@@ -113,23 +149,18 @@ type GLTFResult = GLTF & {
     ['bood.001']: THREE.MeshStandardMaterial
     ['roope.001']: THREE.MeshStandardMaterial
     ['material.003']: THREE.MeshStandardMaterial
-    ['Material_001.001']: THREE.MeshStandardMaterial
-    Material_003: THREE.MeshStandardMaterial
-    ['material.004']: THREE.MeshStandardMaterial
-    ['Material_002.001']: THREE.MeshStandardMaterial
     ['material_0.001']: THREE.MeshStandardMaterial
     Maze: THREE.MeshPhysicalMaterial
     ['Material.001']: THREE.MeshStandardMaterial
     Floor: THREE.MeshPhysicalMaterial
-    Monitor: THREE.MeshPhysicalMaterial
     MonitorScreen: THREE.MeshPhysicalMaterial
     ['Material.002']: THREE.MeshStandardMaterial
     Keyboard_Mouse: THREE.MeshPhysicalMaterial
+    Monitor: THREE.MeshPhysicalMaterial
     Desk_Leg: THREE.MeshStandardMaterial
     Desk_Leg_Extension: THREE.MeshStandardMaterial
     Book_1: THREE.MeshPhysicalMaterial
     Book_Paper: THREE.MeshStandardMaterial
-    Book_1_Text: THREE.MeshPhysicalMaterial
     Book_2: THREE.MeshStandardMaterial
     ['Book_Paper.001']: THREE.MeshStandardMaterial
     Book_3: THREE.MeshStandardMaterial
@@ -140,19 +171,61 @@ type GLTFResult = GLTF & {
     Ball: THREE.MeshStandardMaterial
     Flag_Pole: THREE.MeshStandardMaterial
     Flag: THREE.MeshStandardMaterial
-    Paper: THREE.MeshStandardMaterial
     Pen: THREE.MeshStandardMaterial
     Pen_Tip: THREE.MeshStandardMaterial
     Book_5: THREE.MeshStandardMaterial
     Chair: THREE.MeshStandardMaterial
     Chair_Seat: THREE.MeshStandardMaterial
-    material_poster: THREE.MeshStandardMaterial
-    Clock: THREE.MeshPhysicalMaterial
     Clock_Hand: THREE.MeshPhysicalMaterial
     Window: THREE.MeshPhysicalMaterial
     Mat: THREE.MeshPhysicalMaterial
+    mat0: THREE.MeshPhysicalMaterial
+    Paper: THREE.MeshStandardMaterial
+    Do_do: THREE.MeshStandardMaterial
+    Trang: THREE.MeshStandardMaterial
+    Clock: THREE.MeshPhysicalMaterial
+    Xanh_Kinh: THREE.MeshStandardMaterial
+    Burger_Shop_Coffee_HouseBlack: THREE.MeshStandardMaterial
+    Burger_Shop_Coffee_HouseBrown_Dam: THREE.MeshStandardMaterial
+    _7___Default: THREE.MeshStandardMaterial
+    BOTTOM: THREE.MeshStandardMaterial
+    METALL: THREE.MeshStandardMaterial
+    PLASTIC: THREE.MeshStandardMaterial
+    GLASS: THREE.MeshStandardMaterial
+    VOID: THREE.MeshStandardMaterial
+    LIGHT: THREE.MeshStandardMaterial
+    LIGHTS_GLASS: THREE.MeshStandardMaterial
+    material: THREE.MeshStandardMaterial
+    TIRE: THREE.MeshStandardMaterial
+    SEPAMAT: THREE.MeshStandardMaterial
   }
 }
+
+
+const whiteMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+whiteMaterial.transparent = true;
+whiteMaterial.opacity = 0;
+
+const resumeTexture = new THREE.TextureLoader().load("src/assets/images/Resume.jpg");
+const posterTexture = new THREE.TextureLoader().load("src/assets/images/Poster_" + (Math.floor(Math.random() * 5) + 1) + ".jpg");
+
+const resumeMaterials: THREE.Material[] = [
+  whiteMaterial,
+  whiteMaterial,
+  new THREE.MeshBasicMaterial({ map: resumeTexture }),
+  whiteMaterial,
+  whiteMaterial,
+  whiteMaterial
+];
+
+const posterMaterials: THREE.Material[] = [
+  new THREE.MeshBasicMaterial({ map: posterTexture }),
+  whiteMaterial,
+  whiteMaterial,
+  whiteMaterial,
+  whiteMaterial,
+  whiteMaterial
+];
 
 
 type RoomProps = {
@@ -165,7 +238,8 @@ export enum Item {
   Resume,
   Education,
   Experience,
-  Projects,
+  PersonalProjects,
+  AcademicProjects,
   Certifications,
   About,
 }
@@ -179,56 +253,56 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.Certifications}
       >
-      <group position={[-1.608, 7.471, -0.07]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Circle_006_Tropy_Cup_0.geometry}
-          material={materials.Tropy_Cup}
-          position={[2.288, -4.577, 6.865]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Circle_007_Tropy_Cup_0.geometry}
-          material={materials.Tropy_Cup}
-          position={[2.288, -4.577, 6.865]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube_003_Tropy_cup_2_0.geometry}
-          material={materials.Tropy_cup_2}
-          position={[2.288, -4.577, 6.865]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube_004_Tropy_Cup_0.geometry}
-          material={materials.Tropy_Cup}
-          position={[2.288, -4.577, 6.865]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube_005_Tropy_Cup_0.geometry}
-          material={materials.Tropy_Cup}
-          position={[2.288, -4.577, 6.865]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube_006_Tropy_Cup_0.geometry}
-          material={materials.Tropy_Cup}
-          position={[2.288, -4.577, 6.865]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Star_star_0.geometry}
-          material={materials.star}
-          position={[2.288, -4.577, 6.865]}
-        />
+        <group position={[-3.032, 4.469, -1.855]} rotation={[Math.PI / 2, 0, -1.067]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle_006_Tropy_Cup_0.geometry}
+            material={materials.Tropy_Cup}
+            position={[2.288, -4.577, 6.865]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle_007_Tropy_Cup_0.geometry}
+            material={materials.Tropy_Cup}
+            position={[2.288, -4.577, 6.865]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_003_Tropy_cup_2_0.geometry}
+            material={materials.Tropy_cup_2}
+            position={[2.288, -4.577, 6.865]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_004_Tropy_Cup_0.geometry}
+            material={materials.Tropy_Cup}
+            position={[2.288, -4.577, 6.865]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_005_Tropy_Cup_0.geometry}
+            material={materials.Tropy_Cup}
+            position={[2.288, -4.577, 6.865]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_006_Tropy_Cup_0.geometry}
+            material={materials.Tropy_Cup}
+            position={[2.288, -4.577, 6.865]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Star_star_0.geometry}
+            material={materials.star}
+            position={[2.288, -4.577, 6.865]}
+          />
         </group>
       </ClickableItem>
       <ClickableItem
@@ -266,57 +340,6 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
         </group>
         </group>
       </ClickableItem>
-      <group position={[-1.585, 5.069, -3.908]} rotation={[Math.PI / 2, 0, 0.5]}>
-        <group rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
-          <group rotation={[Math.PI / 2, 0, 0]}>
-            <group position={[-0.025, 0.091, 0.003]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Object_0002.geometry}
-                material={materials['Material_001.001']}
-                position={[-0.188, -5.114, 6.865]}
-              />
-            </group>
-            <group position={[-0.025, 0.091, 0.003]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Object_3002.geometry}
-                material={materials.Material_003}
-                position={[-0.188, -5.114, 6.865]}
-              />
-            </group>
-            <group position={[-0.022, 0.618, 0.006]} rotation={[-0.342, 0, 0]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Object_4003.geometry}
-                material={materials['material.004']}
-                position={[-0.188, -7.121, 4.751]}
-              />
-            </group>
-            <group position={[-0.023, 0.562, -0.024]} rotation={[-0.049, 0, 0]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Object_1003.geometry}
-                material={materials['Material_002.001']}
-                position={[-0.188, -5.446, 6.605]}
-              />
-            </group>
-            <group position={[-0.18, 0.541, -0.05]} rotation={[1.347, 0.209, -0.039]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Object_2002.geometry}
-                material={materials['material.004']}
-                position={[-1.751, 5.498, 6.326]}
-              />
-            </group>
-          </group>
-        </group>
-      </group>
       <group position={[-0.345, 0, 6.993]} rotation={[Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, -0.576, -Math.PI]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
@@ -436,42 +459,38 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
         material={materials.Floor}
         position={[0.173, -7.065, 0.212]}
       />
-      <ClickableItem
-        item={Item.Resume}
-      >
-        <group position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
-          <group position={[-3.838, -5.066, -1.905]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Cube011.geometry}
-              material={materials.Monitor}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Cube011_1.geometry}
-              material={materials.MonitorScreen}
-            />
-          </group>
+      <group position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
+        <group position={[-3.838, -5.066, -1.905]}>
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.MonitorStand.geometry}
+            geometry={nodes.Cube011.geometry}
             material={materials.Monitor}
-            position={[-3.545, -4.431, -1.904]}
-            rotation={[0, 1.571, 0]}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.MonitorStandFoot.geometry}
-            material={materials.Monitor}
-            position={[-3.58, -4.431, -1.901]}
-            rotation={[0, 1.571, 0]}
+            geometry={nodes.Cube011_1.geometry}
+            material={materials.MonitorScreen}
           />
         </group>
-      </ClickableItem>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.MonitorStand.geometry}
+          material={materials.Monitor}
+          position={[-3.545, -4.431, -1.904]}
+          rotation={[0, 1.571, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.MonitorStandFoot.geometry}
+          material={materials.Monitor}
+          position={[-3.58, -4.431, -1.901]}
+          rotation={[0, 1.571, 0]}
+        />
+      </group>
       <group position={[1.65, 4.463, -0.005]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
         <group position={[-0.989, -0.076, -0.307]} rotation={[0.123, 0, 0]}>
           <mesh
@@ -653,17 +672,9 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
             material={materials.Book_Paper}
           />
         </group>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.CTCI.geometry}
-          material={materials.Book_1_Text}
-          position={[-4.057, -6.812, -2.288]}
-          rotation={[0, 0, -Math.PI / 2]}
-        />
       </group>
       <ClickableItem
-        item={Item.Projects}
+        item={Item.PersonalProjects}
       >
       <group position={[0.736, 4.486, -3.247]} rotation={[0, -0.556, 0]}>
         <mesh
@@ -711,36 +722,32 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
         />
         </group>
       </ClickableItem>
-      <ClickableItem
-        item={Item.Experience}
-      >
       <group position={[1.03, 4.472, 2.837]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane.geometry}
+          geometry={nodes.Paper_1.geometry}
           material={materials.Paper}
-          position={[-4.577, -6.865, -2.288]}
-          rotation={[-Math.PI, 1.455, -Math.PI]}
+          position={[-4.61, -6.844, -2.285]}
+          rotation={[0.024, 0.075, -0.003]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane001.geometry}
+          geometry={nodes.Paper_2.geometry}
           material={materials.Paper}
-          position={[-4.577, -6.849, -2.288]}
-          rotation={[0, 1.519, 0]}
+          position={[-4.61, -6.808, -2.285]}
+          rotation={[0.025, -0.202, 0.004]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane002.geometry}
+          geometry={nodes.Paper_3.geometry}
           material={materials.Paper}
-          position={[-4.577, -6.837, -2.288]}
-          rotation={[-Math.PI, 1.08, -Math.PI]}
+          position={[-4.61, -6.781, -2.285]}
+          rotation={[0.028, 0.486, -0.014]}
         />
-        </group>
-      </ClickableItem>
+      </group>
       <group position={[1.494, 4.472, 2.966]}>
         <group position={[-6.725, -6.344, -1.792]} rotation={[-0.109, -0.11, 0.099]}>
           <mesh
@@ -850,7 +857,7 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
           position={[-6.63, -6.579, -1.641]}
         />
       </group>
-      <group visible={portfolioOpened} position={[-0.179, 3.382, 1.701]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
+      <group visible={!portfolioOpened || true} position={[-0.179, 3.382, 1.701]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
         <mesh
           castShadow
           receiveShadow
@@ -873,14 +880,6 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
           position={[-4.057, 0.75, 6.989]}
         />
       </group>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_1001.geometry}
-        material={materials.material_poster}
-        position={[-6.856, 0.014, 4.594]}
-        rotation={[0, Math.PI / 2, 0]}
-      />
       <group position={[-6.716, 3.973, -2.322]}>
         <mesh
           castShadow
@@ -934,6 +933,399 @@ const Room = ({ group, portfolioOpened }: RoomProps) => {
         geometry={nodes.Mat.geometry}
         material={materials.Mat}
         position={[4, -6.7, 2.86]}
+      />
+      <ClickableItem
+        item={Item.About}
+      >
+        <group position={[-6.122, 0.751, -2.354]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Avatar.geometry}
+            material={materials.mat0}
+            position={[-0.012, 0.784, -0.004]}
+            rotation={[Math.PI / 2, 0, -1.537]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Avatar_Stand.geometry}
+            material={materials.Monitor}
+          />
+        </group>
+      </ClickableItem>
+      <ClickableItem
+        item={Item.AcademicProjects}
+      >
+        <group position={[-6.616, 0.746, 4.029]} rotation={[0, Math.PI / 2, 0]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['@'].geometry}
+            material={materials.Paper}
+            position={[8.086, 0.58, 0.465]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder.geometry}
+            material={materials.Paper}
+            position={[7.861, 0.183, 0.782]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder001.geometry}
+            material={materials.Do_do}
+            position={[7.909, 0.183, 0.782]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder002.geometry}
+            material={materials.Do_do}
+            position={[7.817, 0.183, 0.782]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder003.geometry}
+            material={materials.Do_do}
+            position={[8.587, 0.183, 0.782]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['E-commerce'].geometry}
+            material={materials.Paper}
+            position={[7.895, 0.423, 0.61]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <group position={[6.775, -0.148, 0.487]} rotation={[Math.PI / 2, 0, 0]}>
+            <group rotation={[Math.PI / 2, 0, 0]}>
+              <group rotation={[Math.PI, 0, 0]}>
+                <group position={[1.427, 0.519, -0.158]}>
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Do_do_0.geometry}
+                    material={materials.Do_do}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Do_do_0001.geometry}
+                    material={materials.Do_do}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Kem_0.geometry}
+                    material={materials.Clock}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Trang_0.geometry}
+                    material={materials.Paper}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Trang_0001.geometry}
+                    material={materials.Paper}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Xam_xanh_0.geometry}
+                    material={materials.Monitor}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Xanh_Kinh_0.geometry}
+                    material={materials.Xanh_Kinh}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.hotdog_house_Xanh_la_0.geometry}
+                    material={materials.Book_1}
+                  />
+                </group>
+                <group position={[0.214, 0.521, -0.225]}>
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.icescream_house_Trang_0001.geometry}
+                    material={materials.Trang}
+                    position={[1.208, 0, 0]}
+                  />
+                </group>
+                <group position={[3.032, 0.788, -0.364]}>
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.pizzaria_Burger_Shop_Coffee_House_Black_0001.geometry}
+                    material={materials.Burger_Shop_Coffee_HouseBlack}
+                    position={[-1.336, -0.748, 0.669]}
+                    rotation={[0, 1.571, 0]}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.pizzaria_Burger_Shop_Coffee_House_Brown_Dam_0001.geometry}
+                    material={materials.Burger_Shop_Coffee_HouseBrown_Dam}
+                    position={[-1.336, -0.748, 0.669]}
+                    rotation={[0, 1.547, 0]}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.pizzaria_Burger_Shop_Coffee_House_White_0001.geometry}
+                    material={materials.Trang}
+                    position={[-1.336, -0.748, 0.669]}
+                    rotation={[0, 1.547, 0]}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.pizzaria_Do_do_0001.geometry}
+                    material={materials.Do_do}
+                    position={[-0.863, -0.501, 0.22]}
+                  />
+                  <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.pizzaria_Do_do_0002.geometry}
+                    material={materials.Do_do}
+                    position={[-1.912, -0.071, 0.427]}
+                    rotation={[Math.PI, 0, Math.PI]}
+                  />
+                </group>
+              </group>
+            </group>
+          </group>
+        </group>
+      </ClickableItem>
+      <ClickableItem
+        item={Item.Experience}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane.geometry}
+          material={materials.SEPAMAT}
+          position={[-4.328, -2.085, -2.446]}
+          rotation={[0, 0, -Math.PI / 2]}
+          scale={[0.8, 0.8, 0.8]}
+        />
+        <group position={[-4.526, -2.385, -2.284]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
+          <group position={[0.016, 0.001, -0.267]} rotation={[0, 0, Math.PI / 2]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BODY_BODY_0.geometry}
+              material={materials.Paper}
+              position={[0.038, 0.505, 0.073]}
+            />
+          </group>
+          <group position={[0.036, 0.002, -0.086]} rotation={[-Math.PI / 2, 0, -Math.PI]}>
+            <group position={[0.385, 0.084, 0.003]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.bottom_07___Default_0.geometry}
+                material={materials._7___Default}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.bottom_BOTTOM_0.geometry}
+                material={materials.BOTTOM}
+              />
+            </group>
+          </group>
+          <group position={[0.155, 0.001, -0.298]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BOX_METAL_METALL_0.geometry}
+              material={materials.METALL}
+              position={[0.007, 0.192, 0]}
+            />
+          </group>
+          <group position={[-0.459, 0.001, -0.069]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BUMPER_FRONT_PLASTIC_0.geometry}
+              material={materials.PLASTIC}
+              position={[0.033, 0.182, 0.009]}
+            />
+          </group>
+          <group position={[-0.459, 0.001, -0.069]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BUMPER_FRONT_INNER_BOTTOM_0.geometry}
+              material={materials.BOTTOM}
+              position={[0.033, 0.182, 0.009]}
+            />
+          </group>
+          <group position={[-0.369, 0.001, -0.257]}>
+            <group position={[0.095, 0.173, 0.057]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.CABIN_PLASTIC_METALL_0.geometry}
+                material={materials.METALL}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.CABIN_PLASTIC_PLASTIC_0.geometry}
+                material={materials.PLASTIC}
+              />
+            </group>
+          </group>
+          <group position={[-0.378, 0.001, -0.266]} rotation={[0, 0, Math.PI / 2]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.GLASS_GLASS_0.geometry}
+              material={materials.GLASS}
+              position={[0.038, 0.104, 0.072]}
+            />
+          </group>
+          <group position={[-0.356, 0.002, -0.236]} rotation={[0, 0, Math.PI / 2]}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.interior_VOID_0.geometry}
+              material={materials.VOID}
+              position={[-0.005, 0.151, 0.101]}
+            />
+          </group>
+          <group position={[-0.003, 0.001, -0.127]} rotation={[0, 0, Math.PI / 2]}>
+            <group position={[0.038, 0.486, -0.067]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.LIGHTS_LIGHT_0.geometry}
+                material={materials.LIGHT}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.LIGHTS_LIGHTS_GLASS_0.geometry}
+                material={materials.LIGHTS_GLASS}
+              />
+            </group>
+          </group>
+          <group position={[0.268, -0.142, -0.06]} rotation={[Math.PI / 2, 0, 0]}>
+            <group position={[0, 0, 0.018]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_003_RIM_0.geometry}
+                material={materials.material}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_003_TIRE_0.geometry}
+                material={materials.TIRE}
+              />
+            </group>
+          </group>
+          <group position={[-0.331, -0.156, -0.06]} rotation={[Math.PI / 2, 0, 0]}>
+            <group position={[0, 0, 0.004]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_004_RIM_0.geometry}
+                material={materials.material}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_004_TIRE_0.geometry}
+                material={materials.TIRE}
+              />
+            </group>
+          </group>
+          <group position={[-0.331, 0.157, -0.06]} rotation={[-Math.PI / 2, 0, 0]}>
+            <group position={[0, 0, 0.004]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_01_RIM_0.geometry}
+                material={materials.material}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_01_TIRE_0.geometry}
+                material={materials.TIRE}
+              />
+            </group>
+          </group>
+          <group position={[0.268, 0.143, -0.06]} rotation={[-Math.PI / 2, 0, 0]}>
+            <group position={[0, 0, 0.018]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_02_RIM_0.geometry}
+                material={materials.material}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.wheel_02_TIRE_0.geometry}
+                material={materials.TIRE}
+              />
+            </group>
+          </group>
+        </group>
+      </ClickableItem>
+      <ClickableItem
+        item={Item.Resume}
+      >
+        <Box
+          castShadow
+          receiveShadow
+          material={resumeMaterials}
+          position={[-5.597, -1.067, -3.785]}
+          rotation={[0, -0.262, -Math.PI / 2]}
+          scale={[1.6, 0.1, 1.14]}
+        />
+      </ClickableItem>
+      {/* <ClickableItem
+        item={Item.Resume}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Resume.geometry}
+          material={resumeMaterial}
+          position={[-5.597, -1.067, -3.785]}
+          rotation={[0, -0.262, -Math.PI / 2]}
+        />
+      </ClickableItem> */}
+      <Box
+        castShadow
+        receiveShadow
+        material={posterMaterials}
+        position={[-6.81, 2.585, 4.567]}
+        // rotation={[0, -0.262, -Math.PI / 2]}
+        scale={[0.1, 4, 3]}
       />
       <mesh
         castShadow
