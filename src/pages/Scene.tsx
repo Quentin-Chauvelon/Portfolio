@@ -26,6 +26,8 @@ const Scene = () => {
 
     return (
         <>
+            <LoadingScreen />
+
             <Canvas
                 camera={{ position: [-1, -1, 10], fov: 40, aspect: 5 }}
                 style={{ position: 'absolute' }}
@@ -78,8 +80,6 @@ const Scene = () => {
                 cameraManagerRef={cameraManager}
                 chairVisible={setChairVisible}
             />
-
-            <LoadingScreen />
         </>
     )
 }

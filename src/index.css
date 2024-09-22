@@ -28,8 +28,10 @@
   --hero-section-left: 12%;
   --hero-section-buttons-color: #004e89;
 
+  --color-light: rgba(255, 255, 255, 0.87);
+
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

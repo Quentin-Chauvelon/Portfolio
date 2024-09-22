@@ -1,0 +1,23 @@
+.loading-dots {
+  width: 3.5rem;
+  aspect-ratio: 2;
+  background: 
+    no-repeat radial-gradient(circle closest-side,var(--color-light) 90%,#0000) 0%   50%,
+    no-repeat radial-gradient(circle closest-side,var(--color-light) 90%,#0000) 50%  50%,
+    no-repeat radial-gradient(circle closest-side,var(--color-light) 90%,#0000) 100% 50%;
+  background-size: calc(100% / 3) 50%;
+  animation: loader-animation 1.2s infinite linear
+}
+
+/*
+Loading animation with jumping dots. Each couple of values represent a dot.
+The first value selects the dot to animate (0% is the first dot, 100% is the last dot).
+The second value represents the height of the dot (50% is the default height, -10% is higher).
+*/
+@keyframes loader-animation {
+    20% {background-position: 0% 50%,  50% 50%,  100% 50%}
+    35% {background-position: 0% -10%, 50% 50%,  100% 50%}
+    50% {background-position: 0% 50%,  50% -10%, 100% 50%}
+    65% {background-position: 0% 50%,  50% 50%,  100% -10%}
+    80% {background-position: 0% 50%,  50% 50%,  100% 50%}
+}
