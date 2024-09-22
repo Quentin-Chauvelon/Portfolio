@@ -23,11 +23,6 @@
   --bg-dark: #2f4a75;
   --bg-scene-dark: #243756;
 
-  --hero-section-width: 45%;
-  --hero-section-top: 8%;
-  --hero-section-left: 12%;
-  --hero-section-buttons-color: #004e89;
-
   --color-light: rgba(255, 255, 255, 0.87);
 
   color-scheme: light dark;
@@ -37,60 +32,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@property --bg-gradient-from {
-  syntax: '<color>';
-  initial-value: #004e89;
-  inherits: false;
-}
-
-@property --bg-gradient-to {
-  syntax: '<color>';
-  initial-value: #004e89;
-  inherits: false;
-}
-
-@media screen and (max-width: 1280px) {
-  @property --bg-gradient-from {
-    syntax: '<color>';
-    initial-value: theme(colors.sky.500);
-    inherits: false;
-  }
-
-  @property --bg-gradient-to {
-    syntax: '<color>';
-    initial-value: theme(colors.purple.600);
-    inherits: false;
-  }
-}
-
-.gradient-bp {
-  @apply from-sky-400 to-purple-600;
-}
-
-.gradient-animation,
-.gradient-animation h2 {
-  transition: --bg-gradient-from 0.25s, --bg-gradient-to 0.25s, --bg-gradient-deg 1s;
-}
-
-.gradient-animation:hover,
-.gradient-animation:hover h2 {
-  --bg-gradient-from: theme(colors.sky.500);
-  --bg-gradient-to: theme(colors.purple.600);
-}
-
-@media screen and (max-width: 1280px) {
-  .gradient-animation,
-  .gradient-animation h2 {
-    transition: --bg-gradient-from 0.25s, --bg-gradient-to 0.25s, --bg-gradient-deg 1s;
-  }
-
-  .gradient-animation:hover,
-  .gradient-animation:hover h2 {
-    --bg-gradient-from: #004e89;
-    --bg-gradient-to: #004e89;
-  }
 }
 
 body {
