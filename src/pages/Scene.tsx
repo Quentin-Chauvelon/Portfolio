@@ -1,23 +1,26 @@
 import React, { Suspense, createContext, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
-import '../../node_modules/font-awesome/css/font-awesome.min.css'
+import { EffectComposer } from '@react-three/postprocessing'
 
 import Hero from '../pages/Hero'
+import { LoadingScreen } from '../pages/LoadingScreen'
 
+import CameraManager, { CameraRefType } from '../components/CameraManager'
 import Room, { Item } from '../components/Room'
+import { MultiOutline, SelectionTest } from '../components/Selection'
 import Light from '../components/Light'
 import Floor from '../components/Floor'
-import CameraManager, { CameraRefType } from '../components/CameraManager'
-import { LoadingScreen } from '../pages/LoadingScreen'
-import { EffectComposer } from '@react-three/postprocessing'
-import { MultiOutline, SelectionTest } from '../components/Selection'
+
+import '../../node_modules/font-awesome/css/font-awesome.min.css'
+import RoomAnimation from '../components/RoomAnimation'
+
 
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
+
 const Scene = () => {
     const [portfolioOpened, setportfolioOpened] = useState(false);
-
     const cameraManager = useRef<CameraRefType>();
 
     function onItemClicked(item: Item) {
@@ -34,6 +37,8 @@ const Scene = () => {
                 shadows={true}
                 linear={true}
             >
+                <RoomAnimation />
+
                 <CameraManager {...{
                     perspectiveCameraRef: useRef<THREE.PerspectiveCamera>() as React.MutableRefObject<THREE.PerspectiveCamera>,
                     orthographicCameraRef: useRef<THREE.OrthographicCamera>() as React.MutableRefObject<THREE.OrthographicCamera>,
