@@ -1,0 +1,23 @@
+:root {
+    --picture-size: 45%;
+    --picture-border-size: 0.25rem;
+    --links-color: #3a3a3adc;
+
+    /* Skills cards colors */
+    /* Must be defined here, otherwise tailwind can't resolve the color since it is dynamically */
+    /* set via a component props. It must also be added to the tailwind's safelist in the config */
+    --skills-general-bg-color: #c4baff;
+    --skills-general-color: #6657b9;
+    --skills-web-bg-color: #b9e4b1;
+    --skills-web-color: #348d22;
+    --skills-databases-bg-color: #ffdfab;
+    --skills-databases-color: #db8700;
+    --skills-frameworks-bg-color: #f0b4af;
+    --skills-frameworks-color: #a00000;
+    --skills-others-bg-color: #adc3f2;
+    --skills-others-color: #254ea7;
+
+    /* Language progress colors */
+    --language-progress-bg-color: #a4d6a7;
+    --language-progress-color: #3e9b43;
+}

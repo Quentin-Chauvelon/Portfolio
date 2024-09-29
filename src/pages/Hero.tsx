@@ -126,7 +126,7 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
                     <button className='mb-10 xl:mb-0 gradient-animation group bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] transition-colors self-center rounded-full p-[0.2rem] border-0'
                         onClick={cameraToDeskAnimation}
                     >
-                        <div className='bottom-8 left-1/2 px-4 py-2 bg-[--bg-light] rounded-full'>
+                        <div className='bottom-8 left-1/2 px-4 py-2 bg-[--bg-color] rounded-full'>
                             <h2 className="gradient-animation font-bold bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] bg-clip-text text-transparent rounded-2xl">
                                 <i className="fa fa-regular fa-user pl-1 pr-3"></i>
                                 SEE PORTFOLIO

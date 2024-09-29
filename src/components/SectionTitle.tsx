@@ -1,0 +1,35 @@
+import { AnimateProperties } from "./Animation"
+
+type SectionTitleProps = {
+    title: string
+    skipMargin?: boolean
+}
+
+const TitleBar = () => {
+    return (
+        <AnimateProperties
+            fromValues={{
+                ["width"]: 0,
+                ["backgroundColor"]: "#242424"
+            }}
+            toValues={{
+                ["width"]: "100%",
+                ["backgroundColor"]: "#E6E6E2"
+            }}
+            duration={1}
+            styles="h-[2px] xl:h-[3px] bg-[--gray-300]"
+        />
+    )
+}
+
+const SectionTitle = ({ title, skipMargin }: SectionTitleProps) => {
+    return (
+        <div className={"flex justify-center items-center " + (skipMargin ? "" : "mt-44") + " mb-16 px-4 lg:px-8 gap-4 w-full"}>
+            <TitleBar />
+            <h1 className="font-bold text-[--gray-600] text-2xl lg:text-3xl">{title}</h1>
+            <TitleBar />
+        </div>
+    )
+}
+
+export default SectionTitle

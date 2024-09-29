@@ -16,17 +16,27 @@
   font-family: Montserrat, Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  /* overflow: hidden; */
+  max-width: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
 
-  --bg-light: #9bc7ec;
-  --bg-scene-light: #4d91ff;
-  --bg-dark: #2f4a75;
-  --bg-scene-dark: #243756;
+  --gray-900: #000000;
+  --gray-800: #040407;
+  --gray-700: #242424;
+  --gray-600: #4E5860;
+  --gray-500: #869098;
+  --gray-400: #C7CFD7;
+  --gray-300: #E6E6E2;
+  --gray-200: #EEF0F2;
+  --gray-100: #F7F7F7;
+  --white: #FFFFFF;
 
-  --color-light: rgba(255, 255, 255, 0.87);
+  --bg-color: var(--gray-100);
+  --color: var(--gray-700);
 
   color-scheme: light dark;
-  color: var(--color-light);
+  background-color: var(--bg-color);
+  color: var(--color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -37,13 +47,21 @@
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #2f4a75;
+
+    --color: rgba(255, 255, 255, 0.87);
+    
+    background-color: var(--bg-dark);
+  }
 }
 
 a {
@@ -54,4 +72,102 @@ a {
 
 a:hover {
   color: #535bf2;
+}
+
+
+/* ================================= BLUE PURPLE GRADIENT ================================= */
+
+/* 
+Use properties to set the gradient colors. This way, we can easily
+change the colors on hover to update the gradient
+*/
+@property --bg-gradient-from {
+  syntax: '<color>';
+  initial-value: #004e89;
+  inherits: false;
+}
+
+@property --bg-gradient-to {
+  syntax: '<color>';
+  initial-value: #004e89;
+  inherits: false;
+}
+
+/*
+If we have a smaller screen, use the hover effect by default (blue --> purple gradient)
+*/
+@media screen and (max-width: 1280px) {
+  @property --bg-gradient-from {
+      syntax: '<color>';
+      initial-value: theme(colors.sky.500);
+      inherits: false;
+  }
+
+  @property --bg-gradient-to {
+      syntax: '<color>';
+      initial-value: theme(colors.purple.600);
+      inherits: false;
+  }
+}
+
+/* Shorthand for the blue --> purple gradient */
+.gradient-bp {
+  @apply from-sky-400 to-purple-600;
+}
+
+/* Gradient hover animation transition */
+.gradient-animation,
+.gradient-animation h2 {
+  transition: --bg-gradient-from 0.25s, --bg-gradient-to 0.25s, --bg-gradient-deg 1s;
+}
+
+/* Update the gradient on hover */
+.gradient-animation:hover,
+.gradient-animation:hover h2 {
+  --bg-gradient-from: theme(colors.sky.500);
+  --bg-gradient-to: theme(colors.purple.600);
+}
+
+@media screen and (max-width: 1280px) {
+  .gradient-animation,
+  .gradient-animation h2 {
+      transition: --bg-gradient-from 0.25s, --bg-gradient-to 0.25s, --bg-gradient-deg 1s;
+  }
+
+  .gradient-animation:hover,
+  .gradient-animation:hover h2 {
+      --bg-gradient-from: #004e89;
+      --bg-gradient-to: #004e89;
+  }
+}
+
+.tooltip  {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.tooltip:after {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.5rem;
+  background-color: var(--gray-700);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+
+.tooltip:hover:after {
+  display: block;
+}
+
+.card-shadow {
+  box-shadow: 8px 8px 8px -2px rgba(26, 27, 31, 0.08);
 }

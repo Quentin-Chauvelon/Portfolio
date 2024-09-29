@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
-import { Item } from './Room'
-import { Select } from './Selection'
+
 import { ItemClickedContext } from '../pages/Scene'
+
+import { Select } from './Selection'
+import { Item } from '../Items'
 
 export type ClickableItemProps = {
     item: Item
