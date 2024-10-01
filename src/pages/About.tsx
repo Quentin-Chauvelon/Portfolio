@@ -96,7 +96,7 @@ const LanguageRadialProgress = ({ language, progress, level }: LanguageProps) =>
                 duration={1.5}
                 styles="w-4/5 aspect-square bg-[conic-gradient(var(--gray-500)80deg,var(--white)80deg)] rounded-full p-6 shadow-lg"
             >
-                <a className="flex justify-center items-center w-full h-full bg-[--gray-100] rounded-full font-light text-[--gray-700]">{level}</a>
+                <p className="flex justify-center items-center w-full h-full bg-[--gray-100] rounded-full font-light text-[--gray-700]">{level}</p>
             </AnimateProperty>
         </div>
     )
@@ -122,8 +122,8 @@ const HobbyCard = ({ title, icon, description, backgroundColor, color }: HobbyPr
                 <h3>{title}</h3>
 
                 <ul className="my-auto list-disc font-extralight text-sm md:text-base ml-8">
-                    {description.map((desc) => (
-                        <li>{desc}</li>
+                    {description.map((desc, i) => (
+                        <li key={i}>{desc}</li>
                     ))}
                 </ul>
             </div>

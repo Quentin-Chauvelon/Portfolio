@@ -1,4 +1,5 @@
 import React, { Suspense, createContext, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import { EffectComposer } from '@react-three/postprocessing'
@@ -6,40 +7,49 @@ import { Stats } from '@react-three/drei'
 
 import Hero from '../pages/Hero'
 import { LoadingScreen } from '../pages/LoadingScreen'
-import About from '../pages/About'
 
 import CameraManager, { CameraRefType } from '../components/CameraManager'
 import Room from '../components/Room'
 import { MultiOutline, SelectionTest } from '../components/Selection'
 import Light from '../components/Light'
 import Floor from '../components/Floor'
-import NavBar from '../components/NavBar'
 
 import RoomAnimation from '../components/RoomAnimation'
-import { Item } from '../Items'
+import { Item, ItemsRoutesMap } from '../Items'
+import NavBar from '../components/NavBar'
 
 
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
-
 const Scene = () => {
-    const [portfolioOpened, setportfolioOpened] = useState(false);
+    const [portfolioOpened, setPortfolioOpened] = useState(false);
     const [selectedItem, setSelectedItem] = useState(Item.None);
     const cameraManager = useRef<CameraRefType>();
+    const navigate = useNavigate();
+
+    const skipRoomAnimation = false;
+
+    const onItemSelected = (item: Item) => {
+        setSelectedItem(item);
+        navigate(ItemsRoutesMap[item]);
+    }
+
 
     return (
         <>
             {/* <Stats showPanel={0} className="stats" /> */}
             <LoadingScreen />
+
             <Canvas
                 camera={{ position: [-1, -1, 10], fov: 40, aspect: 5 }}
                 style={{ position: 'absolute', zIndex: selectedItem === Item.None ? 0 : -1 }}
                 shadows={true}
                 linear={true}
             >
-                {/* <RoomAnimation /> */}
+                {!portfolioOpened && !skipRoomAnimation && <RoomAnimation />}
 
                 <CameraManager {...{
+                    portfolioOpened: portfolioOpened,
                     perspectiveCameraRef: useRef<THREE.PerspectiveCamera>() as React.MutableRefObject<THREE.PerspectiveCamera>,
                     orthographicCameraRef: useRef<THREE.OrthographicCamera>() as React.MutableRefObject<THREE.OrthographicCamera>,
                     cameraVisible: selectedItem === Item.None
@@ -50,7 +60,7 @@ const Scene = () => {
                 <Suspense fallback={null}>
                     <Light />
 
-                    <ItemClickedContext.Provider value={setSelectedItem}>
+                    <ItemClickedContext.Provider value={onItemSelected}>
                         <SelectionTest>
                             <EffectComposer enabled={portfolioOpened} autoClear={false} >
                                 <MultiOutline
@@ -75,7 +85,7 @@ const Scene = () => {
                                 position: [0, 0, -15],
                                 rotation: [0.7 * Math.PI / 4, -Math.PI / 4, 0]
                             }}
-                                portfolioOpened={portfolioOpened}
+                                playAnimation={!portfolioOpened && !skipRoomAnimation}
                         />
                         </SelectionTest>
                     </ItemClickedContext.Provider>
@@ -86,21 +96,12 @@ const Scene = () => {
 
             <Hero
                 cameraManagerRef={cameraManager}
-                portfolioOpened={setportfolioOpened}
+                portfolioOpened={setPortfolioOpened}
             />
 
-            <section className="relative overflow-auto bg-[--bg-color] text-[--color]">
-                {selectedItem !== Item.None &&
-                    <ItemClickedContext.Provider value={setSelectedItem}>
-                        <NavBar />
-                    </ItemClickedContext.Provider>
-                }
-
-                {
-                    selectedItem === Item.About &&
-                    <About />
-                }
-            </section>
+            <ItemClickedContext.Provider value={onItemSelected}>
+                <NavBar />
+            </ItemClickedContext.Provider>
         </>
     )
 }

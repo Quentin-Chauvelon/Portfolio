@@ -6,7 +6,8 @@ import * as THREE from 'three';
 
 export type CameraProps = {
     perspectiveCameraRef: React.RefObject<THREE.PerspectiveCamera>,
-    orthographicCameraRef: React.RefObject<THREE.OrthographicCamera>
+    orthographicCameraRef: React.RefObject<THREE.OrthographicCamera>,
+    portfolioOpened: boolean,
 };
 
 export type CameraRefType = {
@@ -23,9 +24,9 @@ export enum CameraType {
 }
 
 
-const CameraManager = forwardRef(({ perspectiveCameraRef, orthographicCameraRef }: CameraProps, ref) => {
+const CameraManager = forwardRef(({ perspectiveCameraRef, orthographicCameraRef, portfolioOpened }: CameraProps, ref) => {
     const [activeCameraRef, setActiveCameraRef] = useState<THREE.Camera | null>(orthographicCameraRef.current);
-    const [activeCameraType, setActiveCameraType] = useState(CameraType.Orthographic);
+    const [activeCameraType, setActiveCameraType] = useState(portfolioOpened ? CameraType.Perspective : CameraType.Orthographic);
 
     const three = useThree();
 
