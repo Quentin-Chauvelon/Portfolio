@@ -7,12 +7,12 @@
     --mobile-timeline-width: 0.5rem;
     --mobile-timeline-left: calc(
         var(--mobile-experience-icon-size) / 2 +
-        (100vw - var(--mobile-experience-content-container-width) - var(--mobile-experience-icon-size)) / 3 -
-        var(--mobile-timeline-width) / 2
+        (100vw - var(--mobile-experience-content-container-width) - var(--mobile-experience-icon-size)) / 2 -
+        var(--mobile-timeline-width) / 1.5
     );
         
     --sepamat-color: #a4d6a7;
-    --u-express-color: #f0b4af;
+    --u-express-color: #a7dff8;
 }
 
 #experience-content-container::before {

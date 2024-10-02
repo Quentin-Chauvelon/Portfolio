@@ -4,54 +4,120 @@ import "/src/assets/styles/experience.css"
 import { Slide, SlideDirection } from "../components/Animation"
 
 
-type ExperienceContentProps = {
-    image: string,
-    title: string,
-    company: string,
-    location: string,
-    date: string,
-    description: string[],
-    backgroundColor: string,
-    borderColor: string
+enum DeviceOrientation {
+    Portrait,
+    Landscape
 }
 
-const ExperienceContent = ({ image, title, company, location, date, description, backgroundColor, borderColor }: ExperienceContentProps) => {
+
+type ExperienceContentContainerProps = {
+    title: string,
+    company: string,
+    location: string
+    date: string,
+    description: string[],
+    borderColor: string,
+    orientation: DeviceOrientation,
+    even: boolean
+}
+
+const ExperienceContentContainer = ({ title, company, location, date, description, borderColor, orientation, even }: ExperienceContentContainerProps) => {
     return (
-        <div className="flex justify-evenly p-3">
+        <Slide
+            direction={orientation === DeviceOrientation.Landscape && even ? SlideDirection.Left : SlideDirection.Right}
+            styles={"relative flex flex-col gap-1 w-[calc(var(--mobile-experience-content-container-width)-var(--mobile-experience-arrow-size))] p-4 pb-2 bg-[--white] rounded-lg border-b-[0.5rem] " + borderColor + " card-shadow " + (orientation === DeviceOrientation.Landscape && even ? "mr-[--mobile-experience-arrow-size]" : "ml-[--mobile-experience-arrow-size]")}
+        >
+            <div className={"absolute w-[--mobile-experience-arrow-size] h-[--mobile-experience-arrow-size] bg-inherit top-[--mobile-experience-arrow-top] " + (orientation === DeviceOrientation.Landscape && even ? "right-[--mobile-experience-arrow-left]" : "left-[--mobile-experience-arrow-left]") + " rotate-45"}></div>
+
+            <h2 className="md:text-2xl xl:text-base font-bold">{title}</h2>
+
+            <div className={"flex " + (window.innerWidth > 768 ? "items-center" : "flex-col")}>
+                {
+                    window.innerWidth > 768
+                        ? <h3 className="text-sm md:text-lg xl:text-sm font-medium">{company} &bull;&nbsp;</h3>
+                        : <h3 className="text-sm md:text-lg font-medium">{company}</h3>
+                }
+                <h4 className="text-xs md:text-base xl:text-xs font-extralight">{location}</h4>
+            </div>
+
+            <ul className="my-3 ml-4 space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc">
+                {description.map((desc, index) => (
+                    <li key={index}>{desc}</li>
+                ))}
+            </ul>
+
+            {window.innerWidth < 1248
+                ? <p className="text-xs md:text-base font-medium text-center">{date}</p>
+                : <></>
+            }
+        </Slide>
+    )
+}
+
+
+type ExperienceItemProps = {
+    image: string,
+    backgroundColor: string
+}
+
+const ExperienceItem = ({ image, backgroundColor, ...props }: ExperienceItemProps & ExperienceContentContainerProps) => {
+    return (
+        <div className={"flex justify-center " + (props.orientation === DeviceOrientation.Landscape && props.even ? "flex-row-reverse" : "flex-row") + " gap-1 md:gap-3 p-3"}>
+            {props.orientation === DeviceOrientation.Landscape &&
+                <Slide
+                    direction={props.orientation === DeviceOrientation.Landscape && props.even ? SlideDirection.Right : SlideDirection.Left}
+                    styles={"w-[--mobile-experience-content-container-width]"}
+                >
+                    <p className={"mt-[calc(var(--mobile-experience-icon-size)/2-(0.875rem/2)-6px)] text-sm font-medium " + (props.even ? "text-left" : "text-right")}>{props.date}</p>
+                </Slide >
+            }
+
             <Slide
-                direction={SlideDirection.Left}
+                direction={(SlideDirection.Left)}
+                translationValue={props.orientation === DeviceOrientation.Portrait ? 50 : 1}
                 styles={"flex justify-center items-center w-[--mobile-experience-icon-size] h-[--mobile-experience-icon-size] aspect-square " + backgroundColor + " p-2 rounded-full border-[--white] border-4 shadow-md"}
             >
-                <img src={image} alt={company} />
+                <img src={image} alt={props.company} />
             </Slide >
 
-            <Slide
-                direction={SlideDirection.Right}
-                styles={"relative flex flex-col gap-1 w-[--mobile-experience-content-container-width] ml-2 p-4 pb-2 bg-[--white] rounded-lg border-b-[0.5rem] " + borderColor + " card-shadow"}
-            >
-                <div className="absolute w-[--mobile-experience-arrow-size] h-[--mobile-experience-arrow-size] bg-inherit top-[--mobile-experience-arrow-top] left-[--mobile-experience-arrow-left] rotate-45"></div>
-
-                <h2 className="font-bold">{title}</h2>
-
-                <div className="flex flex-col">
-                    <h3 className="text-sm font-medium">{company}</h3>
-                    <h4 className="text-xs font-extralight">{location}</h4>
-                </div>
-
-                <ul className="my-3 ml-4 space-y-2 text-xs leading-5 font-light list-disc">
-                    {description.map((desc, index) => (
-                        <li key={index}>{desc}</li>
-                    ))}
-                </ul>
-
-                <p className="text-xs font-medium text-center">{date}</p>
-            </Slide>
+            <ExperienceContentContainer
+                {...props}
+            />
         </div >
     )
 }
 
 
 const Experience = () => {
+    const orientation = window.innerWidth > 1024 ? DeviceOrientation.Landscape : DeviceOrientation.Portrait;
+
+    /*
+    Mobile and desktop and have 2 very different layouts (1 column vs 2 columns) and sizes
+    Thus, in order to reuse the components defined above, we can't use the same CSS variables.
+    I decided to simply override the CSS values based on the width of the device.
+    A better idea would have been to have 2 sets of CSS variables (one for mobile and another for desktop),
+    and then dynamically update the name of the variable we want (eg: "--" + orientation + "-icon-size").
+    This unfortunately doesn't work since Tailwind can't resolve dynamic class names, unless they are added
+    to the safelist in the config which would have made this a lot less maintanable
+    */
+    if (orientation === DeviceOrientation.Portrait) {
+        if (window.innerWidth < 650) {
+            document.documentElement.style.setProperty("--mobile-experience-icon-size", "14vw");
+            document.documentElement.style.setProperty("--mobile-experience-content-container-width", "calc(85vw - var(--mobile-experience-icon-size))");
+            document.documentElement.style.setProperty("--mobile-experience-arrow-size", "0.75rem");
+            document.documentElement.style.setProperty("--mobile-timeline-width", "0.5rem");
+        } else {
+            document.documentElement.style.setProperty("--mobile-experience-icon-size", "8vw");
+            document.documentElement.style.setProperty("--mobile-experience-content-container-width", "calc(85vw - var(--mobile-experience-icon-size))");
+            document.documentElement.style.setProperty("--mobile-experience-arrow-size", "1.25rem");
+            document.documentElement.style.setProperty("--mobile-timeline-width", "0.5rem");
+        }
+    } else {
+        document.documentElement.style.setProperty("--mobile-experience-icon-size", "5vw");
+        document.documentElement.style.setProperty("--mobile-experience-arrow-size", "1rem");
+        document.documentElement.style.setProperty("--mobile-experience-content-container-width", "calc((60vw - var(--mobile-experience-icon-size)) / 2");
+    }
+
     return (
         <div className="min-h-[100vh]">
             <SectionTitle
@@ -60,9 +126,9 @@ const Experience = () => {
             />
 
             <div className="relative">
-                <div className="absolute top-0 left-[--mobile-timeline-left] w-[--mobile-timeline-width] h-full bg-[--white]"></div>
+                <div className={"absolute top-0 " + (window.innerWidth < 1248 ? "left-[--mobile-timeline-left]" : "left-1/2 translate-x-1/2") + " w-[--mobile-timeline-width] h-full -ml-1 md:-ml-2 bg-[--white]"}></div>
 
-                <ExperienceContent
+                <ExperienceItem
                     image="/src/assets/images/experience/sepamat.png"
                     title="Software Developer"
                     company="SEPAMAT"
@@ -75,12 +141,14 @@ const Experience = () => {
                     ]}
                     backgroundColor="bg-[--sepamat-color]"
                     borderColor="border-[--sepamat-color]"
+                    orientation={orientation}
+                    even={true}
                 />
 
-                <ExperienceContent
+                <ExperienceItem
                     image="/src/assets/images/experience/u-express.png"
                     title="Summer Job: Stocker"
-                    company="U Express Les Marines"
+                    company="U Express"
                     location="Saint-Hilaire-de-Riez"
                     date="Every summer since 2020"
                     description={[
@@ -90,6 +158,8 @@ const Experience = () => {
                     ]}
                     backgroundColor="bg-[--u-express-color]"
                     borderColor="border-[--u-express-color]"
+                    orientation={orientation}
+                    even={false}
                 />
             </div>
         </div >
