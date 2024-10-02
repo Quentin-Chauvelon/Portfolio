@@ -38,7 +38,7 @@ const SkillsCard = ({ title, backgroundColor, color, icon, skills }: SkillsCardP
                 <FontAwesomeIcon icon={icon} className={"text-[" + color + "] w-[32px] h-[32px]"} />
             </div>
 
-            <p className={"mt-4 mb-2 text-sm text-[" + color + "] font-semibold"}>{title}</p>
+            <p className={"mt-4 mb-2 text-sm md:text-base xl:text-sm text-[" + color + "] font-semibold"}>{title}</p>
 
             <div className="flex justify-center w-full">
                 {Object.keys(skills).map((skill, i) => (
@@ -68,7 +68,7 @@ type LanguageProps = {
 const LanguageProgressBar = ({ language, progress, level }: LanguageProps) => {
     return (
         <div className="flex justify-center items-center">
-            <p className="w-1/4 md:w-[12%]">{language}</p>
+            <p className="text-sm w-1/4 md:w-[12%]">{language}</p>
 
             <div className="w-[70%] h-4 bg-[--white] rounded-full card-shadow overflow-hidden">
                 <AnimateProperty
@@ -87,7 +87,7 @@ const LanguageProgressBar = ({ language, progress, level }: LanguageProps) => {
 const LanguageRadialProgress = ({ language, progress, level }: LanguageProps) => {
     return (
         <div className="flex flex-col justify-center items-center gap-2 w-1/4 2xl:w-1/5 text-center">
-            <p className="text-xl">{language}</p>
+            <p className="text-lg xl:text-base">{language}</p>
 
             <AnimateProperty
                 property="backgroundImage"
@@ -96,7 +96,7 @@ const LanguageRadialProgress = ({ language, progress, level }: LanguageProps) =>
                 duration={1.5}
                 styles="w-4/5 aspect-square bg-[conic-gradient(var(--gray-500)80deg,var(--white)80deg)] rounded-full p-6 shadow-lg"
             >
-                <p className="flex justify-center items-center w-full h-full bg-[--gray-100] rounded-full font-light text-[--gray-700]">{level}</p>
+                <p className="flex justify-center items-center w-full h-full bg-[--gray-100] p-3 rounded-full text-base xl:text-sm font-extralight text-[--gray-700]">{level}</p>
             </AnimateProperty>
         </div>
     )
@@ -116,12 +116,12 @@ const HobbyCard = ({ title, icon, description, backgroundColor, color }: HobbyPr
         <Slide
             direction={SlideDirection.Top}
             translationValue={150}
-            styles="flex aspect-[1.8/1] md:aspect-[2.11/1] 2xl:aspect-[1.8/1] justify-between gap-6 w-4/5 md:w-2/5 2xl:w-1/4 px-4 py-4 bg-[--white] rounded-lg card-shadow text-sm md:text-lg font-semibold"
+            styles="flex aspect-[1.8/1] md:aspect-[2.11/1] justify-between gap-6 w-4/5 md:w-2/5 2xl:w-1/4 px-4 py-4 bg-[--white] rounded-lg card-shadow text-sm md:text-lg font-semibold"
         >
             <div className="flex flex-col min-w-[50%]">
-                <h3>{title}</h3>
+                <h3 className="text-sm md:text-lg xl:text-base">{title}</h3>
 
-                <ul className="my-auto list-disc font-extralight text-sm md:text-base ml-8">
+                <ul className="my-auto list-disc font-extralight text-xs md:text-base xl:text-xs ml-8">
                     {description.map((desc, i) => (
                         <li key={i}>{desc}</li>
                     ))}
@@ -300,7 +300,7 @@ const Languages = () => {
         <>
             <SectionTitle title="LANGUAGES" />
 
-            <div className="flex flex-col md:flex-row md:justify-around w-full px-8 md:px-8 2xl:px-24">
+            <div className="flex flex-col md:flex-row md:justify-around gap-4 w-full px-8 md:px-8 2xl:px-24">
                 {document.documentElement.clientWidth < 768
                     ? <>
                         <LanguageProgressBar language="French" progress={100} level="Native" />
@@ -387,8 +387,8 @@ const Credits = () => {
         <>
             <SectionTitle title="CREDITS" />
 
-            <div className="px-4">
-                <p className="text-center">This portfolio website has been inspired by:</p>
+            <div className="text-xs md:text-base xl:text-sm text-center px-4">
+                <p>This portfolio website has been inspired by:</p>
 
                 <div className="flex flex-wrap justify-evenly gap-4 md:gap-0 mt-4 mb-8">
                     <CreditsInspirationImage
@@ -405,7 +405,7 @@ const Credits = () => {
                     />
                 </div>
 
-                <p className="text-center">Although I have made some models myself, I had to rely on free models for more complex objects. Thank you to these talented modelers:</p>
+                <p>Although I have made some models myself, I had to rely on free models for more complex objects. Thank you to these talented modelers:</p>
                 <ul>
                     <CreditsModelLink
                         name="Felikin Ruslan"
