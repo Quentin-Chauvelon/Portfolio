@@ -2,7 +2,7 @@ import { AnimateProperties } from "./Animation"
 
 type SectionTitleProps = {
     title: string
-    skipMargin?: boolean
+    topMargin?: string
 }
 
 const TitleBar = () => {
@@ -22,9 +22,9 @@ const TitleBar = () => {
     )
 }
 
-const SectionTitle = ({ title, skipMargin }: SectionTitleProps) => {
+const SectionTitle = ({ title, topMargin }: SectionTitleProps) => {
     return (
-        <div className={"flex justify-center items-center " + (skipMargin ? "" : "mt-44") + " mb-16 px-4 lg:px-8 gap-4 w-full"}>
+        <div className={"flex justify-center items-center " + (topMargin ? topMargin : "mt-44") + " mb-16 px-4 lg:px-8 gap-4 w-full"}>
             <TitleBar />
             <h1 className="font-bold text-[--gray-600] text-2xl lg:text-3xl">{title}</h1>
             <TitleBar />

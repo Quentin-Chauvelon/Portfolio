@@ -219,7 +219,7 @@ const HeroTitle = () => {
 const Skills = () => {
     return (
         <>
-            <SectionTitle title="SKILLS" skipMargin />
+            <SectionTitle title="SKILLS" topMargin={"mt-0"} />
 
             <div className="flex flex-wrap justify-center w-full gap-5">
                 <SkillsCard
