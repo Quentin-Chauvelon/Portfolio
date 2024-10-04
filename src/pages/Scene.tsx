@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import { EffectComposer } from '@react-three/postprocessing'
-import { Stats } from '@react-three/drei'
 
 import Hero from '../pages/Hero'
 import { LoadingScreen } from '../pages/LoadingScreen'
@@ -26,6 +25,10 @@ const Scene = () => {
     const [selectedItem, setSelectedItem] = useState(Item.None);
     const cameraManager = useRef<CameraRefType>();
     const navigate = useNavigate();
+
+    if (location.pathname !== "/" && !portfolioOpened) {
+        setPortfolioOpened(true);
+    }
 
     const skipRoomAnimation = false;
 
@@ -94,10 +97,12 @@ const Scene = () => {
                 </Suspense>
             </Canvas >
 
-            <Hero
-                cameraManagerRef={cameraManager}
-                portfolioOpened={setPortfolioOpened}
-            />
+            {!portfolioOpened &&
+                <Hero
+                    cameraManagerRef={cameraManager}
+                    portfolioOpened={setPortfolioOpened}
+                />
+            }
 
             <ItemClickedContext.Provider value={onItemSelected}>
                 <NavBar />

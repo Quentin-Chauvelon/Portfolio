@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom"
 import Scene from "./pages/Scene";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
+import PersonalProjects from "./pages/PersonalProjects";
 
 import "./App.css"
 
@@ -25,6 +26,10 @@ function App() {
                         <Route
                             path="/experience"
                             element={<Experience />}
+                        />
+                        <Route
+                            path="/personal-projects"
+                            element={<PersonalProjects />}
                         />
                         <Route
                             path="*"

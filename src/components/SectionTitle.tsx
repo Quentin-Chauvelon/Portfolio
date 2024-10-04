@@ -26,7 +26,7 @@ const SectionTitle = ({ title, topMargin }: SectionTitleProps) => {
     return (
         <div className={"flex justify-center items-center " + (topMargin ? topMargin : "mt-44") + " mb-16 px-4 lg:px-8 gap-4 w-full"}>
             <TitleBar />
-            <h1 className="font-bold text-[--gray-600] text-2xl lg:text-3xl">{title}</h1>
+            <h1 className="font-bold text-[--gray-600] text-2xl lg:text-3xl whitespace-nowrap">{title}</h1>
             <TitleBar />
         </div>
     )
