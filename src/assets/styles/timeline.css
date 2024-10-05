@@ -1,0 +1,13 @@
+:root {
+    --icon-size: 14vw;
+    --content-container-width: calc(85vw - var(--icon-size));
+    --arrow-size: 0.75rem;
+    --arrow-top: calc(var(--icon-size) / 2 - var(--arrow-size) / 2);
+    --arrow-left: calc(var(--arrow-size) / -2);
+    --timeline-width: 0.5rem;
+    --timeline-left: calc(
+        var(--icon-size) / 2 +
+        (100vw - var(--content-container-width) - var(--icon-size)) / 2 -
+        var(--timeline-width) / 1.5
+    );
+}

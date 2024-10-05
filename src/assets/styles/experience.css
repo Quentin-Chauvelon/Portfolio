@@ -1,27 +1,4 @@
 :root {
-    --mobile-experience-icon-size: 14vw;
-    --mobile-experience-content-container-width: calc(85vw - var(--mobile-experience-icon-size));
-    --mobile-experience-arrow-size: 0.75rem;
-    --mobile-experience-arrow-top: calc(var(--mobile-experience-icon-size) / 2 - var(--mobile-experience-arrow-size) / 2);
-    --mobile-experience-arrow-left: calc(var(--mobile-experience-arrow-size) / -2);
-    --mobile-timeline-width: 0.5rem;
-    --mobile-timeline-left: calc(
-        var(--mobile-experience-icon-size) / 2 +
-        (100vw - var(--mobile-experience-content-container-width) - var(--mobile-experience-icon-size)) / 2 -
-        var(--mobile-timeline-width) / 1.5
-    );
-        
     --sepamat-color: #a4d6a7;
     --u-express-color: #a7dff8;
-}
-
-#experience-content-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-color);
-    z-index: -1;
 }
