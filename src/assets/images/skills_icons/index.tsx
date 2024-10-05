@@ -25,3 +25,6 @@ export { default as postman } from "./postman.svg";
 export { default as vite } from "./vite.svg";
 export { default as bash } from "./bash.svg";
 export { default as nodejs } from "./nodejs.svg";
+export { default as sqlServer } from "./sql-server.svg";
+export { default as aspDotNet } from "./asp-dot-net.png";
+export { default as visualStudio } from "./visual-studio.svg";

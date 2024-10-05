@@ -16,7 +16,7 @@ const SkillsList = ({ skills, borderColor, align }: SkillsListProps) => {
                         toValue={1}
                         delay={i * 0.1}
                         key={i}
-                        styles={"flex justify-center items-center -mx-1 p-[0.35rem] aspect-square rounded-full border-2 bg-[--white] w-[48px] h-[48px] " + borderColor + " tooltip"}
+                        styles={"flex justify-center items-center -mx-1 p-[0.35rem] aspect-square rounded-full border-2 bg-[--white] w-[48px] " + borderColor + " tooltip"}
                         data={{ ["data-tooltip"]: skill }}
                     >
                         <img src={skills[skill] as string} alt={skill} className={"w-full h-full"} />
