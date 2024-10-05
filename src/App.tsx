@@ -4,6 +4,7 @@ import Scene from "./pages/Scene";
 import About from "./pages/About";
 import Resume from "./pages/Resume";
 import Experience from "./pages/Experience";
+import Education from "./pages/Education";
 import PersonalProjects from "./pages/PersonalProjects";
 
 import "./App.css"
@@ -31,6 +32,10 @@ function App() {
                         <Route
                             path="/experience"
                             element={<Experience />}
+                        />
+                        <Route
+                            path="/education"
+                            element={<Education />}
                         />
                         <Route
                             path="/personal-projects"
