@@ -2,6 +2,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom"
 
 import Scene from "./pages/Scene";
 import About from "./pages/About";
+import Resume from "./pages/Resume";
 import Experience from "./pages/Experience";
 import PersonalProjects from "./pages/PersonalProjects";
 
@@ -22,6 +23,10 @@ function App() {
                         <Route
                             path="/about"
                             element={<About />}
+                        />
+                        <Route
+                            path="/resume"
+                            element={<Resume />}
                         />
                         <Route
                             path="/experience"
