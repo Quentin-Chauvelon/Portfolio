@@ -12,16 +12,18 @@ import Room from '../components/Room'
 import { MultiOutline, SelectionTest } from '../components/Selection'
 import Light from '../components/Light'
 import Floor from '../components/Floor'
-
 import RoomAnimation from '../components/RoomAnimation'
-import { Item, ItemsRoutesMap } from '../Items'
 import NavBar from '../components/NavBar'
+import InstructionsText from '../components/InstructionsText'
+
+import { Item, ItemsRoutesMap } from '../Items'
 
 
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
 const Scene = () => {
     const [portfolioOpened, setPortfolioOpened] = useState(false);
+    const [firstItemSelected, setFirstItemSelected] = useState(false);
     const [selectedItem, setSelectedItem] = useState(Item.None);
     const cameraManager = useRef<CameraRefType>();
     const navigate = useNavigate();
@@ -33,10 +35,13 @@ const Scene = () => {
     const skipRoomAnimation = false;
 
     const onItemSelected = (item: Item) => {
+        if (!firstItemSelected && item !== Item.None) {
+            setFirstItemSelected(true);
+        }
+
         setSelectedItem(item);
         navigate(ItemsRoutesMap[item]);
     }
-
 
     return (
         <>
@@ -83,6 +88,7 @@ const Scene = () => {
                                     visibleEdgeColor={"#6a00ff" as unknown as number} // Converting string to number to fix remove type error
                                 />
                             </EffectComposer>
+
                         <Room
                             group={{
                                 position: [0, 0, -15],
@@ -90,8 +96,15 @@ const Scene = () => {
                             }}
                                 playAnimation={!portfolioOpened && !skipRoomAnimation}
                         />
+
                         </SelectionTest>
                     </ItemClickedContext.Provider>
+
+                    {/* While the user has not selected any items, display the text  */}
+                    {
+                        portfolioOpened && !firstItemSelected &&
+                        <InstructionsText />
+                    }
 
                     <Floor />
                 </Suspense>

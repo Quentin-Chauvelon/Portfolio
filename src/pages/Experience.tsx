@@ -1,7 +1,10 @@
 import SectionTitle from "../components/SectionTitle"
+import { Slide, SlideDirection } from "../components/Animation"
 
 import "/src/assets/styles/experience.css"
-import { Slide, SlideDirection } from "../components/Animation"
+
+import sepamat from "/src/assets/images/experience/sepamat.png"
+import uExpress from "/src/assets/images/experience/u-express.png"
 
 
 enum DeviceOrientation {
@@ -31,12 +34,8 @@ const ExperienceContentContainer = ({ title, company, location, date, descriptio
 
             <h2 className="md:text-2xl xl:text-base font-bold">{title}</h2>
 
-            <div className={"flex " + (window.innerWidth > 768 ? "items-center" : "flex-col")}>
-                {
-                    window.innerWidth > 768
-                        ? <h3 className="text-sm md:text-lg xl:text-sm font-medium">{company} &bull;&nbsp;</h3>
-                        : <h3 className="text-sm md:text-lg font-medium">{company}</h3>
-                }
+            <div className="flex flex-col">
+                <h3 className="text-sm md:text-lg xl:text-sm font-medium">{company}</h3>
                 <h4 className="text-xs md:text-base xl:text-xs font-extralight">{location}</h4>
             </div>
 
@@ -75,7 +74,7 @@ const ExperienceItem = ({ image, backgroundColor, ...props }: ExperienceItemProp
             <Slide
                 direction={(SlideDirection.Left)}
                 translationValue={props.orientation === DeviceOrientation.Portrait ? 50 : 1}
-                styles={"flex justify-center items-center w-[--mobile-experience-icon-size] h-[--mobile-experience-icon-size] aspect-square " + backgroundColor + " p-2 rounded-full border-[--white] border-4 shadow-md"}
+                styles={"flex justify-center items-center w-[--mobile-experience-icon-size] h-[--mobile-experience-icon-size] aspect-square " + backgroundColor + " p-3 rounded-full border-[--white] border-4 shadow-md"}
             >
                 <img src={image} alt={props.company} />
             </Slide >
@@ -129,10 +128,10 @@ const Experience = () => {
                 <div className={"absolute top-0 " + (window.innerWidth < 1248 ? "left-[--mobile-timeline-left]" : "left-1/2 translate-x-1/2") + " w-[--mobile-timeline-width] h-full -ml-1 md:-ml-2 bg-[--white]"}></div>
 
                 <ExperienceItem
-                    image="/src/assets/images/experience/sepamat.png"
+                    image={sepamat}
                     title="Software Developer"
                     company="SEPAMAT"
-                    location="Orvault"
+                    location="Orvault, France"
                     date="April 2023 - June 2023"
                     description={[
                         "Designed and deployed a web application in PHP and SQL in order to make the insurance process easier, faster and more organized for 60 agencies",
@@ -146,14 +145,14 @@ const Experience = () => {
                 />
 
                 <ExperienceItem
-                    image="/src/assets/images/experience/u-express.png"
+                    image={uExpress}
                     title="Summer Job: Stocker"
                     company="U Express"
-                    location="Saint-Hilaire-de-Riez"
+                    location="Saint-Hilaire-de-Riez, France"
                     date="Every summer since 2020"
                     description={[
-                        "Restocking",
-                        "Training of new seasonal workers",
+                        "Restocked shelves",
+                        "Trained new seasonal workers",
                         "Managed my department for 3 weeks independently"
                     ]}
                     backgroundColor="bg-[--u-express-color]"

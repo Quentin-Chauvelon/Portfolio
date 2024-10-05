@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { Easing, Group, Tween } from '@tweenjs/tween.js';

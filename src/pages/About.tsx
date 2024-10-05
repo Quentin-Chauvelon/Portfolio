@@ -1,8 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, faCertificate, faCode, faComputer, faDatabase, faGlobe } from "@fortawesome/free-solid-svg-icons";
+
 import { AnimateProperty, Fade, Slide, SlideDirection } from "../components/Animation";
 import SectionTitle from "../components/SectionTitle";
+
 import "/src/assets/styles/about.css"
+
+import bryceHanna from "/src/assets/images/bryce_hanna.png"
+import abigailBloom from "/src/assets/images/abigail_bloom.png"
+import picture from "/src/assets/images/Picture.png"
+import gameDevelopment from "/src/assets/images/hobbies/game-development.svg"
+import book from "/src/assets/images/hobbies/book.svg"
+import tableTennis from "/src/assets/images/hobbies/table-tennis.svg"
+import bicycle from "/src/assets/images/hobbies/bicycle.svg"
+import plane from "/src/assets/images/hobbies/plane.svg"
+import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, sql, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
 
 
 type LinkProps = {
@@ -65,7 +77,7 @@ type LanguageProps = {
     level: string
 }
 
-const LanguageProgressBar = ({ language, progress, level }: LanguageProps) => {
+const LanguageProgressBar = ({ language, progress }: LanguageProps) => {
     return (
         <div className="flex justify-center items-center">
             <p className="text-sm w-1/4 md:w-[12%]">{language}</p>
@@ -106,12 +118,11 @@ const LanguageRadialProgress = ({ language, progress, level }: LanguageProps) =>
 type HobbyProps = {
     title: string,
     icon: string,
-    description: string[]
-    backgroundColor: string,
-    color: string
+    description: string[],
+    backgroundColor: string
 }
 
-const HobbyCard = ({ title, icon, description, backgroundColor, color }: HobbyProps) => {
+const HobbyCard = ({ title, icon, description, backgroundColor }: HobbyProps) => {
     return (
         <Slide
             direction={SlideDirection.Top}
@@ -183,7 +194,7 @@ const HeroTitle = () => {
             >
                 <div className="aspect-square rounded-full bg-gradient-to-r gradient-bp w-3/5 xl:w-[--picture-size] h-[calc(100vw/2*(var(--picture-size)/100)-var(--picture-border-size))] p-1">
                     <div className="w-full h-full flex bg-white rounded-full overflow-hidden">
-                        <img src="src/assets/images/Picture.png" alt="" />
+                        <img src={picture} alt="" />
                     </div>
                 </div>
             </Slide>
@@ -228,13 +239,13 @@ const Skills = () => {
                     color="--skills-general-color"
                     icon={faCode}
                     skills={{
-                        ["Lua"]: "/src/assets/images/skills_icons/lua.svg",
-                        ["C"]: "/src/assets/images/skills_icons/c.svg",
-                        ["C#"]: "/src/assets/images/skills_icons/c-sharp.svg",
-                        ["Python"]: "/src/assets/images/skills_icons/python.svg",
-                        ["Java"]: "/src/assets/images/skills_icons/java.svg",
-                        ["Kotlin"]: "/src/assets/images/skills_icons/kotlin.svg",
-                        ["Go"]: "/src/assets/images/skills_icons/golang.svg",
+                        ["Lua"]: lua,
+                        ["C"]: c,
+                        ["C#"]: cSharp,
+                        ["Python"]: python,
+                        ["Java"]: java,
+                        ["Kotlin"]: kotlin,
+                        ["Go"]: go,
                     }}
                 />
                 <SkillsCard
@@ -243,11 +254,11 @@ const Skills = () => {
                     color="--skills-web-color"
                     icon={faGlobe}
                     skills={{
-                        ["PHP"]: "/src/assets/images/skills_icons/php.svg",
-                        ["HTML5"]: "/src/assets/images/skills_icons/html5.svg",
-                        ["CSS3"]: "/src/assets/images/skills_icons/css3.svg",
-                        ["JavaScript"]: "/src/assets/images/skills_icons/javascript.svg",
-                        ["TypeScript"]: "/src/assets/images/skills_icons/typescript.svg",
+                        ["PHP"]: php,
+                        ["HTML5"]: html5,
+                        ["CSS3"]: css3,
+                        ["JavaScript"]: javascript,
+                        ["TypeScript"]: typescript,
                     }}
                 />
                 <SkillsCard
@@ -256,8 +267,8 @@ const Skills = () => {
                     color="--skills-databases-color"
                     icon={faDatabase}
                     skills={{
-                        ["SQL"]: "/src/assets/images/skills_icons/sql.svg",
-                        ["MongoDB"]: "/src/assets/images/skills_icons/mongodb.svg",
+                        ["SQL"]: sql,
+                        ["MongoDB"]: mongodb,
                     }}
                 />
                 <SkillsCard
@@ -266,10 +277,10 @@ const Skills = () => {
                     color="--skills-frameworks-color"
                     icon={faCertificate}
                     skills={{
-                        [".NET Core"]: "/src/assets/images/skills_icons/dotnet-core.svg",
-                        ["ReactJS"]: "/src/assets/images/skills_icons/react.svg",
-                        ["TailwindCSS"]: "/src/assets/images/skills_icons/tailwind-css.svg",
-                        ["CodeIgniter4"]: "/src/assets/images/skills_icons/codeigniter.svg",
+                        [".NET Core"]: dotnetCore,
+                        ["ReactJS"]: react,
+                        ["TailwindCSS"]: tailwindCss,
+                        ["CodeIgniter4"]: codeigniter,
                     }}
                 />
                 <SkillsCard
@@ -278,15 +289,14 @@ const Skills = () => {
                     color="--skills-others-color"
                     icon={faComputer}
                     skills={{
-                        ["Linux"]: "/src/assets/images/skills_icons/linux.svg",
-                        ["Git"]: "/src/assets/images/skills_icons/git.svg",
-                        ["VS Code"]: "/src/assets/images/skills_icons/vscode.svg",
-                        ["IntelliJ"]: "/src/assets/images/skills_icons/intellij.svg",
-                        ["Postman"]: "/src/assets/images/skills_icons/postman.svg",
-                        ["Agile"]: "/src/assets/images/skills_icons/agile.svg",
-                        ["Vite"]: "/src/assets/images/skills_icons/vite.svg",
-                        ["Bash"]: "/src/assets/images/skills_icons/bash.svg",
-                        ["NodeJS"]: "/src/assets/images/skills_icons/nodejs.svg",
+                        ["Linux"]: linux,
+                        ["Git"]: git,
+                        ["VS Code"]: vscode,
+                        ["IntelliJ"]: intellij,
+                        ["Postman"]: postman,
+                        ["Vite"]: vite,
+                        ["Bash"]: bash,
+                        ["NodeJS"]: nodejs,
                     }}
                 />
             </div>
@@ -304,8 +314,8 @@ const Languages = () => {
                 {document.documentElement.clientWidth < 768
                     ? <>
                         <LanguageProgressBar language="French" progress={100} level="Native" />
-                        <LanguageProgressBar language="English" progress={85} level="C1" />
-                        <LanguageProgressBar language="Spanish" progress={40} level="" />
+                        <LanguageProgressBar language="English" progress={85} level="Full professional proficiency" />
+                        <LanguageProgressBar language="Spanish" progress={40} level="Limited working proficiency" />
                     </>
                     : <>
                         <LanguageRadialProgress language="French" progress={100} level="Native" />
@@ -327,54 +337,50 @@ const Hobbies = () => {
             <div className="flex flex-wrap justify-center gap-8">
                 <HobbyCard
                     title="INDIE GAME DEV"
-                    icon="/src/assets/images/hobbies/game-development.svg"
+                    icon={gameDevelopment}
                     description={[
                         "4 games developed",
                         "35k+ plays",
+                        "Learned both technical and soft skills",
                     ]}
                     backgroundColor="--skills-general-bg-color"
-                    color="--skills-general-color"
                 />
                 <HobbyCard
                     title="READING"
-                    icon="/src/assets/images/hobbies/book.svg"
+                    icon={book}
                     description={[
                         "200+ novels read",
                         "Adventure, YA, SF, Fantasy...",
                     ]}
                     backgroundColor="--skills-web-bg-color"
-                    color="--skills-web-color"
                 />
                 <HobbyCard
                     title="TABLE TENNIS"
-                    icon="/src/assets/images/hobbies/table-tennis.svg"
+                    icon={tableTennis}
                     description={[
                         "8 years",
                         "Competitions in teams",
                         "Individual tournaments",
                     ]}
                     backgroundColor="--skills-databases-bg-color"
-                    color="--skills-databases-color"
                 />
                 <HobbyCard
                     title="CYCLING"
-                    icon="/src/assets/images/hobbies/bicycle.svg"
+                    icon={bicycle}
                     description={[
                         "4 years",
                         "~550 km/month",
                     ]}
                     backgroundColor="--skills-frameworks-bg-color"
-                    color="--skills-frameworks-color"
                 />
                 <HobbyCard
                     title="TRAVELING"
-                    icon="/src/assets/images/hobbies/plane.svg"
+                    icon={plane}
                     description={[
                         "6 countries",
                         "6 cultures",
                     ]}
                     backgroundColor="--skills-others-bg-color"
-                    color="--skills-others-color"
                 />
             </div>
         </>
@@ -393,13 +399,13 @@ const Credits = () => {
                 <div className="flex flex-wrap justify-evenly gap-4 md:gap-0 mt-4 mb-8">
                     <CreditsInspirationImage
                         name="Bryce Hanna"
-                        image="/src/assets/images/bryce_hanna.png"
+                        image={bryceHanna}
                         link="https://brycehanna.dev/"
                         slideDirection={SlideDirection.Left}
                     />
                     <CreditsInspirationImage
                         name="Abigail Bloom"
-                        image="/src/assets/images/abigail_bloom.png"
+                        image={abigailBloom}
                         link="https://abigail-bloom-portolio-bokoko33.vercel.app/"
                         slideDirection={SlideDirection.Right}
                     />

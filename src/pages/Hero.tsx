@@ -1,10 +1,31 @@
 import React from 'react'
 import { Easing, Tween } from '@tweenjs/tween.js'
 
-import HeroLink from '../components/HeroLink'
 import { CameraType, CameraRefType } from '../components/CameraManager'
 
 import "/src/assets/styles/hero.css"
+import picture from "/src/assets/images/Picture.png"
+
+
+type HeroLinkProps = {
+    link: string,
+    icon: string
+}
+
+const HeroLink = ({ link, icon }: HeroLinkProps) => {
+    return (
+        <>
+            <div className='group h-full aspect-square group bg-gradient-to-r bg-[--hero-section-buttons-color] rounded-full p-[0.2rem]'>
+                <a href={link} target='_blank'>
+                    <div className='aspect-square flex justify-center items-center bg-[--hero-bg-color] group-hover:bg-transparent rounded-full'>
+                        <i className={"fa fa-brands " + icon + " text-[--hero-section-buttons-color] group-hover:text-white rounded-full"}></i>
+                    </div>
+                </a>
+            </div >
+        </>
+    )
+}
+
 
 type HeroProps = {
     cameraManagerRef: React.MutableRefObject<CameraRefType | undefined>
@@ -20,8 +41,6 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
         }
 
         cameraManagerRef.current?.setActiveCamera(CameraType.Perspective);
-
-        portfolioOpened(true);
 
         const values = {
             x: 0, y: 0, z: 21,
@@ -49,6 +68,7 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
             })
             .onComplete(() => {
                 (document.querySelector('#hero-section-container') as HTMLElement).style.display = 'none';
+                portfolioOpened(true);
             })
             .start()
 
@@ -66,51 +86,18 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
     }
 
 
-    // const TypewritingEffect = () => {
-
-    //     const steps1 = [200, 200, 1500, 200, 0, 200, 200, 200]
-    //     const steps2 = [200, 200, 200, 200, 200, 200, 200]
-
-    //     const text1 = "Hi, I'm";
-    //     const text2 = "Quentin";
-
-    //     let step = 0;
-    //     let i = 0;
-
-    //     const typeWriter = (element: HTMLElement, text: string, steps: number[]) => {
-    //         if (i == text.length) {
-    //             i = 0;
-
-    //             if (step == 0) {
-    //                 typeWriter(document.querySelector("#hero-title-2") as HTMLElement, text2, steps2);
-    //             } else if (step == 1) {
-    //                 (document.querySelector("#hero-title-3") as HTMLElement).innerHTML = "&nbsp;👋";
-    //             }
-
-    //             step += 1;
-    //             return;
-    //         }
-
-    //         element.innerHTML = text.substring(0, i + 1);
-    //         i++;
-    //         setTimeout(typeWriter, steps[i], element, text, steps);
-    //     }
-
-    //     typeWriter(document.querySelector("#hero-title-1") as HTMLElement, text1, steps1);
-    // }
-
     return (
         <>
             <section id="hero-section-container" className="relative flex flex-col gap-8 justify-between xl:justify-normal items-center xl:items-stretch xl:top-[--hero-section-top] xl:left-[--hero-section-left] w-full xl:w-[--hero-section-width] h-full xl:h-[calc(100%-var(--hero-section-top))] text-[#f4faff] font-extrabold leading-none">
                 <div className='flex flex-wrap w-full text-4xl md:text-6xl mt-4 xl:mt-0 pl-12 xl:pl-0'>
                     <h1 id="hero-title-1" className='w-full'>Hi, I'm</h1>
                     <h1 id="hero-title-2" className="ml-2 xl:ml-0 bg-gradient-to-r gradient-bp bg-clip-text text-transparent [text-shadow:_-7px_-7px_#e9f0f7] xl:[text-shadow:_0_0_rgba(0,0,0,0)] shadow-white;">Quentin</h1>
-                    <h1 id="hero-title-3">&nbsp;👋</h1>
+                    <h1 id="hero-title-3" className="wave">&nbsp;👋</h1>
                 </div>
 
                 <div className='relative hidden xl:flex justify-center items-center w-60 mt-14 ml-[15%] bg-gradient-to-br gradient-bp aspect-square rounded-full'>
                     <div className='flex justify-center items-center w-[97%] bg-blue-200 aspect-square rounded-full'>
-                        <img src="src/assets/images/Picture.png" alt="Photo" className='absolute aspect-square max-w-[200%] w-[130%] bottom-0' style={{ clipPath: 'circle(48% at 50% 51%)' }} />
+                        <img src={picture} alt="Photo" className='absolute aspect-square max-w-[200%] w-[130%] bottom-0' style={{ clipPath: 'circle(48% at 50% 51%)' }} />
                     </div>
                 </div>
 
@@ -119,17 +106,17 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
                             <div className='p-4 bg-[#9bc7ec] group-hover:bg-transparent rounded-full transition-colors duration-200'>
                                 <h2 className="text-3xl font-bold bg-gradient-to-r bg-[--hero-section-buttons-color] bg-clip-text text-transparent group-hover:text-current rounded-2xl transition-colors duration-200">
                                     <i className="fa fa-regular fa-user pr-3"></i>
-                                    SEE PORTFOLIO
+                                    VIEW PORTFOLIO
                                 </h2>
                             </div>
                         </button> */}
                     <button className='mb-10 xl:mb-0 gradient-animation group bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] transition-colors self-center rounded-full p-[0.2rem] border-0'
                         onClick={cameraToDeskAnimation}
                     >
-                        <div className='bottom-8 left-1/2 px-4 py-2 bg-[--bg-color] rounded-full'>
+                        <div className='bottom-8 left-1/2 px-4 py-2 bg-[--hero-bg-color] rounded-full'>
                             <h2 className="gradient-animation font-bold bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] bg-clip-text text-transparent rounded-2xl">
                                 <i className="fa fa-regular fa-user pl-1 pr-3"></i>
-                                SEE PORTFOLIO
+                                VIEW PORTFOLIO
                             </h2>
                         </div>
                     </button>

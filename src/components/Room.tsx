@@ -6,6 +6,7 @@ import { a } from '@react-spring/three'
 import roomScene from "../assets/models/Portfolio.glb";
 import ClickableItem from './ClickableItem';
 import { Item } from '../Items';
+import resume from "/src/assets/images/Resume.jpg";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -208,8 +209,8 @@ const whiteMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 whiteMaterial.transparent = true;
 whiteMaterial.opacity = 0;
 
-const resumeTexture = new THREE.TextureLoader().load("src/assets/images/Resume.jpg");
-const posterTexture = new THREE.TextureLoader().load("src/assets/images/Poster_" + (Math.floor(Math.random() * 5) + 1) + ".jpg");
+const resumeTexture = new THREE.TextureLoader().load(resume);
+const posterTexture = new THREE.TextureLoader().load("/posters/Poster_" + (Math.floor(Math.random() * 5) + 1) + ".jpg");
 
 const resumeMaterials: THREE.Material[] = [
   whiteMaterial,

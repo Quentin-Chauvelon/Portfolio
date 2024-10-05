@@ -1,7 +1,10 @@
 import { useState } from "react"
-import SectionTitle from "../components/SectionTitle"
 import { motion } from "framer-motion"
+
+import SectionTitle from "../components/SectionTitle"
 import { Slide, SlideDirection } from "../components/Animation"
+
+import arrow from "../assets/images/arrow.svg"
 
 
 type ProjectTagProps = {
@@ -29,7 +32,8 @@ type SwitchImageButtonProps = {
 const SwitchImageButton = ({ onClick, direction }: SwitchImageButtonProps) => {
     return (
         <button onClick={onClick} className={"absolute flex justify-center aspect-square w-7 md:w-10 xl:w-8 rounded-full top-1/2 -translate-y-1/2 p-1.5 bg-[--gray-700] shadow-lg " + (direction === Direction.Left ? "left-2" : "right-2")}>
-            <img src="/src/assets/images/arrow.svg" alt="Arrow" className={"h-full " + (direction === Direction.Left ? "rotate-0 -translate-x-[20%]" : "rotate-180 translate-x-[20%]")} />
+            {/* <img src="/src/assets/images/arrow.svg" alt="Arrow" className={"h-full " + (direction === Direction.Left ? "rotate-0 -translate-x-[20%]" : "rotate-180 translate-x-[20%]")} /> */}
+            <img src={arrow} alt="Arrow" className={"h-full " + (direction === Direction.Left ? "rotate-0 -translate-x-[20%]" : "rotate-180 translate-x-[20%]")} />
         </button>
     )
 }

@@ -32,10 +32,11 @@
   --white: #FFFFFF;
 
   --bg-color: var(--gray-100);
+  --hero-bg-color: #9bc7ec;
   --color: var(--gray-700);
 
   color-scheme: light dark;
-  background-color: var(--bg-color);
+  background-color: var(--hero-bg-color);
   color: var(--color);
 
   font-synthesis: none;
