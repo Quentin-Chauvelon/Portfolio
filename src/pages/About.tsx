@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, faCertificate, faCode, faComputer, faDatabase, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-import { AnimateProperty, Fade, Slide, SlideDirection } from "../components/Animation";
+import { AnimateProperty, Slide, SlideDirection } from "../components/Animation";
 import SectionTitle from "../components/SectionTitle";
+import SkillsList from "../components/SkillsList";
 
 import "/src/assets/styles/about.css"
 
@@ -52,20 +53,10 @@ const SkillsCard = ({ title, backgroundColor, color, icon, skills }: SkillsCardP
 
             <p className={"mt-4 mb-2 text-sm md:text-base xl:text-sm text-[" + color + "] font-semibold"}>{title}</p>
 
-            <div className="flex justify-center w-full">
-                {Object.keys(skills).map((skill, i) => (
-                    <Fade
-                        fromValue={0}
-                        toValue={1}
-                        delay={i * 0.1}
-                        key={i}
-                        styles={"flex justify-center items-center -mx-1 p-[0.35rem] aspect-square rounded-full border-2 bg-[--white] w-[48px] h-[48px] border-[" + color + "] tooltip"}
-                        data={{ ["data-tooltip"]: skill }}
-                    >
-                        <img src={skills[skill] as string} alt={skill} className={"w-full h-full"} />
-                    </Fade>
-                ))}
-            </div>
+            <SkillsList
+                skills={skills}
+                borderColor={"border-[" + color + "]"}
+            />
         </Slide>
     )
 }
