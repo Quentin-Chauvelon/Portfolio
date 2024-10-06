@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { Box, useGLTF } from '@react-three/drei'
+import { Box, useGLTF, Text } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
 
@@ -296,7 +296,7 @@ const Room = ({ group, playAnimation }: RoomProps) => {
       <ClickableItem
         item={Item.Education}
       >
-        <group name="GraduationHat" scale={playAnimation ? scaleZero : scaleOne} position={[-6.345, 0.961, 1.052]} rotation={[Math.PI / 2, -0.592, 0]}>
+        <group name="GraduationHat" scale={playAnimation ? scaleZero : scaleOne} position={[-3.428, -2.356, -5.627]} rotation={[Math.PI / 2, 0, 1.486]}>
           <group rotation={[Math.PI / 2, -0.497, -Math.PI]}>
             <group rotation={[Math.PI / 2, 0, 0]}>
               <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -305,14 +305,14 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 receiveShadow
                 geometry={nodes.Sphere_bood_0.geometry}
                 material={materials['bood.001']}
-                  position={[-0.718, 0.238, 0]}
+                  position={[-0.407, 0.135, 0]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Sphere_roope_0.geometry}
                 material={materials['roope.001']}
-                  position={[-0.718, 0.238, 0]}
+                  position={[-0.407, 0.135, 0]}
               />
               </group>
               <mesh
@@ -485,7 +485,7 @@ const Room = ({ group, playAnimation }: RoomProps) => {
             castShadow
             receiveShadow
             geometry={nodes.emissive_Key_0.geometry}
-            material={materials.Keyboard_Mouse}
+            material={materials.Monitor}
             position={[-0.989, 0.19, 0.006]}
           />
         </group>
@@ -494,13 +494,13 @@ const Room = ({ group, playAnimation }: RoomProps) => {
             castShadow
             receiveShadow
             geometry={nodes.keyboard_Key_0.geometry}
-            material={materials.Keyboard_Mouse}
+            material={materials.Monitor}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.keyboard_Keyboard_0.geometry}
-            material={materials.Keyboard_Mouse}
+            material={materials.Monitor}
           />
         </group>
         <group rotation={[0.123, 0, 0]}>
@@ -508,7 +508,7 @@ const Room = ({ group, playAnimation }: RoomProps) => {
             castShadow
             receiveShadow
             geometry={nodes.keys_Key_0.geometry}
-            material={materials.Keyboard_Mouse}
+            material={materials.Monitor}
             position={[-0.989, 0.186, -0.015]}
           />
         </group>
@@ -518,13 +518,13 @@ const Room = ({ group, playAnimation }: RoomProps) => {
           castShadow
           receiveShadow
           geometry={nodes.Object_0.geometry}
-          material={materials.Keyboard_Mouse}
+          material={materials.Monitor}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_2.geometry}
-          material={materials.Keyboard_Mouse}
+          material={materials.Monitor}
         />
         <mesh
           castShadow
@@ -643,27 +643,28 @@ const Room = ({ group, playAnimation }: RoomProps) => {
       <ClickableItem
         item={Item.PersonalProjects}
       >
-        <group name="PersonalProjects" scale={playAnimation ? scaleZero : scaleOne} position={[-3.841, -2.379, -5.536]} rotation={[0, -0.556, 0]}>
+        <group name="PersonalProjects" scale={playAnimation ? scaleZero : scaleOne} position={[-6.412, 1.066, 0.847]} rotation={[-Math.PI, 0, -2.313]}>
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Ball.geometry}
             material={materials.Ball}
-            position={[0.145, 0.112, 0.134]}
+            position={[0.172, 0.134, 0.159]}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Flag.geometry}
             material={materials.Flag_Pole}
-            position={[0.366, 0.029, -0.356]}
+            position={[0.436, 0.034, -0.424]}
           />
           <mesh
             castShadow
             receiveShadow
+            scale={[1, 25, 1]}
             geometry={nodes.Flag001.geometry}
             material={materials.Flag}
-            position={[0.366, 0.197, -0.349]}
+            position={[0.435, 0.235, -0.416]}
           />
           <mesh
             castShadow
@@ -671,20 +672,20 @@ const Room = ({ group, playAnimation }: RoomProps) => {
             geometry={nodes.Maze_Floor.geometry}
             material={materials.Maze}
           />
-          <group position={[5.095, 6.865, -0.471]}>
+          <group position={[6.067, 8.175, -0.56]}>
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Cube.geometry}
               material={materials.Maze}
-              position={[-5.47, -6.773, 0.945]}
+              position={[-6.514, -8.065, 1.126]}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Cube001.geometry}
               material={materials.Maze}
-              position={[-4.621, -6.773, 0.846]}
+              position={[-5.503, -8.065, 1.007]}
               rotation={[0, 1.571, 0]}
             />
           </group>
@@ -915,13 +916,13 @@ const Room = ({ group, playAnimation }: RoomProps) => {
       <ClickableItem
         item={Item.About}
       >
-        <group name="About" scale={playAnimation ? scaleZero : scaleOne} position={[-6.122, 0.751, -1.688]}>
+        <group name="About" scale={playAnimation ? scaleZero : scaleOne} position={[-6.122, 0.742, -1.688]}>
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Avatar.geometry}
             material={materials.mat0}
-            position={[-0.012, 0.784, -0.004]}
+            position={[-0.01, 0.689, -0.004]}
             rotation={[Math.PI / 2, 0, -1.537]}
           />
           <mesh
@@ -1095,19 +1096,19 @@ const Room = ({ group, playAnimation }: RoomProps) => {
       <ClickableItem
         item={Item.Experience}
       >
-        <group name="Experience" scale={playAnimation ? scaleZero : scaleOne} position={[-4.333, -2.087, -2.446]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
-          <group position={[-0.162, -0.193, 0.298]}>
-            <group position={[0.016, 0.001, -0.267]} rotation={[0, 0, Math.PI / 2]}>
+        <group name="Experience" scale={playAnimation ? scaleZero : scaleOne} position={[-4.333, -1.979, -2.446]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
+          <group position={[-0.23, -0.274, 0.424]}>
+            <group position={[0.022, 0.001, -0.379]} rotation={[0, 0, Math.PI / 2]}>
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.BODY_BODY_0.geometry}
                 material={materials.Paper}
-                position={[0.038, 0.505, 0.073]}
+                position={[0.054, 0.718, 0.104]}
               />
             </group>
-            <group position={[0.036, 0.002, -0.086]} rotation={[-Math.PI / 2, 0, -Math.PI]}>
-              <group position={[0.385, 0.084, 0.003]}>
+            <group position={[0.051, 0.003, -0.122]} rotation={[-Math.PI / 2, 0, -Math.PI]}>
+              <group position={[0.547, 0.12, 0.004]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1122,35 +1123,35 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 />
               </group>
             </group>
-            <group position={[0.155, 0.001, -0.298]}>
+            <group position={[0.22, 0.001, -0.424]}>
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.BOX_METAL_METALL_0.geometry}
                 material={materials.METALL}
-                position={[0.007, 0.192, 0]}
+                position={[0.01, 0.273, 0]}
               />
             </group>
-            <group position={[-0.459, 0.001, -0.069]}>
+            <group position={[-0.652, 0.001, -0.098]}>
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.BUMPER_FRONT_PLASTIC_0.geometry}
                 material={materials.PLASTIC}
-                position={[0.033, 0.182, 0.009]}
+                position={[0.047, 0.258, 0.012]}
               />
             </group>
-            <group position={[-0.459, 0.001, -0.069]}>
+            <group position={[-0.652, 0.001, -0.098]}>
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.BUMPER_FRONT_INNER_BOTTOM_0.geometry}
                 material={materials.BOTTOM}
-                position={[0.033, 0.182, 0.009]}
+                position={[0.047, 0.258, 0.012]}
               />
             </group>
-            <group position={[-0.369, 0.001, -0.257]}>
-              <group position={[0.095, 0.173, 0.057]}>
+            <group position={[-0.524, 0.001, -0.365]}>
+              <group position={[0.136, 0.246, 0.082]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1165,26 +1166,26 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 />
               </group>
             </group>
-            <group position={[-0.378, 0.001, -0.266]} rotation={[0, 0, Math.PI / 2]}>
+            <group position={[-0.537, 0.001, -0.377]} rotation={[0, 0, Math.PI / 2]}>
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.GLASS_GLASS_0.geometry}
                 material={materials.GLASS}
-                position={[0.038, 0.104, 0.072]}
+                position={[0.054, 0.147, 0.102]}
               />
             </group>
-            <group position={[-0.356, 0.002, -0.236]} rotation={[0, 0, Math.PI / 2]}>
+            <group position={[-0.505, 0.003, -0.335]} rotation={[0, 0, Math.PI / 2]}>
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.interior_VOID_0.geometry}
                 material={materials.VOID}
-                position={[-0.005, 0.151, 0.101]}
+                position={[-0.006, 0.215, 0.143]}
               />
             </group>
-            <group position={[-0.003, 0.001, -0.127]} rotation={[0, 0, Math.PI / 2]}>
-              <group position={[0.038, 0.486, -0.067]}>
+            <group position={[-0.005, 0.001, -0.18]} rotation={[0, 0, Math.PI / 2]}>
+              <group position={[0.054, 0.691, -0.095]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1199,8 +1200,8 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 />
               </group>
             </group>
-            <group position={[0.268, -0.142, -0.06]} rotation={[Math.PI / 2, 0, 0]}>
-              <group position={[0, 0, 0.018]}>
+            <group position={[0.381, -0.202, -0.085]} rotation={[Math.PI / 2, 0, 0]}>
+              <group position={[0, 0, 0.026]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1215,8 +1216,8 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 />
               </group>
             </group>
-            <group position={[-0.331, -0.156, -0.06]} rotation={[Math.PI / 2, 0, 0]}>
-              <group position={[0, 0, 0.004]}>
+            <group position={[-0.47, -0.222, -0.085]} rotation={[Math.PI / 2, 0, 0]}>
+              <group position={[0, 0, 0.006]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1231,8 +1232,8 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 />
               </group>
             </group>
-            <group position={[-0.331, 0.157, -0.06]} rotation={[-Math.PI / 2, 0, 0]}>
-              <group position={[0, 0, 0.004]}>
+            <group position={[-0.47, 0.223, -0.085]} rotation={[-Math.PI / 2, 0, 0]}>
+              <group position={[0, 0, 0.006]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1247,8 +1248,8 @@ const Room = ({ group, playAnimation }: RoomProps) => {
                 />
               </group>
             </group>
-            <group position={[0.268, 0.143, -0.06]} rotation={[-Math.PI / 2, 0, 0]}>
-              <group position={[0, 0, 0.018]}>
+            <group position={[0.381, 0.203, -0.085]} rotation={[-Math.PI / 2, 0, 0]}>
+              <group position={[0, 0, 0.026]}>
                 <mesh
                   castShadow
                   receiveShadow
@@ -1269,7 +1270,7 @@ const Room = ({ group, playAnimation }: RoomProps) => {
             receiveShadow
             geometry={nodes.Plane.geometry}
             material={materials.SEPAMAT}
-            position={[0, 0.005, -0.002]}
+            position={[0, 0.007, -0.004]}
             rotation={[0, -Math.PI / 2, 0]}
           />
         </group>
@@ -1329,6 +1330,17 @@ const Room = ({ group, playAnimation }: RoomProps) => {
           position={[0, 0, 3.921]}
         />
       </group>
+      <Text
+        color="black"
+        fontSize={0.15}
+        anchorX="left"
+        textAlign="center"
+        position={[-3.2, -2.2, 0.95]}
+        rotation={[Math.PI / 2, 3.2, -1]}
+        maxWidth={1}
+      >
+        Seeking a summer 2025 internship in software development
+      </Text>
     </a.group>
   )
 }
