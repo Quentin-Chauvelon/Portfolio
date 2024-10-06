@@ -8,6 +8,7 @@ import Education from "./pages/Education";
 import Certifications from "./pages/Certifications";
 import PersonalProjects from "./pages/PersonalProjects";
 import AcademicProjects from "./pages/AcademicProjects";
+import NotFound from "./pages/NotFound";
 
 import "./App.css"
 
@@ -53,7 +54,7 @@ function App() {
                         />
                         <Route
                             path="*"
-                            element={'Not Found'}
+                            element={<NotFound />}
                         />
                     </Routes>
                 </section>
