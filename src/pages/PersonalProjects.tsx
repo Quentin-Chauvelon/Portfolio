@@ -1,5 +1,6 @@
 import SectionTitle from "../components/SectionTitle"
 import { ProjectCard, ProjectCardBodyList, ProjectCardBodyParagraph } from "../components/Project"
+import { Link } from "react-router-dom"
 
 
 const PersonalProjects = () => {
@@ -8,7 +9,14 @@ const PersonalProjects = () => {
             <SectionTitle
                 title="PERSONAL PROJECTS"
                 topMargin={"mt-24"}
+                bottomMargin={"mb-12"}
             />
+
+            <p className="px-8 md:px-16 xl:px-32 text-center text-xs md:text-sm xl:text-xs">
+                Since I started programming, it has really become a passion of mine. That's why I spend a lot of my free time working on personal projects. So far, I have mostly worked on indie game development projects but I'm interested in all kinds of projects.
+            </p>
+
+            <p className="mt-1 mb-12 px-8 text-center text-xs md:text-sm xl:text-xs">If you want to see other projects I have worked on, you can check my <Link to="/academic-projects" className="text-current underline font-normal">academic projects</Link>.</p>
 
             <div className="flex flex-col items-center gap-8 px-6 mb-12">
                 <ProjectCard
