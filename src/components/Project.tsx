@@ -49,7 +49,7 @@ type ImageNumberIndicatorProps = {
 
 const ImageNumberIndicator = ({ expand }: ImageNumberIndicatorProps) => {
     return (
-        <motion.div className={(expand ? "w-3 md:w-9 xl:w-6" : "w-1 md:w-3 xl:w-2") + " flex h-1 md:h-3 xl:h-2 bg-[--gray-700] rounded-[50px]"} layoutId={expand ? "dot_indicator" : ""} />
+        <motion.div className={(expand ? "w-3 md:w-9 xl:w-[1.125rem]" : "w-1 md:w-3 xl:w-1.5") + " flex h-1 md:h-3 xl:h-1.5 bg-[--gray-700] rounded-[50px]"} layoutId={expand ? "dot_indicator" : ""} />
     )
 }
 
@@ -96,8 +96,8 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
                 </div>
             </div>
 
-            <div className="2xl:absolute 2xl:top-1/2 2xl:-translate-y-1/2 2xl:-right-[15%] 2xl:rotate-3 self-center w-4/5 md:w-3/5 2xl:w-[50%] aspect-video relative mt-4 overflow-hidden rounded-lg card-shadow">
-                <img src={"src/assets/images/personal-projects/" + images[currentImage].src} alt="" className="w-full h-full object-fill" />
+            <div className="2xl:absolute 2xl:top-1/2 2xl:-translate-y-1/2 2xl:-right-[15%] 2xl:rotate-3 self-center w-4/5 md:w-3/5 2xl:w-[50%] aspect-video relative mt-4 2xl:mt-0 rounded-lg card-shadow bg-[--gray-400]">
+                <img src={"src/assets/images/personal-projects/" + images[currentImage].src} alt="" className={"w-full h-full object-fill " + (images[currentImage].tooltip ? "rounded-t-lg" : "rounded-lg")} />
 
                 {images.length > 1 &&
                     <>
@@ -110,7 +110,7 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
                             direction={Direction.Right}
                         />
 
-                        <div className="absolute flex gap-1 md:gap-1.5 xl:gap-1 left-1/2 -translate-x-1/2 bottom-1 md:bottom-2">
+                    <div className={"absolute flex gap-1 md:gap-1.5 xl:gap-1 left-1/2 -translate-x-1/2 " + (images[currentImage].tooltip ? "bottom-1 md:bottom-7" : "bottom-1 md:bottom-2")}>
                             {images.map((_, index) => (
                                 <ImageNumberIndicator
                                     key={index}
@@ -120,10 +120,16 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
                         </div>
                     </>
                 }
+
+                {images[currentImage].tooltip &&
+                    <div className="w-full bg-[--white] p-0.5 rounded-b-lg">
+                        <p className="text-center text-xs md:text-base xl:text-xs font-extralight"> {images[currentImage].tooltip}</p>
+                    </div>
+                }
             </div>
 
             {github
-                ? <a href={github} target="_blank" className="absolute top-2 right-4 text-2xl md:text-3xl xl:text-2xl">
+                ? <a href={github} target="_blank" className="absolute top-2 right-4 text-2xl md:text-3xl">
                     <i className={"fa fa-brands fa-github text-[--gray-700]"} />
                 </a>
                 : <></>
