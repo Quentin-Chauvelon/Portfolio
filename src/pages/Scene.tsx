@@ -70,14 +70,14 @@ const Scene = () => {
 
                     <ItemClickedContext.Provider value={onItemSelected}>
                         <SelectionTest>
-                            <EffectComposer enabled={portfolioOpened} autoClear={false} >
+                            <EffectComposer enabled={portfolioOpened && selectedItem === Item.None} autoClear={false} >
                                 <MultiOutline
                                     group={"default"}
                                     blur
                                     edgeStrength={25}
                                     pulseSpeed={0.3}
                                     selectionLayer={9}
-                                    visibleEdgeColor={"#ffff00" as unknown as number} // Converting string to number to fix remove type error
+                                    visibleEdgeColor={"#ffff00" as unknown as number} // Converting string to number to silence type error
                                 />
                                 <MultiOutline
                                     group={"hovered"}
@@ -85,7 +85,7 @@ const Scene = () => {
                                     blur
                                     edgeStrength={50}
                                     pulseSpeed={0.3}
-                                    visibleEdgeColor={"#6a00ff" as unknown as number} // Converting string to number to fix remove type error
+                                    visibleEdgeColor={"#6a00ff" as unknown as number} // Converting string to number to silence type error
                                 />
                             </EffectComposer>
 

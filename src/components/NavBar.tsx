@@ -18,7 +18,7 @@ const NavBar = ({ }) => {
                         Back
                     </button>
 
-                    <p>Toggle</p>
+                    <p className="text-transparent">Toggle</p>
                 </div>
             </>
             : null

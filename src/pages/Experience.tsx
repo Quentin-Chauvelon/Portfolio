@@ -6,7 +6,7 @@ import "/src/assets/styles/experience.css"
 
 import sepamat from "/src/assets/images/experience/sepamat.png"
 import uExpress from "/src/assets/images/experience/u-express.png"
-import { php, cSharp, html5, css3, python, javascript, dotnetCore, git, vscode, postman, sqlServer, aspDotNet, visualStudio } from "../assets/images/skills_icons"
+import { php, cSharp, html5, css3, javascript, dotnetCore, git, vscode, postman, sqlServer, visualStudio } from "../assets/images/skills_icons"
 
 
 const Experience = () => {

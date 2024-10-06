@@ -2,8 +2,6 @@ import SectionTitle from "../components/SectionTitle"
 import { ProjectCard, ProjectCardBodyList, ProjectCardBodyParagraph } from "../components/Project"
 
 
-
-
 const PersonalProjects = () => {
     return (
         <div className="min-h-[100vh]">
@@ -12,7 +10,7 @@ const PersonalProjects = () => {
                 topMargin={"mt-24"}
             />
 
-            <div className="flex flex-col items-center gap-8 px-6">
+            <div className="flex flex-col items-center gap-8 px-6 mb-12">
                 <ProjectCard
                     title="Portfolio"
                     date="December 2024 - Present"
@@ -125,8 +123,8 @@ const PersonalProjects = () => {
 
                 <ProjectCard
                     title="Zombie Invasion: Survive"
-                    date="February 2023 - December 2023"
-                    duration="10 months"
+                    date="May 2022 - September 2022"
+                    duration="4 months"
                     github="https://github.com/Quentin-Chauvelon/Zombie_Invasion_Survive"
                     tags={[
                         { name: "Lua", color: "bg-[#000080]" },
@@ -171,8 +169,8 @@ const PersonalProjects = () => {
 
                 <ProjectCard
                     title="Reve Island"
-                    date="February 2023 - December 2023"
-                    duration="10 months"
+                    date="April 2019 - May 2022"
+                    duration="3 years"
                     github="https://github.com/Quentin-Chauvelon/Reve_Island"
                     tags={[
                         { name: "Lua", color: "bg-[#000080]" },
