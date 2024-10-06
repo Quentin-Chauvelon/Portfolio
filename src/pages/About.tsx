@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, faCertificate, faCode, faComputer, faDatabase, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,14 +8,14 @@ import SkillsList from "../components/SkillsList";
 
 import "/src/assets/styles/about.css"
 
-import bryceHanna from "/src/assets/images/bryce_hanna.png"
-import abigailBloom from "/src/assets/images/abigail_bloom.png"
-import picture from "/src/assets/images/Picture.png"
-import gameDevelopment from "/src/assets/images/hobbies/game-development.svg"
-import book from "/src/assets/images/hobbies/book.svg"
-import tableTennis from "/src/assets/images/hobbies/table-tennis.svg"
-import bicycle from "/src/assets/images/hobbies/bicycle.svg"
-import plane from "/src/assets/images/hobbies/plane.svg"
+import bryceHanna from "../assets/images/bryce_hanna.png"
+import abigailBloom from "../assets/images/abigail_bloom.png"
+import picture from "../assets/images/Picture.png"
+import gameDevelopment from "../assets/images/hobbies/game-development.svg"
+import book from "../assets/images/hobbies/book.svg"
+import tableTennis from "../assets/images/hobbies/table-tennis.svg"
+import bicycle from "../assets/images/hobbies/bicycle.svg"
+import plane from "../assets/images/hobbies/plane.svg"
 import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
 
 
@@ -177,9 +178,13 @@ const CreditsModelLink = ({ name, modelName, link }: CreditsModelLinkProps) => {
 }
 
 
-const HeroTitle = () => {
+type HeroTitleProps = {
+    hasScrolled: boolean
+}
+
+const HeroTitle = ({ hasScrolled }: HeroTitleProps) => {
     return (
-        <div className="flex gap-8 h-screen min-h-screen">
+        <div className="relative flex gap-8 h-screen min-h-screen overflow-auto">
             <Slide
                 direction={SlideDirection.Left}
                 styles="hidden md:flex justify-end items-center w-1/2"
@@ -207,6 +212,7 @@ const HeroTitle = () => {
                 </div>
 
                 <p className="mx-8 md:mx-0 md:w-4/6 md:mt-5 md:mb-2 font-light">Welcome to my portfolio website in which you can find all information about me, my projects, my experiences and more!</p>
+                <p className="mx-8 md:mx-0 md:w-4/6 md:mb-2 font-light">I am currently seeking an internship in software development from May or June (for 8 to 16 weeks).</p>
 
                 <div className="hidden md:flex gap-4">
                     <Link link="https://www.linkedin.com/in/quentin-chauvelon/" icon="fa-brands fa-linkedin" />
@@ -214,6 +220,12 @@ const HeroTitle = () => {
                     <Link link="mailto:quentin.chauvelon@gmail.com" icon="fa-envelope" />
                 </div>
             </Slide>
+
+            <div className={(hasScrolled ? "hidden" : "block") + " absolute bottom-4 left-1/2 -translate-x-1/2"}>
+                <div id="first-arrow" className="arrow-blinking -mt-1 p-1.5 border-[--gray-700] border-b-[6px] border-l-[6px] -rotate-45" />
+                <div id="second-arrow" className="arrow-blinking -mt-1 p-1.5 border-[--gray-700] border-b-[6px] border-l-[6px] -rotate-45" />
+                <div id="third-arrow" className=" arrow-blinking -mt-1 p-1.5 border-[--gray-700] border-b-[6px] border-l-[6px] -rotate-45" />
+            </div>
         </div>
     )
 }
@@ -460,10 +472,20 @@ const Credits = () => {
 
 
 const About = () => {
+    const [hasScrolled, setHasScrolled] = useState(false);
+
+    const handleScroll = () => {
+        if (!hasScrolled) {
+            setHasScrolled(true);
+        }
+    }
+
     return (
         <>
-            <section className="flex flex-col items-center w-full h-[100vh]">
-                <HeroTitle />
+            <section className="flex flex-col items-center w-full h-[100vh] overflow-y-auto overflow-x-hidden" onScroll={handleScroll}>
+                <HeroTitle
+                    hasScrolled={hasScrolled}
+                />
 
                 <Skills />
 

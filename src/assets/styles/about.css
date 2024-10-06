@@ -21,3 +21,36 @@
     --language-progress-bg-color: #a4d6a7;
     --language-progress-color: #3e9b43;
 }
+
+
+.arrow-blinking {
+    animation-name: arrow-blinking-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#first-arrow {
+    animation-delay: 0s;
+}
+
+#second-arrow {
+    animation-delay: 200ms;
+}
+
+#third-arrow {
+    animation-delay: 400ms;
+}
+
+@keyframes arrow-blinking-animation {
+    0% {
+        border-color: var(--gray-700);
+    }
+
+    20% {
+        border-color: var(--gray-400);
+    }
+
+    60% {
+        border-color: var(--gray-400);
+    }
+}
