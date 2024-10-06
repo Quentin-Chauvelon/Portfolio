@@ -35,27 +35,28 @@ const Link = ({ link, icon }: LinkProps) => {
 type SkillsCardProps = {
     title: string,
     backgroundColor: string,
-    color: string,
+    textColor: string,
+    borderColor: string,
     icon: IconDefinition,
     skills: { [string: string]: string },
 }
 
-const SkillsCard = ({ title, backgroundColor, color, icon, skills }: SkillsCardProps) => {
+const SkillsCard = ({ title, backgroundColor, textColor, borderColor, icon, skills }: SkillsCardProps) => {
     return (
         <Slide
             direction={SlideDirection.Top}
             translationValue={150}
             styles="flex flex-col items-center p-4 w-4/5 md:w-[45%] xl:w-[30%] 2xl:w-1/4 bg-[--white] card-shadow rounded-lg"
         >
-            <div className={"flex justify-center items-center aspect-square p-[0.35rem] bg-[" + backgroundColor + "] rounded-full"}>
-                <FontAwesomeIcon icon={icon} className={"text-[" + color + "] w-[32px] h-[32px]"} />
+            <div className={"flex justify-center items-center aspect-square p-[0.35rem] " + backgroundColor + " rounded-full"}>
+                <FontAwesomeIcon icon={icon} className={textColor + " w-[32px] h-[32px]"} />
             </div>
 
-            <p className={"mt-4 mb-2 text-sm md:text-base xl:text-sm text-[" + color + "] font-semibold"}>{title}</p>
+            <p className={"mt-4 mb-2 text-sm md:text-base xl:text-sm " + textColor + " font-semibold"}>{title}</p>
 
             <SkillsList
                 skills={skills}
-                borderColor={"border-[" + color + "]"}
+                borderColor={borderColor}
             />
         </Slide>
     )
@@ -226,8 +227,9 @@ const Skills = () => {
             <div className="flex flex-wrap justify-center w-full gap-5">
                 <SkillsCard
                     title="GENERAL PURPOSE"
-                    backgroundColor="--skills-general-bg-color"
-                    color="--skills-general-color"
+                    backgroundColor="bg-[--skills-general-bg-color]"
+                    textColor="text-[--skills-general-color]"
+                    borderColor="border-[--skills-general-color]"
                     icon={faCode}
                     skills={{
                         ["Lua"]: lua,
@@ -241,8 +243,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="WEB DEVELOPMENT"
-                    backgroundColor="--skills-web-bg-color"
-                    color="--skills-web-color"
+                    backgroundColor="bg-[--skills-web-bg-color]"
+                    textColor="text-[--skills-web-color]"
+                    borderColor="border-[--skills-web-color]"
                     icon={faGlobe}
                     skills={{
                         ["PHP"]: php,
@@ -254,8 +257,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="DATABASES"
-                    backgroundColor="--skills-databases-bg-color"
-                    color="--skills-databases-color"
+                    backgroundColor="bg-[--skills-databases-bg-color]"
+                    textColor="text-[--skills-databases-color]"
+                    borderColor="border-[--skills-databases-color]"
                     icon={faDatabase}
                     skills={{
                         ["SQL"]: sql,
@@ -264,8 +268,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="FRAMEWORKS"
-                    backgroundColor="--skills-frameworks-bg-color"
-                    color="--skills-frameworks-color"
+                    backgroundColor="bg-[--skills-frameworks-bg-color]"
+                    textColor="text-[--skills-frameworks-color]"
+                    borderColor="border-[--skills-frameworks-color]"
                     icon={faCertificate}
                     skills={{
                         [".NET Core"]: dotnetCore,
@@ -276,8 +281,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="OTHERS"
-                    backgroundColor="--skills-others-bg-color"
-                    color="--skills-others-color"
+                    backgroundColor="bg-[--skills-others-bg-color]"
+                    textColor="text-[--skills-others-color]"
+                    borderColor="border-[--skills-others-color]"
                     icon={faComputer}
                     skills={{
                         ["Linux"]: linux,
