@@ -46,9 +46,9 @@ const Education = () => {
 
                         <TimelineBodyList
                             listItems={[
-                                "15210: Parallel and Sequential Data Structures and Algorithms",
-                                "10601: Introduction to Machine Learning",
-                                "15462: Computer Graphics"
+                                "Parallel and Sequential Data Structures and Algorithms (15210)",
+                                "Introduction to Machine Learning (10601)",
+                                "Computer Graphics (15462)"
                             ]}
                             marginBottom
                         />

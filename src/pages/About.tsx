@@ -15,7 +15,7 @@ import book from "/src/assets/images/hobbies/book.svg"
 import tableTennis from "/src/assets/images/hobbies/table-tennis.svg"
 import bicycle from "/src/assets/images/hobbies/bicycle.svg"
 import plane from "/src/assets/images/hobbies/plane.svg"
-import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, sql, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
+import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
 
 
 type LinkProps = {
@@ -262,7 +262,9 @@ const Skills = () => {
                     borderColor="border-[--skills-databases-color]"
                     icon={faDatabase}
                     skills={{
-                        ["SQL"]: sql,
+                        ["MySQL"]: mysql,
+                        ["SQL Server"]: sqlServer,
+                        ["SQLite"]: sqlite,
                         ["MongoDB"]: mongodb,
                     }}
                 />

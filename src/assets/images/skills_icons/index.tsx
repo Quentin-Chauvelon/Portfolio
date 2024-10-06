@@ -28,3 +28,5 @@ export { default as nodejs } from "./nodejs.svg";
 export { default as sqlServer } from "./sql-server.svg";
 export { default as aspDotNet } from "./asp-dot-net.png";
 export { default as visualStudio } from "./visual-studio.svg";
+export { default as mysql } from "./mysql.svg";
+export { default as sqlite } from "./sqlite.svg";

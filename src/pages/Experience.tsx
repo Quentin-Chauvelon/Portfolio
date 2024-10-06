@@ -1,4 +1,4 @@
-import { DeviceOrientation, Timeline, TimelineItem, TimelineBodyList } from "../components/Timeline"
+import { DeviceOrientation, Timeline, TimelineItem, TimelineBodyList, TimelineBodyParagraph } from "../components/Timeline"
 import SectionTitle from "../components/SectionTitle"
 import SkillsList from "../components/SkillsList"
 
@@ -66,7 +66,7 @@ const Experience = () => {
                 <TimelineItem
                     image={uExpress}
                     title="Summer Job: Stocker"
-                    heading="U Express"
+                    heading="U Express Les Marines"
                     subHeading="Saint-Hilaire-de-Riez, France"
                     date="Every summer since 2020"
                     backgroundColor="bg-[--u-express-color]"
@@ -83,6 +83,33 @@ const Experience = () => {
                         marginTop
                         marginBottom
                     />
+                </TimelineItem>
+
+                <TimelineItem
+                    image={uExpress}
+                    title="Stocker"
+                    heading="Super U Les Banchais"
+                    subHeading="Saint-Barthélemy-d'Anjou, France"
+                    date="October 2020 - February 2021"
+                    backgroundColor="bg-[--u-express-color]"
+                    borderColor="border-[--u-express-color]"
+                    orientation={orientation}
+                    even={true}
+                >
+                    <>
+                        <TimelineBodyParagraph
+                            text={"I worked part-time as a stocker during the week-end and holidays"}
+                            marginTop
+                        />
+
+                        <TimelineBodyList
+                            listItems={[
+                                "Restocked shelves",
+                            ]}
+                            marginTop
+                            marginBottom
+                        />
+                    </>
                 </TimelineItem>
             </Timeline>
         </div >

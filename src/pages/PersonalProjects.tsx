@@ -13,7 +13,7 @@ const PersonalProjects = () => {
             <div className="flex flex-col items-center gap-8 px-6 mb-12">
                 <ProjectCard
                     title="Portfolio"
-                    date="December 2024 - Present"
+                    date="September 2024 - Present"
                     tags={[
                         { name: "React", color: "bg-[#61dafb]" },
                         { name: "HTML", color: "bg-[#e96228]" },

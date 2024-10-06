@@ -102,15 +102,7 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
                 </div>
 
                 <div className='flex gap-10 text-2xl'>
-                    {/* <button className='group flex justify-center items-center bg-gradient-to-r bg-[--hero-section-buttons-color] self-center rounded-full p-1 border-0'>
-                            <div className='p-4 bg-[#9bc7ec] group-hover:bg-transparent rounded-full transition-colors duration-200'>
-                                <h2 className="text-3xl font-bold bg-gradient-to-r bg-[--hero-section-buttons-color] bg-clip-text text-transparent group-hover:text-current rounded-2xl transition-colors duration-200">
-                                    <i className="fa fa-regular fa-user pr-3"></i>
-                                    VIEW PORTFOLIO
-                                </h2>
-                            </div>
-                        </button> */}
-                    <button className='mb-10 xl:mb-0 gradient-animation group bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] transition-colors self-center rounded-full p-[0.2rem] border-0'
+                    <button className='mb-10 xl:mb-0 gradient-animation group bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] transition-all self-center rounded-full p-[0.2rem] border-0 active:scale-95'
                         onClick={cameraToDeskAnimation}
                     >
                         <div className='bottom-8 left-1/2 px-4 py-2 bg-[--hero-bg-color] rounded-full'>
@@ -132,40 +124,6 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
                         }} />
                     </div>
                 </div >
-
-                {/*<div className='flex gap-12'>
-                    <div className='group flex justify-center items-center bg-gradient-to-r from-blue-500 to-violet-500 self-center rounded-full p-1'>
-                        <div className='p-4 bg-[#9bc7ec] group-hover:bg-transparent rounded-full transition-colors duration-200'>
-                            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent group-hover:text-current rounded-2xl transition-colors duration-200">
-                                <i className="fa fa-regular fa-user pr-3"></i>
-                                SEE PORTFOLIO
-                            </h2>
-                        </div>
-                    </div>
-                    <div className='flex gap-4'>
-                        <div className='h-full aspect-square group bg-gradient-to-r from-blue-500 to-violet-500 rounded-[15px] p-1'>
-                            <a href="https://www.linkedin.com/in/quentin-chauvelon/" target='_blank'>
-                                <div className='aspect-square p-4 flex justify-center items-center bg-[#9bc7ec] hover:bg-transparent rounded-[12px] transition-colors duration-200'>
-                                    <i className="fa fa-brands fa-linkedin text-white"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div className='h-full aspect-square group bg-gradient-to-r from-blue-500 to-violet-500 rounded-[15px] p-1'>
-                            <a href="https://www.github.com/Quentin-Chauvelon/" target='_blank'>
-                                <div className='aspect-square flex justify-center items-center bg-[#9bc7ec] hover:bg-transparent rounded-[12px] transition-colors duration-200'>
-                                    <i className="fa fa-brands fa-github text-white"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div > */}
-
-                {/* <div className='flex justify-center items-center bg-transparent self-center rounded-full p-1'>
-                    <h2 className="text-3xl font-bold border-4 p-4 text-[--hero-section-buttons-color] border-[--hero-section-buttons-color] rounded-full">
-                        <i className="fa fa-regular fa-user pr-3"></i>
-                        SEE PORTFOLIO
-                    </h2>
-                </div> */}
             </section >
         </>
     )

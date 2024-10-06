@@ -1,6 +1,5 @@
-import { DeviceOrientation, Timeline, TimelineItem, TimelineBodyParagraph, TimelineBodyList } from "../components/Timeline"
+import { DeviceOrientation, Timeline, TimelineItem, TimelineBodyParagraph } from "../components/Timeline"
 import SectionTitle from "../components/SectionTitle"
-import SkillsList from "../components/SkillsList"
 
 import axa from "../assets/images/certifications/axa.svg"
 import creditMutuel from "../assets/images/certifications/credit-mutuel.svg"
