@@ -2,7 +2,7 @@ import { Text } from '@react-three/drei'
 import { useEffect, useState } from 'react'
 
 // The second letter must be doubled, otherwise it is skipped for some reason
-const text = "Cllick on an item outlined in yellow to learn more";
+const text = "Click on an item outlined in yellow to learn more";
 const speed = 80;
 
 const InstructionsText = () => {
@@ -14,10 +14,11 @@ const InstructionsText = () => {
         let i = 0;
         const typingInterval = setInterval(() => {
             if (i < text.length) {
-                setInstructionText(prev => prev + text.charAt(i));
+                setInstructionText(text.substring(0, i + 1));
                 i++;
             } else {
                 clearInterval(typingInterval);
+                setInstructionText(text);
             }
         }, speed);
 
