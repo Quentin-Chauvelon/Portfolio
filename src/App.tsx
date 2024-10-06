@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Resume from "./pages/Resume";
 import Experience from "./pages/Experience";
 import Education from "./pages/Education";
+import Certifications from "./pages/Certifications";
 import PersonalProjects from "./pages/PersonalProjects";
 
 import "./App.css"
@@ -36,6 +37,10 @@ function App() {
                         <Route
                             path="/education"
                             element={<Education />}
+                        />
+                        <Route
+                            path="/certifications"
+                            element={<Certifications />}
                         />
                         <Route
                             path="/personal-projects"

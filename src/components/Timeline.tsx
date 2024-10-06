@@ -69,7 +69,7 @@ export const TimelineItem = ({ image, backgroundColor, ...props }: TimelineItemP
                 translationValue={props.orientation === DeviceOrientation.Portrait ? 50 : 1}
                 styles={"flex justify-center items-center w-[--icon-size] h-[--icon-size] aspect-square " + backgroundColor + " p-3 rounded-full border-[--white] border-4 shadow-md"}
             >
-                <img src={image} />
+                <img src={image} className="w-full" />
             </Slide >
 
             <TimelineItemContentContainer
