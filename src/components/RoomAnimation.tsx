@@ -131,10 +131,10 @@ const RoomAnimation = () => {
         const paperTween = initScaleTween(objectsToTween[ObjectsToTween.Papers], defaultDuration, Easing.Back.Out);
         const penHolderTween = initScaleTween(objectsToTween[ObjectsToTween.PenHolder], defaultDuration, Easing.Back.Out).delay(200);
         const experienceTween = initScaleTween(objectsToTween[ObjectsToTween.Experience], defaultDuration, Easing.Back.Out).delay(400);
-        const personalProjectsTween = initScaleTween(objectsToTween[ObjectsToTween.PersonalProjects], defaultDuration, Easing.Back.Out).delay(600);
+        const graduationHatTween = initScaleTween(objectsToTween[ObjectsToTween.GraduationHat], defaultDuration, Easing.Back.Out).delay(600);
         const trophyTween = initScaleTween(objectsToTween[ObjectsToTween.Trophy], defaultDuration, Easing.Back.Out).delay(800);
         const shelfTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.Shelf], defaultDuration, Easing.Back.Out);
-        const graduationHatTween = initScaleTween(objectsToTween[ObjectsToTween.GraduationHat], defaultDuration, Easing.Back.Out);
+        const personalProjectsTween = initScaleTween(objectsToTween[ObjectsToTween.PersonalProjects], defaultDuration, Easing.Back.Out);
         const aboutTween = initScaleTween(objectsToTween[ObjectsToTween.About], defaultDuration, Easing.Back.Out).delay(200);
         const academicProjectsTween = initScaleTween(objectsToTween[ObjectsToTween.AcademicProjects], defaultDuration, Easing.Back.Out).delay(400);
         const booksTween = initScaleTween(objectsToTween[ObjectsToTween.Books], defaultDuration, Easing.Back.Out).delay(600);
@@ -153,9 +153,9 @@ const RoomAnimation = () => {
         deskTween.chain(plantTween, posterTween, clockTween, matTween);
         posterTween.chain(monitorsTween);
         monitorsTween.chain(keyboardTween, mouseTween, resumeTween);
-        mouseTween.chain(paperTween, penHolderTween, experienceTween, personalProjectsTween, trophyTween);
+        mouseTween.chain(paperTween, penHolderTween, experienceTween, graduationHatTween, trophyTween);
         trophyTween.chain(shelfTween);
-        shelfTween.chain(graduationHatTween, aboutTween, academicProjectsTween, booksTween);
+        shelfTween.chain(personalProjectsTween, aboutTween, academicProjectsTween, booksTween);
         booksTween.chain(chairTween);
         chairTween.chain(chairRotationTween);
 
