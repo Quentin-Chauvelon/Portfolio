@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import resumeOneColumn from '../assets/Resume_Quentin_Chauvelon.pdf'
 import resumeTwoColumns from '../assets/Resume_Quentin_Chauvelon_Two_Columns.pdf'
 
-import oneColumn from "../assets/images/one-column.svg"
+import oneColumn from "../assets/images/one-column.png"
 import twoColumns from "../assets/images/two-columns.png"
 
 enum ResumeType {
@@ -38,9 +38,9 @@ const Toggle = ({ defaultEnabled, callback, iconLeft, iconRight }: ToggleProps) 
     }
 
     return (
-        <div className="hidden md:flex gap-1">
+        <div className="hidden md:flex gap-1.5">
             {iconLeft &&
-                <img src={iconLeft} className="w-6 h-6" />
+                <img src={iconLeft} className="h-6" />
             }
 
             <div onClick={toggle} className={"flex " + (enabled ? "justify-end" : "justify-start") + " items-center w-12 h-6 p-1 bg-[--gray-700] card-shadow rounded-full cursor-pointer"}>
@@ -48,7 +48,7 @@ const Toggle = ({ defaultEnabled, callback, iconLeft, iconRight }: ToggleProps) 
             </div>
 
             {iconRight &&
-                <img src={iconRight} className="w-6 h-6" />
+                <img src={iconRight} className="h-6" />
             }
         </div>
     )
