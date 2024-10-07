@@ -16,7 +16,7 @@ import book from "../assets/images/hobbies/book.svg"
 import tableTennis from "../assets/images/hobbies/table-tennis.svg"
 import bicycle from "../assets/images/hobbies/bicycle.svg"
 import plane from "../assets/images/hobbies/plane.svg"
-import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
+import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, agile, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
 
 
 type LinkProps = {
@@ -302,6 +302,7 @@ const Skills = () => {
                     skills={{
                         ["Linux"]: linux,
                         ["Git"]: git,
+                        ["Agile"]: agile,
                         ["VS Code"]: vscode,
                         ["IntelliJ"]: intellij,
                         ["Postman"]: postman,
