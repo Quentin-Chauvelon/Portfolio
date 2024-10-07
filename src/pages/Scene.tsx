@@ -95,6 +95,7 @@ const Scene = () => {
                                 rotation: [0.7 * Math.PI / 4, -Math.PI / 4, 0]
                             }}
                                 playAnimation={!portfolioOpened && !skipRoomAnimation}
+                                portfolioOpened={portfolioOpened}
                         />
 
                         </SelectionTest>

@@ -234,10 +234,11 @@ const posterMaterials: THREE.Material[] = [
 type RoomProps = {
   group: JSX.IntrinsicElements['group'],
   playAnimation: boolean,
+  portfolioOpened: boolean,
 }
 
 
-const Room = ({ group, playAnimation }: RoomProps) => {
+const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
 
   const scaleZero = new THREE.Vector3(0, 0, 0);
@@ -1331,6 +1332,7 @@ const Room = ({ group, playAnimation }: RoomProps) => {
         />
       </group>
       <Text
+        visible={portfolioOpened}
         color="black"
         fontSize={0.15}
         anchorX="left"
