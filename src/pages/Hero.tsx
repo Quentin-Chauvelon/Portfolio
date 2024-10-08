@@ -4,7 +4,9 @@ import { Easing, Tween } from '@tweenjs/tween.js'
 import { CameraType, CameraRefType } from '../components/CameraManager'
 
 import "/src/assets/styles/hero.css"
-import picture from "/src/assets/images/Picture.png"
+
+import picture1 from "/src/assets/images/picture-1.png"
+import picture2 from "/src/assets/images/picture-2.png"
 
 
 type HeroLinkProps = {
@@ -95,9 +97,10 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
                     <h1 id="hero-title-3" className="wave">&nbsp;👋</h1>
                 </div>
 
-                <div className='relative hidden xl:flex justify-center items-center w-60 mt-14 ml-[15%] bg-gradient-to-br gradient-bp aspect-square rounded-full'>
+                <div className='relative hidden xl:flex justify-center items-center w-60 mt-10 mb-8 ml-[10%] bg-gradient-to-br gradient-bp aspect-square rounded-full'>
                     <div className='flex justify-center items-center w-[97%] bg-blue-200 aspect-square rounded-full'>
-                        <img src={picture} alt="Photo" className='absolute aspect-square max-w-[200%] w-[130%] bottom-0' style={{ clipPath: 'circle(48% at 50% 51%)' }} />
+                        <img src={picture1} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[110%] bottom-[-1px]' />
+                        <img src={picture2} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[110%] bottom-0' style={{ clipPath: 'circle(48% at 50% 52.5%)' }} />
                     </div>
                 </div>
 

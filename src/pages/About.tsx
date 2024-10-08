@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, faCertificate, faCode, faComputer, faDatabase, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,9 +8,10 @@ import SkillsList from "../components/SkillsList";
 
 import "/src/assets/styles/about.css"
 
+import picture1 from "/src/assets/images/picture-1.png"
+import picture2 from "/src/assets/images/picture-2.png"
 import bryceHanna from "../assets/images/bryce_hanna.png"
 import abigailBloom from "../assets/images/abigail_bloom.png"
-import picture from "../assets/images/Picture.png"
 import gameDevelopment from "../assets/images/hobbies/game-development.svg"
 import book from "../assets/images/hobbies/book.svg"
 import tableTennis from "../assets/images/hobbies/table-tennis.svg"
@@ -190,8 +191,9 @@ const HeroTitle = ({ hasScrolled }: HeroTitleProps) => {
                 styles="hidden md:flex justify-end items-center w-1/2"
             >
                 <div className="aspect-square rounded-full bg-gradient-to-r gradient-bp w-3/5 xl:w-[--picture-size] h-[calc(100vw/2*(var(--picture-size)/100)-var(--picture-border-size))] p-1">
-                    <div className="w-full h-full flex bg-white rounded-full overflow-hidden">
-                        <img src={picture} alt="" />
+                    <div className="relative w-full h-full flex justify-center items-center bg-white rounded-full overflow">
+                        <img src={picture1} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[110%] bottom-[-1px]' />
+                        <img src={picture2} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[110%] bottom-0' style={{ clipPath: 'circle(48% at 50% 54%)' }} />
                     </div>
                 </div>
             </Slide>
@@ -205,9 +207,10 @@ const HeroTitle = ({ hasScrolled }: HeroTitleProps) => {
                     <h1 className="bg-gradient-to-r gradient-bp bg-clip-text text-transparent font-black text-3xl md:text-4xl xl:text-5xl tracking-tight">Quentin Chauvelon</h1>
                 </div>
 
-                <div className="md:hidden flex justify-center items-center aspect-square rounded-full bg-gradient-to-r gradient-bp w-3/5 p-1">
-                    <div className="flex justify-center w-full h-full bg-white rounded-full overflow-hidden">
-                        <img src="src/assets/images/Picture.png" alt="" />
+                <div className="md:hidden flex justify-center items-center aspect-square rounded-full bg-gradient-to-r gradient-bp w-3/5 mt-2 p-1">
+                    <div className="relative flex justify-center w-full h-full bg-white rounded-full">
+                        <img src={picture1} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[105%] bottom-[-1px]' />
+                        <img src={picture2} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[105%] bottom-0' style={{ clipPath: 'circle(48% at 50% 54%)' }} />
                     </div>
                 </div>
 

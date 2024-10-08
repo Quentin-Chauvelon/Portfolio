@@ -21,7 +21,7 @@ export { default as git } from "./git.svg";
 export { default as vscode } from "./vscode.svg";
 export { default as intellij } from "./intellij.svg";
 export { default as postman } from "./postman.svg";
-// export { default as agile } from "./agile.svg";
+export { default as agile } from "./agile.png";
 export { default as vite } from "./vite.svg";
 export { default as bash } from "./bash.svg";
 export { default as nodejs } from "./nodejs.svg";
