@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 
 import { Slide, SlideDirection } from "../components/Animation"
+import PlaceholderImage from "../components/PlaceholderImage"
 
 import arrow from "../assets/images/arrow.svg"
 
@@ -26,13 +27,18 @@ export const ProjectNavBar = ({ items }: ProjectNavBarProps) => {
                 {items.map((item, index) => (
                     <div key={index} className="flex flex-col gap-1 items-center w-[16%]">
                         <h3 className="text-xs md:text-sm xl:text-xs font-semibold">{item.name}</h3>
-                        <img src={"/projects/" + item.src} alt={item.name} className="rounded-md cursor-pointer" onClick={() => {
-                            document.getElementById("projects-container")?.children[index].scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center',
-                                inline: 'center'
-                            })
-                        }} />
+                        <PlaceholderImage
+                            src={"/projects/" + item.src}
+                            alt={item.name}
+                            styles="rounded-md cursor-pointer"
+                            onClickCallback={() => {
+                                document.getElementById("projects-container")?.children[index].scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center',
+                                    inline: 'center'
+                                })
+                            }}
+                        />
                         <ProjectTag name={item.language} color={item.languageColor} />
                     </div>
                 ))}
@@ -102,7 +108,15 @@ type ProjectCardProps = {
 }
 
 export const ProjectCard = ({ title, date, duration, github, tags, images, children }: ProjectCardProps) => {
-    const [currentImage, setCurrentImage] = useState(0)
+    const [currentImage, setCurrentImage] = useState(0);
+
+    const handleImageChange = (direction: Direction) => {
+        if (direction === Direction.Left) {
+            setCurrentImage((currentImage - 1 + images.length) % images.length);
+        } else {
+            setCurrentImage((currentImage + 1) % images.length);
+        }
+    }
 
     return (
         <Slide
@@ -135,16 +149,21 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
             </div>
 
             <div className="2xl:absolute 2xl:top-1/2 2xl:-translate-y-1/2 2xl:-right-[15%] 2xl:rotate-3 self-center w-4/5 md:w-3/5 2xl:w-[50%] aspect-video relative mt-4 mb-4 md:mb-6 xl:mb-4 2xl:mt-0 2xl:mb-0 rounded-lg card-shadow bg-[--gray-400]">
-                <img src={"/projects/" + images[currentImage].src} alt="" className={"w-full h-full object-fill " + (images[currentImage].tooltip ? "rounded-t-lg" : "rounded-lg")} />
+                <PlaceholderImage
+                    src={"/projects/" + images[currentImage].src}
+                    alt={title}
+                    styles={"w-full h-full object-fill " + (images[currentImage].tooltip ? "rounded-t-lg" : "rounded-lg")}
+                />
+                {/* <img src={"/projects/" + images[currentImage].src} alt="" className={"w-full h-full object-fill " + (images[currentImage].tooltip ? "rounded-t-lg" : "rounded-lg")} /> */}
 
                 {images.length > 1 &&
                     <>
                         <SwitchImageButton
-                            onClick={() => setCurrentImage((currentImage - 1 + images.length) % images.length)}
+                        onClick={() => handleImageChange(Direction.Left)}
                             direction={Direction.Left}
                         />
                         <SwitchImageButton
-                            onClick={() => setCurrentImage((currentImage + 1) % images.length)}
+                        onClick={() => handleImageChange(Direction.Right)}
                             direction={Direction.Right}
                         />
 
