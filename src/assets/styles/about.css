@@ -17,6 +17,17 @@
     --skills-others-bg-color: #adc3f2;
     --skills-others-color: #254ea7;
 
+    --skills-general-bg-color-dark: #6657b9;
+    --skills-general-color-dark: #c4baff;
+    --skills-web-bg-color-dark: #348d22;
+    --skills-web-color-dark: #b9e4b1;
+    --skills-databases-bg-color-dark: #db8700;
+    --skills-databases-color-dark: #ffdfab;
+    --skills-frameworks-bg-color-dark: #a00000;
+    --skills-frameworks-color-dark: #f0b4af;
+    --skills-others-bg-color-dark: #254ea7;
+    --skills-others-color-dark: #adc3f2;
+
     /* Language progress colors */
     --language-progress-bg-color: #a4d6a7;
     --language-progress-color: #3e9b43;

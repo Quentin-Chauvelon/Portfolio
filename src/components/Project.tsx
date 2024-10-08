@@ -49,7 +49,7 @@ type ProjectTagProps = {
 
 const ProjectTag = ({ name, color }: ProjectTagProps) => {
     return (
-        <h3 className={"w-max px-2 py-0.5 rounded-md text-xs md:text-sm xl:text-xs font-medium md:font-semibold text-[--white] " + color}>{name}</h3>
+        <h3 className={"w-max px-2 py-0.5 rounded-md text-xs md:text-sm xl:text-xs font-medium md:font-semibold text-[--white] dark:text-[--gray-700] " + color}>{name}</h3>
     )
 }
 

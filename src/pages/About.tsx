@@ -242,9 +242,9 @@ const Skills = () => {
             <div className="flex flex-wrap justify-center w-full gap-5">
                 <SkillsCard
                     title="GENERAL PURPOSE"
-                    backgroundColor="bg-[--skills-general-bg-color]"
-                    textColor="text-[--skills-general-color]"
-                    borderColor="border-[--skills-general-color]"
+                    backgroundColor="bg-[--skills-general-bg-color] dark:bg-[--skills-general-bg-color-dark]"
+                    textColor="text-[--skills-general-color] dark:text-[--skills-general-color-dark]"
+                    borderColor="border-[--skills-general-color] dark:border-[--skills-general-color-dark]"
                     icon={faCode}
                     skills={{
                         ["Lua"]: lua,
@@ -258,9 +258,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="WEB DEVELOPMENT"
-                    backgroundColor="bg-[--skills-web-bg-color]"
-                    textColor="text-[--skills-web-color]"
-                    borderColor="border-[--skills-web-color]"
+                    backgroundColor="bg-[--skills-web-bg-color] dark:bg-[--skills-web-bg-color-dark]"
+                    textColor="text-[--skills-web-color] dark:text-[--skills-web-color-dark]"
+                    borderColor="border-[--skills-web-color] dark:border-[--skills-web-color-dark]"
                     icon={faGlobe}
                     skills={{
                         ["PHP"]: php,
@@ -272,9 +272,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="DATABASES"
-                    backgroundColor="bg-[--skills-databases-bg-color]"
-                    textColor="text-[--skills-databases-color]"
-                    borderColor="border-[--skills-databases-color]"
+                    backgroundColor="bg-[--skills-databases-bg-color] dark:bg-[--skills-databases-bg-color-dark]"
+                    textColor="text-[--skills-databases-color] dark:text-[--skills-databases-color-dark]"
+                    borderColor="border-[--skills-databases-color] dark:border-[--skills-databases-color-dark]"
                     icon={faDatabase}
                     skills={{
                         ["MySQL"]: mysql,
@@ -285,9 +285,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="FRAMEWORKS"
-                    backgroundColor="bg-[--skills-frameworks-bg-color]"
-                    textColor="text-[--skills-frameworks-color]"
-                    borderColor="border-[--skills-frameworks-color]"
+                    backgroundColor="bg-[--skills-frameworks-bg-color] dark:bg-[--skills-frameworks-bg-color-dark]"
+                    textColor="text-[--skills-frameworks-color] dark:text-[--skills-frameworks-color-dark]"
+                    borderColor="border-[--skills-frameworks-color] dark:border-[--skills-frameworks-color-dark]"
                     icon={faCertificate}
                     skills={{
                         [".NET Core"]: dotnetCore,
@@ -298,9 +298,9 @@ const Skills = () => {
                 />
                 <SkillsCard
                     title="OTHERS"
-                    backgroundColor="bg-[--skills-others-bg-color]"
-                    textColor="text-[--skills-others-color]"
-                    borderColor="border-[--skills-others-color]"
+                    backgroundColor="bg-[--skills-others-bg-color] dark:bg-[--skills-others-bg-color-dark]"
+                    textColor="text-[--skills-others-color] dark:text-[--skills-others-color-dark]"
+                    borderColor="border-[--skills-others-color] dark:border-[--skills-others-color-dark]"
                     icon={faComputer}
                     skills={{
                         ["Linux"]: linux,

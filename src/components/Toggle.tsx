@@ -13,9 +13,10 @@ type ToggleProps = {
     callback?: (enabled: boolean) => void
     iconLeft?: string
     iconRight?: string
+    color?: string
 }
 
-const Toggle = ({ defaultEnabled, callback, iconLeft, iconRight }: ToggleProps) => {
+const Toggle = ({ defaultEnabled, callback, iconLeft, iconRight, color }: ToggleProps) => {
     const [enabled, setEnabled] = useState(defaultEnabled)
 
     const toggle = () => {
@@ -32,7 +33,7 @@ const Toggle = ({ defaultEnabled, callback, iconLeft, iconRight }: ToggleProps) 
                 <img src={iconLeft} className="h-6" />
             }
 
-            <div onClick={toggle} className={"flex " + (enabled ? "justify-end" : "justify-start") + " items-center w-12 h-6 p-1 bg-[--gray-700] card-shadow rounded-full cursor-pointer"}>
+            <div onClick={toggle} className={"flex " + (enabled ? "justify-end" : "justify-start") + " items-center w-12 h-6 p-1 " + (color ? color : "bg-[--gray-700]") + " card-shadow rounded-full cursor-pointer"}>
                 <motion.div className="w-4 h-4 bg-[--white] rounded-full" layout transition={spring} />
             </div>
 

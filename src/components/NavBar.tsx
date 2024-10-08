@@ -6,7 +6,9 @@ import { Item } from '../Items';
 import Toggle from './Toggle';
 
 import sun from '../assets/images/sun.svg';
+import sunDark from '../assets/images/sun-dark.svg';
 import moon from '../assets/images/moon.svg';
+import moonDark from '../assets/images/moon-dark.svg';
 
 const NavBar = ({ }) => {
     const [darkMode, setDarkMode] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -36,11 +38,12 @@ const NavBar = ({ }) => {
 
                     <Toggle
                         defaultEnabled={darkMode}
-                        iconLeft={sun}
-                        iconRight={moon}
+                        iconLeft={darkMode ? sunDark : sun}
+                        iconRight={darkMode ? moonDark : moon}
                         callback={(enabled) => {
                             toggleDarkMode(enabled);
                         }}
+                        color="bg-[--gray-600] darl:bg-[--gray-700]"
                     />
                 </div>
             </>
