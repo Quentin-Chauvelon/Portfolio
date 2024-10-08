@@ -67,7 +67,7 @@ const PersonalProjects = () => {
                         { name: "Trello", color: "bg-[#ff9f1a]" },
                     ]}
                     images={[
-                        { src: "" },
+                        { src: "placeholder.svg", tooltip: "No image available yet" },
                     ]}
                 >
                     <>
@@ -140,7 +140,10 @@ const PersonalProjects = () => {
                         { name: "Trello", color: "bg-[#ff9f1a]" },
                     ]}
                     images={[
-                        { src: "" },
+                        { src: "zombie-invasion-survive/thumbnail.png", tooltip: "" },
+                        { src: "zombie-invasion-survive/zombie-pathfinding.gif", tooltip: "Zombie pathfinding" },
+                        { src: "zombie-invasion-survive/party-system.gif", tooltip: "Party system" },
+                        { src: "zombie-invasion-survive/gameplay.gif", tooltip: "Gameplay" },
                     ]}
                 >
                     <>
@@ -186,7 +189,10 @@ const PersonalProjects = () => {
                         { name: "Trello", color: "bg-[#ff9f1a]" },
                     ]}
                     images={[
-                        { src: "" },
+                        { src: "reve-island/thumbnail.jpg" },
+                        { src: "reve-island/thumbnail-2.jpg" },
+                        { src: "reve-island/thumbnail-3.jpg" },
+                        { src: "reve-island/thumbnail-4.jpg" },
                     ]}
                 >
                     <>
@@ -197,7 +203,7 @@ const PersonalProjects = () => {
 
                         <ProjectCardBodyList
                             listItems={[
-                                "Implemented all mechanics including a data persistence, jobs/tasks system, leveling system, daily rewards, customizations...",
+                                "Implemented all mechanics including data persistence, jobs/tasks system, leveling system, daily rewards, customizations...",
                                 "Designed the UI of the game and implemented server/client communication to handle player actions, as well as updating back the UI based on the server's requests",
                                 "Implemented cross-server leaderboards",
                                 "Implemented in-app purchases (both consumables and non consumables)",
