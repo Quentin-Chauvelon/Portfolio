@@ -1,7 +1,7 @@
+import { ProjectCard, ProjectCardBodyList, ProjectCardBodyParagraph, ProjectNavBar } from "../components/Project"
 import { Link } from "react-router-dom"
 
 import SectionTitle from "../components/SectionTitle"
-import { ProjectCard, ProjectCardBodyList, ProjectCardBodyParagraph } from "../components/Project"
 
 
 const AcademicProjects = () => {
@@ -17,15 +17,25 @@ const AcademicProjects = () => {
                 These projects are only projects I have worked on during my studies. I also spend a lot of my free time working on personal projects which you can find <Link to="/personal-projects" className="text-current underline font-normal">here</Link>.
             </p>
 
-            <div className="flex flex-col items-center gap-8 px-6 mb-12">
+            <ProjectNavBar
+                items={[
+                    { name: "UI Widget Library", src: "ui-widget-library/2048.gif", language: "C", languageColor: "bg-[#6195cb]" },
+                    { name: "Online shopping", src: "hot-genre/add-to-cart.gif", language: "PHP", languageColor: "bg-[#7377ad]" },
+                    { name: "Schedule Track", src: "schedule-track/schedule.gif", language: "React", languageColor: "bg-[#61dafb]" },
+                    { name: "Particle system", src: "particles/corals.gif", language: "Go", languageColor: "bg-[#00add8]" },
+                    { name: "Network game", src: "network-race/race.gif", language: "Go", languageColor: "bg-[#00add8]" },
+                ]}
+            />
+
+            <div id="projects-container" className="flex flex-col items-center gap-8 px-6 mb-12">
                 <ProjectCard
                     title="UI Widget Library"
                     date="April 2024 - May 2024"
                     duration="1 month"
                     github="https://github.com/Quentin-Chauvelon/Projet-Interface-Graphique"
                     tags={[
-                        { name: "C", color: "bg-[]" },
-                        { name: "CMake", color: "bg-[]" },
+                        { name: "C", color: "bg-[#6195cb]" },
+                        { name: "CMake", color: "bg-[#3ca92a]" },
                     ]}
                     images={[
                         { src: "ui-widget-library/minesweeper.gif", tooltip: "Minesweeper game" },
@@ -185,7 +195,7 @@ const AcademicProjects = () => {
                 >
                     <>
                         <ProjectCardBodyParagraph
-                            text="I worked on this project during my 1st year of BSc in Computer Science in a team of 2. This project has been developed in Go using the Ebiten library for the UI. The goal was to create scenes with particles."
+                            text="I worked on this project during my 1st year of BSc in Computer Science in a team of 2. This project has been developed in Go using the Ebiten library for the UI. The goal was to create a particle system."
                             marginTop
                         />
 
@@ -200,7 +210,7 @@ const AcademicProjects = () => {
                         />
 
                         <ProjectCardBodyParagraph
-                            text="This project is a simple version of a particles system used in games or animations."
+                            text="This project is a simple version of a particle system that could be used to create particle effects in games or animations."
                             marginTop
                             marginBottom
                         />

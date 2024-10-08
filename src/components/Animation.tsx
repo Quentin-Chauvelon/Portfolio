@@ -19,6 +19,7 @@ export enum SlideDirection {
 type SlideProps = {
     direction: SlideDirection,
     translationValue?: number
+    id?: string
 }
 
 type AnimatePropertyProps = {
@@ -39,7 +40,7 @@ type FadeProps = {
 }
 
 
-export const Slide = ({ direction, translationValue, duration, styles, children }: SlideProps & AnimationProps) => {
+export const Slide = ({ direction, translationValue, duration, styles, id, children }: SlideProps & AnimationProps) => {
     let translationX, translationY = 0;
 
     switch (direction) {
@@ -59,6 +60,7 @@ export const Slide = ({ direction, translationValue, duration, styles, children 
 
     return (
         <motion.div
+            id={id}
             className={styles}
             initial={{ opacity: 0.5, translateX: translationX, translateY: translationY }}
             whileInView={{ opacity: 1, translateX: 0, translateY: 0 }}

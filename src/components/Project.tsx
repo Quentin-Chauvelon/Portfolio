@@ -6,6 +6,42 @@ import { Slide, SlideDirection } from "../components/Animation"
 import arrow from "../assets/images/arrow.svg"
 
 
+type ProjectNavBarItem = {
+    name: string,
+    src: string,
+    language: string,
+    languageColor: string
+}
+
+type ProjectNavBarProps = {
+    items: ProjectNavBarItem[],
+}
+
+export const ProjectNavBar = ({ items }: ProjectNavBarProps) => {
+    return (
+        <>
+            <p className="hidden md:block mb-2 px-8 text-center text-xs md:text-sm xl:text-xs underline">Jump to project:</p>
+
+            <div className="hidden md:flex justify-evenly items-center mb-12">
+                {items.map((item, index) => (
+                    <div key={index} className="flex flex-col gap-1 items-center w-[16%]">
+                        <h3 className="text-xs md:text-sm xl:text-xs font-semibold">{item.name}</h3>
+                        <img src={"/projects/" + item.src} alt={item.name} className="rounded-md cursor-pointer" onClick={() => {
+                            document.getElementById("projects-container")?.children[index].scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center',
+                                inline: 'center'
+                            })
+                        }} />
+                        <ProjectTag name={item.language} color={item.languageColor} />
+                    </div>
+                ))}
+            </div>
+        </>
+    )
+}
+
+
 type ProjectTagProps = {
     name: string,
     color: string
@@ -59,6 +95,7 @@ type ProjectCardProps = {
     date: string,
     duration?: string,
     github?: string,
+    id?: string,
     tags: ProjectTagProps[],
     images: ImageProps[],
     children: JSX.Element
@@ -71,6 +108,7 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
         <Slide
             direction={SlideDirection.Top}
             styles="relative flex flex-col 2xl:flex-row 2xl:w-[70%] bg-[--white] card-shadow rounded-lg px-5 py-4"
+            id="project-card"
         >
             <div className="relative flex flex-col gap-2 2xl:w-[55%]">
                 <h2 className="text-base md:text-xl xl:text-lg font-bold">{title}</h2>
@@ -123,13 +161,13 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
 
                 {images[currentImage].tooltip &&
                     <div className="w-full bg-[--white] p-0.5 rounded-b-lg card-shadow">
-                        <p className="text-center text-xs md:text-base xl:text-xs font-extralight"> {images[currentImage].tooltip}</p>
+                        <p className="text-center text-xs md:text-base xl:text-xs font-extralight text-nowrap text-ellipsis overflow-hidden"> {images[currentImage].tooltip}</p>
                     </div>
                 }
             </div>
 
             {github
-                ? <a href={github} target="_blank" className="absolute top-2 right-4 text-2xl md:text-3xl">
+                ? <a href={github} target="_blank" className="absolute top-2 right-4 text-2xl md:text-4xl xl:text-3xl">
                     <i className={"fa fa-brands fa-github text-[--gray-700]"} />
                 </a>
                 : <></>

@@ -1,5 +1,5 @@
 import SectionTitle from "../components/SectionTitle"
-import { ProjectCard, ProjectCardBodyList, ProjectCardBodyParagraph } from "../components/Project"
+import { ProjectCard, ProjectCardBodyList, ProjectCardBodyParagraph, ProjectNavBar } from "../components/Project"
 import { Link } from "react-router-dom"
 
 
@@ -18,7 +18,17 @@ const PersonalProjects = () => {
 
             <p className="mt-1 mb-12 px-8 text-center text-xs md:text-sm xl:text-xs">If you want to see other projects I have worked on, you can check my <Link to="/academic-projects" className="text-current underline font-normal">academic projects</Link>.</p>
 
-            <div className="flex flex-col items-center gap-8 px-6 mb-12">
+            <ProjectNavBar
+                items={[
+                    { name: "Portfolio", src: "portfolio/hero-section.png", language: "React", languageColor: "bg-[#61dafb]" },
+                    { name: "Casual mobile and web game", src: "placeholder.svg", language: "C#", languageColor: "bg-[#9b4993]" },
+                    { name: "RPG game", src: "social-media-simulator/start.gif", language: "Lua", languageColor: "bg-[#000080]" },
+                    { name: "Survival game", src: "zombie-invasion-survive/thumbnail.png", language: "Lua", languageColor: "bg-[#000080]" },
+                    { name: "RPG game", src: "reve-island/thumbnail.jpg", language: "Lua", languageColor: "bg-[#000080]" }
+                ]}
+            />
+
+            <div id="projects-container" className="flex flex-col items-center gap-8 px-6 mb-12">
                 <ProjectCard
                     title="Portfolio"
                     date="September 2024 - Present"
