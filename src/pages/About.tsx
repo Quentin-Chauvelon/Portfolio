@@ -191,7 +191,7 @@ const HeroTitle = ({ hasScrolled }: HeroTitleProps) => {
                 styles="hidden md:flex justify-end items-center w-1/2"
             >
                 <div className="aspect-square rounded-full bg-gradient-to-r gradient-bp w-3/5 xl:w-[--picture-size] h-[calc(100vw/2*(var(--picture-size)/100)-var(--picture-border-size))] p-1">
-                    <div className="relative w-full h-full flex justify-center items-center bg-white rounded-full overflow">
+                    <div className="relative w-full h-full flex justify-center items-center bg-[--white] rounded-full overflow">
                         <img src={picture1} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[110%] bottom-[-1px]' />
                         <img src={picture2} alt="Photo" className='absolute aspect-[8.34/8.98] max-w-[200%] w-[110%] bottom-0' style={{ clipPath: 'circle(48% at 50% 54%)' }} />
                     </div>
@@ -408,7 +408,7 @@ const Credits = () => {
         <>
             <SectionTitle title="CREDITS" />
 
-            <div className="text-xs md:text-base xl:text-sm text-center px-4">
+            <div className="text-xs mb-8 md:text-base xl:text-sm text-center px-4">
                 <p>This portfolio website has been inspired by:</p>
 
                 <div className="flex flex-wrap justify-evenly gap-4 md:gap-0 mt-4 mb-8">
