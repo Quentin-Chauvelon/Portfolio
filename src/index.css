@@ -58,10 +58,16 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #2f4a75;
+    --hero-bg-color: #2f4a75;
+    --hero-section-buttons-color: var(--gray-300);
+    --gray-100: #2f4a75;
+    --gray-700: var(--gray-300);
+    --gray-600: #e6e6e2;
+    --white: #3c4c5a;
 
     --color: rgba(255, 255, 255, 0.87);
     
-    background-color: var(--bg-dark);
+    background-color: var(--bg-color);
   }
 }
 
@@ -82,16 +88,32 @@ a:hover {
 Use properties to set the gradient colors. This way, we can easily
 change the colors on hover to update the gradient
 */
-@property --bg-gradient-from {
-  syntax: '<color>';
-  initial-value: #004e89;
-  inherits: false;
+@media (prefers-color-scheme: light) {
+  @property --bg-gradient-from {
+      syntax: '<color>';
+      initial-value: #004e89;
+      inherits: false;
+    }
+
+    @property --bg-gradient-to {
+      syntax: '<color>';
+      initial-value: #004e89;
+      inherits: false;
+  }
 }
 
-@property --bg-gradient-to {
-  syntax: '<color>';
-  initial-value: #004e89;
-  inherits: false;
+@media (prefers-color-scheme: dark) {
+  @property --bg-gradient-from {
+    syntax: '<color>';
+    initial-value: #E6E6E2;
+    inherits: false;
+  }
+
+  @property --bg-gradient-to {
+    syntax: '<color>';
+    initial-value: #E6E6E2;
+    inherits: false;
+  }
 }
 
 /*
