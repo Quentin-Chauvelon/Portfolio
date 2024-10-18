@@ -14,16 +14,18 @@ type GLTFResult = GLTF & {
     RightWall: THREE.Mesh
     Back_Shelf: THREE.Mesh
     BackShelf_Stands: THREE.Mesh
+    Cube019: THREE.Mesh
+    Cube020: THREE.Mesh
+    Cube021: THREE.Mesh
     Circle_006_Tropy_Cup_0: THREE.Mesh
     Circle_007_Tropy_Cup_0: THREE.Mesh
-    Cube_003_Tropy_cup_2_0: THREE.Mesh
-    Cube_004_Tropy_Cup_0: THREE.Mesh
     Cube_005_Tropy_Cup_0: THREE.Mesh
-    Cube_006_Tropy_Cup_0: THREE.Mesh
     Star_star_0: THREE.Mesh
-    Sphere_bood_0: THREE.Mesh
-    Sphere_roope_0: THREE.Mesh
-    Torus_hat_0: THREE.Mesh
+    Cube022: THREE.Mesh
+    Cylinder014: THREE.Mesh
+    Cylinder015: THREE.Mesh
+    Cylinder016: THREE.Mesh
+    Cylinder017: THREE.Mesh
     Object_11002: THREE.Mesh
     Object_0003: THREE.Mesh
     Object_2003: THREE.Mesh
@@ -37,61 +39,70 @@ type GLTFResult = GLTF & {
     Object_10002: THREE.Mesh
     Object_1004: THREE.Mesh
     Floor: THREE.Mesh
-    Cube011: THREE.Mesh
-    Cube011_1: THREE.Mesh
+    Monitor001: THREE.Mesh
+    Monitor002: THREE.Mesh
     MonitorStand: THREE.Mesh
     MonitorStandFoot: THREE.Mesh
-    emissive_Key_0: THREE.Mesh
-    keyboard_Key_0: THREE.Mesh
-    keyboard_Keyboard_0: THREE.Mesh
-    keys_Key_0: THREE.Mesh
+    Cube006: THREE.Mesh
+    Cube110: THREE.Mesh
     Object_0: THREE.Mesh
     Object_2: THREE.Mesh
-    Object_3: THREE.Mesh
     Leg_Bottom: THREE.Mesh
     Leg_Top: THREE.Mesh
     Table: THREE.Mesh
-    Cube009: THREE.Mesh
     Cube009_1: THREE.Mesh
-    Cube002: THREE.Mesh
-    Cube002_1: THREE.Mesh
-    Cube012: THREE.Mesh
-    Cube012_1: THREE.Mesh
-    Cube013: THREE.Mesh
-    Cube013_1: THREE.Mesh
-    Cube014: THREE.Mesh
-    Cube014_1: THREE.Mesh
-    Cube015: THREE.Mesh
-    Cube015_1: THREE.Mesh
+    Cube009_2: THREE.Mesh
+    Cube160: THREE.Mesh
+    Cube160_1: THREE.Mesh
+    Cube161: THREE.Mesh
+    Cube161_1: THREE.Mesh
+    Cube162: THREE.Mesh
+    Cube162_1: THREE.Mesh
+    Cube163: THREE.Mesh
+    Cube163_1: THREE.Mesh
+    Cube164: THREE.Mesh
+    Cube164_1: THREE.Mesh
     Ball: THREE.Mesh
+    Cube002: THREE.Mesh
+    Cube003: THREE.Mesh
     Flag: THREE.Mesh
     Flag001: THREE.Mesh
     Maze_Floor: THREE.Mesh
-    Cube: THREE.Mesh
-    Cube001: THREE.Mesh
     Paper_1: THREE.Mesh
     Paper_2: THREE.Mesh
     Paper_3: THREE.Mesh
-    Cylinder004: THREE.Mesh
     Cylinder004_1: THREE.Mesh
     Cylinder004_2: THREE.Mesh
-    Cylinder005: THREE.Mesh
+    Cylinder004_3: THREE.Mesh
     Cylinder005_1: THREE.Mesh
     Cylinder005_2: THREE.Mesh
-    Cylinder006: THREE.Mesh
+    Cylinder005_3: THREE.Mesh
     Cylinder006_1: THREE.Mesh
     Cylinder006_2: THREE.Mesh
-    Cylinder007: THREE.Mesh
+    Cylinder006_3: THREE.Mesh
     Cylinder007_1: THREE.Mesh
     Cylinder007_2: THREE.Mesh
-    Cylinder008: THREE.Mesh
+    Cylinder007_3: THREE.Mesh
     Cylinder008_1: THREE.Mesh
     Cylinder008_2: THREE.Mesh
+    Cylinder008_3: THREE.Mesh
     Pen_Holder_Base: THREE.Mesh
-    defaultMaterial: THREE.Mesh
+    Cube004: THREE.Mesh
+    Cube005: THREE.Mesh
+    Cylinder012: THREE.Mesh
+    Cylinder013: THREE.Mesh
     defaultMaterial001: THREE.Mesh
     defaultMaterial002: THREE.Mesh
-    defaultMaterial003: THREE.Mesh
+    defaultMaterial004: THREE.Mesh
+    Cylinder004: THREE.Mesh
+    Cylinder005: THREE.Mesh
+    Cylinder006: THREE.Mesh
+    Cylinder007: THREE.Mesh
+    Cylinder008: THREE.Mesh
+    Cylinder009: THREE.Mesh
+    Cylinder010: THREE.Mesh
+    Cylinder011: THREE.Mesh
+    Plane001: THREE.Mesh
     Clock_Frame: THREE.Mesh
     Marker_1: THREE.Mesh
     Marker_2: THREE.Mesh
@@ -102,83 +113,73 @@ type GLTFResult = GLTF & {
     Avatar: THREE.Mesh
     Avatar_Stand: THREE.Mesh
     ['@']: THREE.Mesh
+    Cube: THREE.Mesh
+    Cube001: THREE.Mesh
+    Cube007: THREE.Mesh
+    Cube008: THREE.Mesh
+    Cube009: THREE.Mesh
+    Cube010: THREE.Mesh
+    Cube011: THREE.Mesh
+    Cube012: THREE.Mesh
     Cylinder: THREE.Mesh
     Cylinder001: THREE.Mesh
     Cylinder002: THREE.Mesh
     Cylinder003: THREE.Mesh
     ['E-commerce']: THREE.Mesh
-    hotdog_house_Do_do_0: THREE.Mesh
     hotdog_house_Do_do_0001: THREE.Mesh
-    hotdog_house_Kem_0: THREE.Mesh
     hotdog_house_Trang_0: THREE.Mesh
     hotdog_house_Trang_0001: THREE.Mesh
     hotdog_house_Xam_xanh_0: THREE.Mesh
     hotdog_house_Xanh_Kinh_0: THREE.Mesh
     hotdog_house_Xanh_la_0: THREE.Mesh
-    icescream_house_Trang_0001: THREE.Mesh
-    pizzaria_Burger_Shop_Coffee_House_Black_0001: THREE.Mesh
-    pizzaria_Burger_Shop_Coffee_House_Brown_Dam_0001: THREE.Mesh
     pizzaria_Burger_Shop_Coffee_House_White_0001: THREE.Mesh
-    pizzaria_Do_do_0001: THREE.Mesh
     pizzaria_Do_do_0002: THREE.Mesh
+    Cube018: THREE.Mesh
     BODY_BODY_0: THREE.Mesh
     bottom_07___Default_0: THREE.Mesh
     bottom_BOTTOM_0: THREE.Mesh
     BOX_METAL_METALL_0: THREE.Mesh
     BUMPER_FRONT_PLASTIC_0: THREE.Mesh
-    BUMPER_FRONT_INNER_BOTTOM_0: THREE.Mesh
-    CABIN_PLASTIC_METALL_0: THREE.Mesh
-    CABIN_PLASTIC_PLASTIC_0: THREE.Mesh
-    GLASS_GLASS_0: THREE.Mesh
     interior_VOID_0: THREE.Mesh
     LIGHTS_LIGHT_0: THREE.Mesh
-    LIGHTS_LIGHTS_GLASS_0: THREE.Mesh
-    wheel_003_RIM_0: THREE.Mesh
-    wheel_003_TIRE_0: THREE.Mesh
-    wheel_004_RIM_0: THREE.Mesh
-    wheel_004_TIRE_0: THREE.Mesh
     wheel_01_RIM_0: THREE.Mesh
     wheel_01_TIRE_0: THREE.Mesh
     wheel_02_RIM_0: THREE.Mesh
     wheel_02_TIRE_0: THREE.Mesh
     Plane: THREE.Mesh
+    Sphere_bood_0: THREE.Mesh
+    Sphere_roope_0: THREE.Mesh
   }
   materials: {
     Wall: THREE.MeshPhysicalMaterial
     Desk_Top: THREE.MeshPhysicalMaterial
-    Tropy_Cup: THREE.MeshStandardMaterial
     Tropy_cup_2: THREE.MeshStandardMaterial
+    Tropy_Cup: THREE.MeshStandardMaterial
     star: THREE.MeshStandardMaterial
-    ['bood.001']: THREE.MeshStandardMaterial
-    ['roope.001']: THREE.MeshStandardMaterial
     ['material.003']: THREE.MeshStandardMaterial
     ['material_0.001']: THREE.MeshStandardMaterial
     Maze: THREE.MeshPhysicalMaterial
     ['Material.001']: THREE.MeshStandardMaterial
     Floor: THREE.MeshPhysicalMaterial
-    MonitorScreen: THREE.MeshPhysicalMaterial
-    ['Material.002']: THREE.MeshStandardMaterial
-    Keyboard_Mouse: THREE.MeshPhysicalMaterial
     Monitor: THREE.MeshPhysicalMaterial
+    MonitorScreen: THREE.MeshPhysicalMaterial
     Desk_Leg: THREE.MeshStandardMaterial
     Desk_Leg_Extension: THREE.MeshStandardMaterial
     Book_1: THREE.MeshPhysicalMaterial
     Book_Paper: THREE.MeshStandardMaterial
     Book_2: THREE.MeshStandardMaterial
-    ['Book_Paper.001']: THREE.MeshStandardMaterial
     Book_3: THREE.MeshStandardMaterial
-    ['Book_Paper.002']: THREE.MeshStandardMaterial
     Book_4: THREE.MeshStandardMaterial
-    ['Book_Paper.003']: THREE.MeshStandardMaterial
-    ['Book_Paper.004']: THREE.MeshStandardMaterial
+    Book_5: THREE.MeshStandardMaterial
     Ball: THREE.MeshStandardMaterial
     Flag_Pole: THREE.MeshStandardMaterial
     Flag: THREE.MeshStandardMaterial
     Pen: THREE.MeshStandardMaterial
     Pen_Tip: THREE.MeshStandardMaterial
-    Book_5: THREE.MeshStandardMaterial
-    Chair: THREE.MeshStandardMaterial
+    _7___Default: THREE.MeshStandardMaterial
     Chair_Seat: THREE.MeshStandardMaterial
+    Chair: THREE.MeshStandardMaterial
+    Clock: THREE.MeshPhysicalMaterial
     Clock_Hand: THREE.MeshPhysicalMaterial
     Window: THREE.MeshPhysicalMaterial
     Mat: THREE.MeshPhysicalMaterial
@@ -186,23 +187,19 @@ type GLTFResult = GLTF & {
     Paper: THREE.MeshStandardMaterial
     Do_do: THREE.MeshStandardMaterial
     Trang: THREE.MeshStandardMaterial
-    Clock: THREE.MeshPhysicalMaterial
     Xanh_Kinh: THREE.MeshStandardMaterial
-    Burger_Shop_Coffee_HouseBlack: THREE.MeshStandardMaterial
-    Burger_Shop_Coffee_HouseBrown_Dam: THREE.MeshStandardMaterial
-    _7___Default: THREE.MeshStandardMaterial
-    BOTTOM: THREE.MeshStandardMaterial
     METALL: THREE.MeshStandardMaterial
     PLASTIC: THREE.MeshStandardMaterial
-    GLASS: THREE.MeshStandardMaterial
     VOID: THREE.MeshStandardMaterial
     LIGHT: THREE.MeshStandardMaterial
-    LIGHTS_GLASS: THREE.MeshStandardMaterial
     material: THREE.MeshStandardMaterial
     TIRE: THREE.MeshStandardMaterial
     SEPAMAT: THREE.MeshStandardMaterial
+    ['bood.002']: THREE.MeshStandardMaterial
+    ['roope.002']: THREE.MeshStandardMaterial
   }
 }
+
 
 
 const whiteMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
@@ -253,6 +250,30 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
+            geometry={nodes.Cube019.geometry}
+            material={materials.Tropy_cup_2}
+            position={[-0.008, 0.001, -0.144]}
+            rotation={[Math.PI / 2, -1.561, Math.PI]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube020.geometry}
+            material={materials.Tropy_Cup}
+            position={[-0.008, 0.001, -0.302]}
+            rotation={[Math.PI / 2, -1.561, Math.PI]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube021.geometry}
+            material={materials.Tropy_Cup}
+            position={[-0.005, 0.232, -0.165]}
+            rotation={[-Math.PI / 2, 1.561, -Math.PI]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
             geometry={nodes.Circle_006_Tropy_Cup_0.geometry}
             material={materials.Tropy_Cup}
           />
@@ -265,25 +286,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube_003_Tropy_cup_2_0.geometry}
-            material={materials.Tropy_cup_2}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube_004_Tropy_Cup_0.geometry}
-            material={materials.Tropy_Cup}
-          />
-          <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_005_Tropy_Cup_0.geometry}
-            material={materials.Tropy_Cup}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube_006_Tropy_Cup_0.geometry}
             material={materials.Tropy_Cup}
           />
           <mesh
@@ -297,34 +300,58 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.Education}
       >
-        <group name="GraduationHat" scale={playAnimation ? scaleZero : scaleOne} position={[-3.428, -2.356, -5.627]} rotation={[Math.PI / 2, 0, 1.486]}>
-          <group rotation={[Math.PI / 2, -0.497, -Math.PI]}>
-            <group rotation={[Math.PI / 2, 0, 0]}>
-              <group rotation={[-Math.PI / 2, 0, 0]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Sphere_bood_0.geometry}
-                material={materials['bood.001']}
-                  position={[-0.407, 0.135, 0]}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Sphere_roope_0.geometry}
-                material={materials['roope.001']}
-                  position={[-0.407, 0.135, 0]}
-              />
-              </group>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Torus_hat_0.geometry}
-                material={materials['material.003']}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-            </group>
-          </group>
+        <group name="GraduationHat" scale={playAnimation ? scaleZero : scaleOne} position={[-3.437, -2.169, -5.624]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube022.geometry}
+            material={materials['material.003']}
+            position={[0.013, 0.236, 0.002]}
+            rotation={[0, 0.593, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder014.geometry}
+            material={materials['material.003']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder015.geometry}
+            material={materials['material.003']}
+            position={[0, -0.061, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder016.geometry}
+            material={materials['material.003']}
+            position={[0, -0.156, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder017.geometry}
+            material={materials['material.003']}
+            position={[0, 0.275, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere_bood_0.geometry}
+            material={materials['bood.002']}
+            position={[0.304, -0.008, 0.446]}
+            rotation={[-Math.PI, 0.989, -Math.PI]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere_roope_0.geometry}
+            material={materials['roope.002']}
+            position={[0.304, -0.008, 0.446]}
+            rotation={[-Math.PI, 0.989, -Math.PI]}
+          />
         </group>
       </ClickableItem>
       <group name="Plant" scale={playAnimation ? scaleZero : scaleOne} position={[-0.345, 0, 6.993]} rotation={[Math.PI / 2, 0, 0]}>
@@ -449,20 +476,20 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
         position={[0.173, -7.065, 0.212]}
       />
       <group name="Monitors" scale={playAnimation ? scaleZero : scaleOne} position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
-        <group position={[-3.838, -5.066, -1.905]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube011.geometry}
-            material={materials.Monitor}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube011_1.geometry}
-            material={materials.MonitorScreen}
-          />
-        </group>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Monitor001.geometry}
+          material={materials.Monitor}
+          position={[-3.838, -5.066, -1.905]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Monitor002.geometry}
+          material={materials.MonitorScreen}
+          position={[-3.838, -5.066, -1.905]}
+        />
         <mesh
           castShadow
           receiveShadow
@@ -481,38 +508,22 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
         />
       </group>
       <group name="Keyboard" scale={playAnimation ? scaleZero : scaleOne} position={[-3.19, -2.296, -2.293]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
-        <group rotation={[0.123, 0, 0]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.emissive_Key_0.geometry}
-            material={materials.Monitor}
-            position={[-0.989, 0.19, 0.006]}
-          />
-        </group>
-        <group rotation={[0.123, 0, 0]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.keyboard_Key_0.geometry}
-            material={materials.Monitor}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.keyboard_Keyboard_0.geometry}
-            material={materials.Monitor}
-          />
-        </group>
-        <group rotation={[0.123, 0, 0]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.keys_Key_0.geometry}
-            material={materials.Monitor}
-            position={[-0.989, 0.186, -0.015]}
-          />
-        </group>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube006.geometry}
+          material={materials.Monitor}
+          position={[-0.004, -0.007, 0.027]}
+          rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube110.geometry}
+          material={materials.Monitor}
+          position={[-0.517, 0.298, -0.071]}
+          rotation={[-1.443, -Math.PI / 2, 0]}
+        />
       </group>
       <group name="Mouse" scale={playAnimation ? scaleZero : scaleOne} position={[-3.165, -2.349, -4.127]} rotation={[0, Math.PI / 2, 0]}>
         <mesh
@@ -525,12 +536,6 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           castShadow
           receiveShadow
           geometry={nodes.Object_2.geometry}
-          material={materials.Monitor}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_3.geometry}
           material={materials.Monitor}
         />
       </group>
@@ -560,86 +565,88 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube009.geometry}
+            geometry={nodes.Cube009_1.geometry}
             material={materials.Desk_Leg}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube009_1.geometry}
+            geometry={nodes.Cube009_2.geometry}
             material={materials.Desk_Leg_Extension}
           />
         </group>
       </group>
       <group name="Books" scale={playAnimation ? scaleZero : scaleOne} position={[-6.308, 1.111, -6.305]}>
-        <group position={[0, 0.03, -0.38]}>
+        <group position={[0.003, 0.095, -0.378]}>
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube002.geometry}
+            geometry={nodes.Cube160.geometry}
             material={materials.Book_1}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube002_1.geometry}
+            geometry={nodes.Cube160_1.geometry}
             material={materials.Book_Paper}
           />
         </group>
-        <group position={[0, -0.023, -0.187]}>
+        <group position={[0.003, 0.029, -0.176]}>
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube012.geometry}
+            geometry={nodes.Cube161.geometry}
             material={materials.Book_2}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube012_1.geometry}
-            material={materials['Book_Paper.001']}
+            geometry={nodes.Cube161_1.geometry}
+            material={materials.Book_Paper}
           />
         </group>
-        <group position={[0, 0.052, 0.202]}>
+        <group position={[0.003, 0.064, 0.027]}>
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube014.geometry}
+            geometry={nodes.Cube162.geometry}
+            material={materials.Book_3}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube162_1.geometry}
+            material={materials.Book_Paper}
+          />
+        </group>
+        <group position={[0.003, 0.111, 0.231]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube163.geometry}
             material={materials.Book_4}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube014_1.geometry}
-            material={materials['Book_Paper.003']}
+            geometry={nodes.Cube163_1.geometry}
+            material={materials.Book_Paper}
           />
         </group>
-        <group position={[0, 0.023, 0.683]} rotation={[-0.449, 0, 0]}>
+        <group position={[0.003, 0.086, 0.69]} rotation={[-0.453, 0, 0]}>
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube015.geometry}
+            geometry={nodes.Cube164.geometry}
             material={materials.Book_1}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cube015_1.geometry}
-            material={materials['Book_Paper.004']}
+            geometry={nodes.Cube164_1.geometry}
+            material={materials.Book_1}
           />
         </group>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube013.geometry}
-          material={materials.Book_3}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube013_1.geometry}
-          material={materials['Book_Paper.002']}
-        />
       </group>
       <ClickableItem
         item={Item.PersonalProjects}
@@ -650,7 +657,23 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
             receiveShadow
             geometry={nodes.Ball.geometry}
             material={materials.Ball}
-            position={[0.172, 0.134, 0.159]}
+            position={[-0.108, 0.121, 0.162]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube002.geometry}
+            material={materials.Maze}
+            position={[-0.562, 0.085, -0.435]}
+            rotation={[1.571, -1.562, 1.571]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube003.geometry}
+            material={materials.Maze}
+            position={[0.465, 0.094, -0.556]}
+            rotation={[-Math.PI, 0, 3.133]}
           />
           <mesh
             castShadow
@@ -662,7 +685,6 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            scale={[1, 25, 1]}
             geometry={nodes.Flag001.geometry}
             material={materials.Flag}
             position={[0.435, 0.235, -0.416]}
@@ -672,24 +694,8 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
             receiveShadow
             geometry={nodes.Maze_Floor.geometry}
             material={materials.Maze}
+            position={[0, 0, 0.017]}
           />
-          <group position={[6.067, 8.175, -0.56]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Cube.geometry}
-              material={materials.Maze}
-              position={[-6.514, -8.065, 1.126]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Cube001.geometry}
-              material={materials.Maze}
-              position={[-5.503, -8.065, 1.007]}
-              rotation={[0, 1.571, 0]}
-            />
-          </group>
         </group>
       </ClickableItem>
       <group name="Papers" scale={playAnimation ? scaleZero : scaleOne} position={[-3.58, -2.336, 0.553]}>
@@ -722,19 +728,19 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder004.geometry}
+            geometry={nodes.Cylinder004_1.geometry}
             material={materials.Book_1}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder004_1.geometry}
+            geometry={nodes.Cylinder004_2.geometry}
             material={materials.Pen}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder004_2.geometry}
+            geometry={nodes.Cylinder004_3.geometry}
             material={materials.Pen_Tip}
           />
         </group>
@@ -742,19 +748,19 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder005.geometry}
+            geometry={nodes.Cylinder005_1.geometry}
             material={materials.Book_4}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder005_1.geometry}
+            geometry={nodes.Cylinder005_2.geometry}
             material={materials.Pen}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder005_2.geometry}
+            geometry={nodes.Cylinder005_3.geometry}
             material={materials.Pen_Tip}
           />
         </group>
@@ -762,19 +768,19 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder006.geometry}
+            geometry={nodes.Cylinder006_1.geometry}
             material={materials.Book_3}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder006_1.geometry}
+            geometry={nodes.Cylinder006_2.geometry}
             material={materials.Pen}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder006_2.geometry}
+            geometry={nodes.Cylinder006_3.geometry}
             material={materials.Pen_Tip}
           />
         </group>
@@ -782,19 +788,19 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder007.geometry}
+            geometry={nodes.Cylinder007_1.geometry}
             material={materials.Book_5}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder007_1.geometry}
+            geometry={nodes.Cylinder007_2.geometry}
             material={materials.Pen}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder007_2.geometry}
+            geometry={nodes.Cylinder007_3.geometry}
             material={materials.Pen_Tip}
           />
         </group>
@@ -802,19 +808,19 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder008.geometry}
+            geometry={nodes.Cylinder008_1.geometry}
             material={materials.Book_2}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder008_1.geometry}
+            geometry={nodes.Cylinder008_2.geometry}
             material={materials.Pen}
           />
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Cylinder008_2.geometry}
+            geometry={nodes.Cylinder008_3.geometry}
             material={materials.Pen_Tip}
           />
         </group>
@@ -829,8 +835,42 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.defaultMaterial.geometry}
-          material={materials.Chair}
+          geometry={nodes.Plane001.geometry}
+          material={materials._7___Default}
+          position={[1.417, 0.766, 0.843]}
+          rotation={[0, 0, -Math.PI / 2]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube004.geometry}
+          material={materials._7___Default}
+          position={[1.161, -0.631, 0.741]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube005.geometry}
+          material={materials._7___Default}
+          position={[1.792, -0.349, 0.701]}
+          rotation={[Math.PI / 2, 1.484, 3.092]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012.geometry}
+          material={materials._7___Default}
+          position={[0.028, -1.405, 0.501]}
+          rotation={[0, 0, -Math.PI / 2]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder013.geometry}
+          material={materials._7___Default}
+          position={[1.698, -0.85, -0.484]}
+          rotation={[0, 0, -1.657]}
         />
         <group rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
           <mesh
@@ -850,9 +890,72 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.defaultMaterial003.geometry}
+            geometry={nodes.defaultMaterial004.geometry}
             material={materials.Chair}
+            position={[-0.023, 0, 0]}
             rotation={[Math.PI / 2, 0, Math.PI / 2]}
+          />
+        </group>
+        <group position={[0.028, 0.171, 1.893]} rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder004.geometry}
+            material={materials._7___Default}
+            rotation={[Math.PI, -0.333, Math.PI]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder005.geometry}
+            material={materials._7___Default}
+            rotation={[Math.PI, -0.333, Math.PI]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder006.geometry}
+            material={materials._7___Default}
+            rotation={[0, -1.557, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder007.geometry}
+            material={materials._7___Default}
+            rotation={[0, -0.282, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder008.geometry}
+            material={materials._7___Default}
+            position={[-1.725, -1.081, 0.088]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder009.geometry}
+            material={materials._7___Default}
+            position={[-1.725, -1.081, 0.088]}
+            rotation={[Math.PI / 2, 0, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder010.geometry}
+            material={materials._7___Default}
+            position={[-0.473, -1.081, 1.725]}
+            rotation={[Math.PI / 2, 0, -1.306]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder011.geometry}
+            material={materials._7___Default}
+            position={[-0.513, -1.081, -1.572]}
+            rotation={[Math.PI / 2, 0, -1.892]}
           />
         </group>
       </group>
@@ -949,6 +1052,70 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           <mesh
             castShadow
             receiveShadow
+            geometry={nodes.Cube.geometry}
+            material={materials.Do_do}
+            position={[0.001, -0.407, -0.078]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube001.geometry}
+            material={materials.Do_do}
+            position={[0.001, 0.03, -0.078]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube007.geometry}
+            material={materials.Do_do}
+            position={[0.001, 0.126, -0.078]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube008.geometry}
+            material={materials.Do_do}
+            position={[0.334, 0.189, -0.296]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube009.geometry}
+            material={materials.Do_do}
+            position={[0.334, 0.247, -0.296]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube010.geometry}
+            material={materials.Trang}
+            position={[-0.004, 0.12, 0.136]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube011.geometry}
+            material={materials.Trang}
+            position={[-0.004, 0.143, 0.136]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube012.geometry}
+            material={materials.Paper}
+            position={[-0.001, -0.103, -0.076]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
             geometry={nodes.Cylinder.geometry}
             material={materials.Paper}
             position={[-0.341, -0.189, 0.453]}
@@ -993,20 +1160,8 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
                   <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.hotdog_house_Do_do_0.geometry}
-                    material={materials.Do_do}
-                  />
-                  <mesh
-                    castShadow
-                    receiveShadow
                     geometry={nodes.hotdog_house_Do_do_0001.geometry}
                     material={materials.Do_do}
-                  />
-                  <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.hotdog_house_Kem_0.geometry}
-                    material={materials.Clock}
                   />
                   <mesh
                     castShadow
@@ -1039,32 +1194,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
                     material={materials.Book_1}
                   />
                 </group>
-                <group position={[0.214, 0.521, -0.225]}>
-                  <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.icescream_house_Trang_0001.geometry}
-                    material={materials.Trang}
-                    position={[1.208, 0, 0]}
-                  />
-                </group>
                 <group position={[3.032, 0.788, -0.364]}>
-                  <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.pizzaria_Burger_Shop_Coffee_House_Black_0001.geometry}
-                    material={materials.Burger_Shop_Coffee_HouseBlack}
-                    position={[-1.336, -0.748, 0.669]}
-                    rotation={[0, Math.PI / 2, 0]}
-                  />
-                  <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.pizzaria_Burger_Shop_Coffee_House_Brown_Dam_0001.geometry}
-                    material={materials.Burger_Shop_Coffee_HouseBrown_Dam}
-                    position={[-1.336, -0.748, 0.669]}
-                    rotation={[0, 1.547, 0]}
-                  />
                   <mesh
                     castShadow
                     receiveShadow
@@ -1072,13 +1202,6 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
                     material={materials.Trang}
                     position={[-1.336, -0.748, 0.669]}
                     rotation={[0, 1.547, 0]}
-                  />
-                  <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.pizzaria_Do_do_0001.geometry}
-                    material={materials.Do_do}
-                    position={[-0.863, -0.501, 0.22]}
                   />
                   <mesh
                     castShadow
@@ -1098,6 +1221,14 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
         item={Item.Experience}
       >
         <group name="Experience" scale={playAnimation ? scaleZero : scaleOne} position={[-4.333, -1.979, -2.446]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube018.geometry}
+            material={materials._7___Default}
+            position={[-0.725, -0.274, 0.249]}
+            rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
+          />
           <group position={[-0.23, -0.274, 0.424]}>
             <group position={[0.022, 0.001, -0.379]} rotation={[0, 0, Math.PI / 2]}>
               <mesh
@@ -1120,7 +1251,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
                   castShadow
                   receiveShadow
                   geometry={nodes.bottom_BOTTOM_0.geometry}
-                  material={materials.BOTTOM}
+                  material={materials._7___Default}
                 />
               </group>
             </group>
@@ -1142,40 +1273,6 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
                 position={[0.047, 0.258, 0.012]}
               />
             </group>
-            <group position={[-0.652, 0.001, -0.098]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.BUMPER_FRONT_INNER_BOTTOM_0.geometry}
-                material={materials.BOTTOM}
-                position={[0.047, 0.258, 0.012]}
-              />
-            </group>
-            <group position={[-0.524, 0.001, -0.365]}>
-              <group position={[0.136, 0.246, 0.082]}>
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.CABIN_PLASTIC_METALL_0.geometry}
-                  material={materials.METALL}
-                />
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.CABIN_PLASTIC_PLASTIC_0.geometry}
-                  material={materials.PLASTIC}
-                />
-              </group>
-            </group>
-            <group position={[-0.537, 0.001, -0.377]} rotation={[0, 0, Math.PI / 2]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.GLASS_GLASS_0.geometry}
-                material={materials.GLASS}
-                position={[0.054, 0.147, 0.102]}
-              />
-            </group>
             <group position={[-0.505, 0.003, -0.335]} rotation={[0, 0, Math.PI / 2]}>
               <mesh
                 castShadow
@@ -1186,52 +1283,13 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
               />
             </group>
             <group position={[-0.005, 0.001, -0.18]} rotation={[0, 0, Math.PI / 2]}>
-              <group position={[0.054, 0.691, -0.095]}>
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.LIGHTS_LIGHT_0.geometry}
-                  material={materials.LIGHT}
-                />
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.LIGHTS_LIGHTS_GLASS_0.geometry}
-                  material={materials.LIGHTS_GLASS}
-                />
-              </group>
-            </group>
-            <group position={[0.381, -0.202, -0.085]} rotation={[Math.PI / 2, 0, 0]}>
-              <group position={[0, 0, 0.026]}>
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.wheel_003_RIM_0.geometry}
-                  material={materials.material}
-                />
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.wheel_003_TIRE_0.geometry}
-                  material={materials.TIRE}
-                />
-              </group>
-            </group>
-            <group position={[-0.47, -0.222, -0.085]} rotation={[Math.PI / 2, 0, 0]}>
-              <group position={[0, 0, 0.006]}>
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.wheel_004_RIM_0.geometry}
-                  material={materials.material}
-                />
-                <mesh
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.wheel_004_TIRE_0.geometry}
-                  material={materials.TIRE}
-                />
-              </group>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.LIGHTS_LIGHT_0.geometry}
+                material={materials.LIGHT}
+                position={[0.054, 0.691, -0.095]}
+              />
             </group>
             <group position={[-0.47, 0.223, -0.085]} rotation={[-Math.PI / 2, 0, 0]}>
               <group position={[0, 0, 0.006]}>
