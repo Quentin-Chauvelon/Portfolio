@@ -22,7 +22,7 @@ const Experience = () => {
             <Timeline>
                 <TimelineItem
                     image={sepamat}
-                    title="Software Developer"
+                    title="Software Developer Intern"
                     heading="SEPAMAT"
                     subHeading="Orvault, France"
                     date="April 2023 - June 2023"

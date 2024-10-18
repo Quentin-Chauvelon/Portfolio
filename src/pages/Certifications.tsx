@@ -78,7 +78,7 @@ const Certifications = () => {
                     title="Euro-Information Code Contest"
                     heading="Ranked 11th out of 295"
                     subHeading="Issued by Euro-Information (Crédit Mutuel Group)"
-                    date="October 2024"
+                    date="October 2023"
                     backgroundColor="bg-[--credit-mutuel-color]"
                     borderColor="border-[--credit-mutuel-color]"
                     orientation={orientation}
