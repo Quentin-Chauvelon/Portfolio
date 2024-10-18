@@ -21,7 +21,7 @@ const PersonalProjects = () => {
             <ProjectNavBar
                 items={[
                     { name: "Portfolio", src: "portfolio/hero-section.png", language: "React", languageColor: "bg-[#61dafb]" },
-                    { name: "Casual mobile and web game", src: "placeholder.svg", language: "C#", languageColor: "bg-[#9b4993]" },
+                    { name: "Casual mobile and web game", src: "3d-ball-maze/game.png", language: "C#", languageColor: "bg-[#9b4993]" },
                     { name: "RPG game", src: "social-media-simulator/start.gif", language: "Lua", languageColor: "bg-[#000080]" },
                     { name: "Survival game", src: "zombie-invasion-survive/thumbnail.png", language: "Lua", languageColor: "bg-[#000080]" },
                     { name: "RPG game", src: "reve-island/thumbnail.jpg", language: "Lua", languageColor: "bg-[#000080]" }
@@ -77,7 +77,7 @@ const PersonalProjects = () => {
                         { name: "Trello", color: "bg-[#ff9f1a]" },
                     ]}
                     images={[
-                        { src: "placeholder.svg", tooltip: "No image available yet" },
+                        { src: "3d-ball-maze/game.png", tooltip: "Prototype of the game" },
                     ]}
                 >
                     <>
