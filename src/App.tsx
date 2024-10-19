@@ -1,4 +1,6 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom"
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Scene from "./pages/Scene";
 import About from "./pages/About";
@@ -12,12 +14,25 @@ import NotFound from "./pages/NotFound";
 
 import "./App.css"
 
+import "./i18next"
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
 function App() {
+    const { i18n } = useTranslation()
+    const [hasLanguageChanged, setHasLanguageChanged] = useState(false);
+
+
+    const changeLanguage = (lng: string) => {
+        setHasLanguageChanged(true);
+        i18n.changeLanguage(lng)
+    }
+
     return (
         <>
             <BrowserRouter>
-                <Scene />
+                <Scene
+                    hasLanguageChanged={hasLanguageChanged}
+                />
                 <section className="relative overflow-auto overflow-x-hidden bg-[--bg-color] text-[--color]">
                     <Routes>
                         <Route
@@ -58,9 +73,12 @@ function App() {
                         />
                     </Routes>
                 </section>
+                <LanguageSwitcher
+                    changeLanguage={changeLanguage}
+                />
             </BrowserRouter >
         </>
     )
 }
 
-export default App
+export default App;

@@ -21,7 +21,11 @@ import { Item, ItemsRoutesMap } from '../Items'
 
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
-const Scene = () => {
+type SceneProps = {
+    hasLanguageChanged: boolean;
+}
+
+const Scene = ({ hasLanguageChanged }: SceneProps) => {
     const [portfolioOpened, setPortfolioOpened] = useState(false);
     const [firstItemSelected, setFirstItemSelected] = useState(false);
     const [selectedItem, setSelectedItem] = useState(Item.None);
@@ -32,7 +36,7 @@ const Scene = () => {
         setPortfolioOpened(true);
     }
 
-    const skipRoomAnimation = false;
+    const skipRoomAnimation = false || hasLanguageChanged;
 
     const onItemSelected = (item: Item) => {
         if (!firstItemSelected && item !== Item.None) {
@@ -42,6 +46,7 @@ const Scene = () => {
         setSelectedItem(item);
         navigate(ItemsRoutesMap[item]);
     }
+
 
     return (
         <>
