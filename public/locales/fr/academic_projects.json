@@ -1,0 +1,228 @@
+{
+    "section-title": "PROJETS ACADÉMIQUES",
+    "link-to-academic-projects": "Ces projets sont uniquement ceux sur lesquels j'ai travaillé durant mes études. Je passe également beaucoup de mon temps libre à travailler sur des projets personnels que vous pouvez retrouver <0>ici</0>.",
+    "navbar": [
+        {
+            "id": "ui-widget-library",
+            "name": "Librairie Graphique"
+        },
+        {
+            "id": "hot-genre",
+            "name": "Site de vente en ligne"
+        },
+        {
+            "id": "schedule-track",
+            "name": "Schedule Track"
+        },
+        {
+            "id": "particles-system",
+            "name": "Système de Particules"
+        },
+        {
+            "id": "network-game",
+            "name": "Jeu en Réseau"
+        }
+    ],
+    "data": [
+        {
+            "id": "ui-widget-library",
+            "title": "Librairie Graphique",
+            "duration": "1 mois",
+            "date": "Avril 2024 - Mai 2024",
+            "imagesTooltip": [
+                {
+                    "id": "minesweeper",
+                    "tooltip": "Jeu du démineur"
+                },
+                {
+                    "id": "2048",
+                    "tooltip": "Jeu du 2048"
+                },
+                {
+                    "id": "puzzle",
+                    "tooltip": "Puzzle"
+                },
+                {
+                    "id": "grid-geometry-manager",
+                    "tooltip": "Gestionaire de géométrie automatique en grille"
+                },
+                {
+                    "id": "text-field",
+                    "tooltip": "Un champ de texte avec sélection"
+                }
+            ],
+            "description": [
+                "<paragraph_t>Ce projet est mon projet de fin de semestre réalisé par groupe de 3 pendant 1 mois durant ma 1ère année en école d'ingénieur. Le but de ce projet était de coder une librairie graphique qui permettrait aux utilisateurs de créer leurs propres interfaces graphiques.</paragraph_t>",
+                "<paragraph_t>Avec cette librairie, des jeux simples peuvent être créés comme le jeu du démineur ou 2048.</paragraph_t>",
+                [
+                    "list_t_b",
+                    "Implémentation de divers composants tels que des frames, des boutons, des champs de texte, etc... qui peuvent être instanciés, configurés, positionnés...",
+                    "Système de gestion des événements et de callbacks (clics, appuis sur une touche du clavier...)",
+                    "Un gestionnaire de géométrie en grille pour organiser les composants dans une grille et la personnaliser",
+                    "Un parseur pour créer des interfaces graphiques à partir d'un fichier",
+                    "Des tags qui peuvent être ajoutés/supprimés des composants pour personnaliser leur comportement"
+                ]
+            ]
+        },
+        {
+            "id": "hot-genre",
+            "title": "Hot Genre",
+            "duration": "2 mois",
+            "date": "Novembre 2022 - Janvier 2023",
+            "imagesTooltip": [
+                {
+                    "id": "account-creation",
+                    "tooltip": "Création d'un compte"
+                },
+                {
+                    "id": "add-to-cart",
+                    "tooltip": "Ajout d'un produit au panier"
+                },
+                {
+                    "id": "admin-products-management",
+                    "tooltip": "Gestion des produits administrateur"
+                },
+                {
+                    "id": "home-page",
+                    "tooltip": "Page d'accueil"
+                },
+                {
+                    "id": "order",
+                    "tooltip": "Processus de commande"
+                },
+                {
+                    "id": "order-summary",
+                    "tooltip": "Résumé d'une commande"
+                },
+                {
+                    "id": "products",
+                    "tooltip": "Catalogue de produits"
+                }
+            ],
+            "description": [
+                "<paragraph_t>Hot Genre est un projet de fin de semestre réalisé par groupe de 5 pendant 2 mois en 2ème année de BUT. Pour ce projet, nous devions développer un site de vente en ligne qui devait gérer tout le processus de commande par un client, de la connexion à la validation de la commande (le paiement n'étant pas à gérer). Le projet a été réalisé en PHP, HTML5, CSS3 et JavaScript avec le framework CodeIgniter 4 et avec une base de données MySQL. J'ai implémenté les fonctionnalités suivantes:</paragraph_t>",
+                [
+                    "list_b",
+                    "Système d'authentification avec différents rôles (client, admin) + mot de passe oublié",
+                    "Catalogue de produits par catégories",
+                    "Page de produit avec description, images, tailles",
+                    "Produits favoris",
+                    "Système de panier et de commande",
+                    "Génération de facture",
+                    "Bons de réduction",
+                    "Gestion de compte (informations personnelles, panier, adresses, historique des commandes)",
+                    "Tableau de bord administrateur pour gérer les produits, les commandes, les clients...",
+                    "Page d'accueil avec les produits populaires, les nouveaux produits..."
+                ]
+            ]
+        },
+        {
+            "id": "schedule-track",
+            "title": "Schedule Track",
+            "duration": "2 semaines",
+            "date": "Avril 2023 - Avril 2023",
+            "imagesTooltip": [
+                {
+                    "id": "schedule-view",
+                    "tooltip": "Emploi du temps"
+                },
+                {
+                    "id": "directions",
+                    "tooltip": "Calcul d'itinéraire et horaires synchronisés avec l'emploi du temps"
+                },
+                {
+                    "id": "rooms",
+                    "tooltip": "Trouver des salles libres"
+                },
+                {
+                    "id": "professors",
+                    "tooltip": "Rechercher les disponibilités d'un professeur"
+                }
+            ],
+            "description": [
+                "<paragraph_t>ScheduleTrack Nantes est un projet de fin de semestre réalisé par groupe de 5 pendant 2 semaines en fin de 2ème année de BUT. Le but était de créer une API RESTful, un site web et une application mobile pour gérer des emplois du temps:</paragraph_t>",
+                [
+                    "list",
+                    "Affichage des emplois du temps en vue calendrier (en utilisant l'API de l'école) + système de favoris",
+                    "Calcul d'itinéraire et d'horaires de départ pour se rendre en cours synchronisé avec l'emploi du temps (en utilisant l'API Google Maps)",
+                    "Trouver des salles libres à un moment donné",
+                    "Vérifier la disponibilité d'un professeur à un moment donné"
+                ],
+                "<paragraph_t>L'API était le coeur de ce projet car elle est utilisée par le site web et l'application mobile. Elle a été développée avec Hapi et l'ORM Prisma, Swagger pour la documentation, Chai pour les tests, ainsi qu'une base de données SQLite. Elle récupère des données de l'API de l'emploi du temps de l'école et de l'API Google Maps et API Directions de Google.</paragraph_t>",
+                "<paragraph_t>Le site web a été développé en React en utilisant Vite</paragraph_t>",
+                "<paragraph_t_b>L'application mobile a été développée en Kotlin</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "particles-system",
+            "title": "Système de particules",
+            "duration": "1 mois",
+            "date": "Décembre 2021 - Janvier 2022",
+            "imagesTooltip": [
+                {
+                    "id": "fireworks",
+                    "tooltip": "Feu d'artifice"
+                },
+                {
+                    "id": "corals",
+                    "tooltip": "Coraux"
+                },
+                {
+                    "id": "selection-menu",
+                    "tooltip": "Menu de sélection"
+                },
+                {
+                    "id": "snake",
+                    "tooltip": "Jeu snake"
+                },
+                {
+                    "id": "circle",
+                    "tooltip": "Cercle"
+                }
+            ],
+            "description": [
+                "<paragraph_t>J'ai travaillé sur ce projet durant ma 1ère année de BUT Informatique en groupe de 2. Ce projet a été développé en Go en utilisant la librairie Ebiten pour l'inteface graphique. Le but était de créer un système de particules.</paragraph_t>",
+                "<paragraph_t>La première partie de ce projet consistait en des configurations basiques de particules (taux d'apparition, vitesse, taille, gravité, couleur...).</paragraph_t>",
+                "<paragraph_t>La deuxième partie consistait en la création de scènes avec des particules telles que des feux d'artifice, un feu, etc. ainsi qu'un menu de sélection pour naviguer entre les scènes.</paragraph_t>",
+                "<paragraph_t_b>Ce projet est une version simplifiée d'un système de particules qui pourrait être utilisé pour créer des effets de particules dans des jeux ou des animations.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "network-game",
+            "title": "Jeu de course en Réseau",
+            "duration": "3 semaines",
+            "date": "Novembre 2022 - Décembre 2022",
+            "imagesTooltip": [
+                {
+                    "id": "players-connection",
+                    "tooltip": "Connexion des joueurs"
+                },
+                {
+                    "id": "runner-selection",
+                    "tooltip": "Sélection du coureur"
+                },
+                {
+                    "id": "race",
+                    "tooltip": "Course"
+                }
+            ],
+            "description": [
+                "<paragraph_t>J'ai travaillé sur ce projet durant ma 2ème année de BUT Informatique en groupe de 2. Ce projet a été développé en Go en utilisant la librairie Ebiten pour l'interface graphique. Le but était de créer un jeu de course qui pourrait être joué en réseau, en utilisant une architecture serveur/client.</paragraph_t>",
+                "<paragraph_t>La première partie de ce projet consistait en la création d'une version fonctionnelle du jeu qui pourrait être jouée par plusieurs joueurs sur le même réseau.</paragraph_t>",
+                [
+                    "list",
+                    "Le serveur gère les connexions, l'état du jeu et réplique les actions d'un client aux autres",
+                    "Le client gère l'interface graphique et envoie ses actions au serveur"
+                ],
+                "<paragraph_t>La deuxième partie de ce projet consistait en l'amélioration du jeu:</paragraph_t>",
+                [
+                    "list_b",
+                    "Afficher le nombre de joueurs connectés",
+                    "Voir la sélection du coureur des autres joueurs",
+                    "S'assurer que deux joueurs ne peuvent pas sélectionner le même coureur",
+                    "..."
+                ]
+            ]
+        }
+    ]
+}

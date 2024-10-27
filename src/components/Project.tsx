@@ -72,6 +72,22 @@ const tagsList: { [key: string]: string } = {
     "Lua": "bg-[#000080]",
     "Trello": "bg-[#ff9f1a]",
     "Roblox Studio": "bg-[#3fa9f5]",
+    "Go": "bg-[#00add8]",
+    "Ebiten": "bg-[#d4531f]",
+    "C": "bg-[#6195cb]",
+    "CMake": "bg-[#3ca92a]",
+    "PHP": "bg-[#7377ad]",
+    "CSS": "bg-[#2862e9]",
+    "JavaScript": "bg-[#efd81d]",
+    "MySQL": "bg-[#dd8a00]",
+    "CodeIgniter": "bg-[#dd8a00]",
+    "UML": "bg-[#432d7b]",
+    "SQLite": "bg-[#53a8da]",
+    "Kotlin": "bg-[#d75d3a]",
+    "Prisma": "bg-[#02344c]",
+    "Hapi": "bg-[#74747c]",
+    "Swagger": "bg-[#81e32c]",
+    "Chai": "bg-[#f7eccb]",
 }
 
 type ProjectTagProps = {

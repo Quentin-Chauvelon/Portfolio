@@ -1,0 +1,228 @@
+{
+    "section-title": "ACADEMIC PROJECTS",
+    "link-to-academic-projects": "These projects are only projects I have worked on during my studies. I also spend a lot of my free time working on personal projects which you can find <0>here</0>.",
+    "navbar": [
+        {
+            "id": "ui-widget-library",
+            "name": "UI Widget Library"
+        },
+        {
+            "id": "hot-genre",
+            "name": "Oneline shopping website"
+        },
+        {
+            "id": "schedule-track",
+            "name": "Schedule Track"
+        },
+        {
+            "id": "particles-system",
+            "name": "Particles system"
+        },
+        {
+            "id": "network-game",
+            "name": "Network game"
+        }
+    ],
+    "data": [
+        {
+            "id": "ui-widget-library",
+            "title": "UI Widget Library",
+            "duration": "1 month",
+            "date": "April 2024 - May 2024",
+            "imagesTooltip": [
+                {
+                    "id": "minesweeper",
+                    "tooltip": "Minesweeper"
+                },
+                {
+                    "id": "2048",
+                    "tooltip": "2048 game"
+                },
+                {
+                    "id": "puzzle",
+                    "tooltip": "Puzzle game"
+                },
+                {
+                    "id": "grid-geometry-manager",
+                    "tooltip": "Grid geometry manager to arrange widgets in a grid"
+                },
+                {
+                    "id": "text-field",
+                    "tooltip": "Text field with text selection"
+                }
+            ],
+            "description": [
+                "<paragraph_t>This project was my end of term project for my 1st year of MSc in Computer Science in a team of 3. The goal was to create a widget library in C that would allow users to create GUIs.</paragraph_t>",
+                "<paragraph_t>With this library, simple games can be created like minesweeper or 2048.</paragraph_t>",
+                [
+                    "list_t_b",
+                    "Implemented various widgets such as frames, buttons, entries, etc. that can be instantiated, configured, positioned...",
+                    "Event handling system that allows the user to bind functions to events such as mouse clicks, key presses...",
+                    "A grid geometry manager to arrange widgets in a grid and customize it",
+                    "A parser to create GUIs from a file",
+                    "Tags that can be added/removed from widgets to personalize their behavior"
+                ]
+            ]
+        },
+        {
+            "id": "hot-genre",
+            "title": "Hot Genre",
+            "duration": "2 months",
+            "date": "November 2022 - January 2023",
+            "imagesTooltip": [
+                {
+                    "id": "account-creation",
+                    "tooltip": "Account creation"
+                },
+                {
+                    "id": "add-to-cart",
+                    "tooltip": "Add product to cart"
+                },
+                {
+                    "id": "admin-products-management",
+                    "tooltip": "Admin products management"
+                },
+                {
+                    "id": "home-page",
+                    "tooltip": "Home page"
+                },
+                {
+                    "id": "order",
+                    "tooltip": "Order process"
+                },
+                {
+                    "id": "order-summary",
+                    "tooltip": "Order summary"
+                },
+                {
+                    "id": "products",
+                    "tooltip": "Product catalog"
+                }
+            ],
+            "description": [
+                "<paragraph_t>This project was my end of term project during my 2nd year of BSc in Computer Science in a team of 5.The goal was to create an online shopping website, from client authentification to order confirmation. It has been developed in PHP with the CodeIgniter4 framework, HTML, CSS, Javascript and a MySQL database. I implemented the following features:</paragraph_t>",
+                [
+                    "list_b",
+                    "Authentification system with different roles (client, admin) + password recovery",
+                    "Product catalog with categories",
+                    "Product page with description, images, sizes",
+                    "Favorite products",
+                    "Cart and order system",
+                    "Invoice generation",
+                    "Vouchers",
+                    "Account management (personal information, cart, addresses, orders history)",
+                    "Admin dashboard to manage products, orders, clients...",
+                    "Home page with best sellers, new products..."
+                ]
+            ]
+        },
+        {
+            "id": "schedule-track",
+            "title": "Schedule Track",
+            "duration": "2 weeks",
+            "date": "April 2023 - April 2023",
+            "imagesTooltip": [
+                {
+                    "id": "schedule-view",
+                    "tooltip": "Schedule view"
+                },
+                {
+                    "id": "directions",
+                    "tooltip": "Directions synchronized with the schedule"
+                },
+                {
+                    "id": "rooms",
+                    "tooltip": "Find free rooms"
+                },
+                {
+                    "id": "professors",
+                    "tooltip": "Check a professor's availability"
+                }
+            ],
+            "description": [
+                "<paragraph_t>This project was my end of term project during my 2nd year of BSc in Computer Science in a team of 5. The goal was to create a RESTful API, a web application and a mobile application to manage schedules:</paragraph_t>",
+                [
+                    "list",
+                    "Schedules display in a calendar view (using the school's schedule API) + favorites system",
+                    "Route and departure time calculation to get to class synchronized with the schedule (using the Google Maps API)",
+                    "Find free rooms at a specific time",
+                    "Check a professor's availability at a specific time"
+                ],
+                "<paragraph_t>The API was the core of this project as it is used by the web application and the mobile application. It has been developed with Hapi and Prisma ORM, Swagger for the documentation, Chai for the tests, as well as a SQLite database. It fetches data from the school's schedule API and the Google Maps and Directions API from Google.</paragraph_t>",
+                "<paragraph_t>The web application has been developed with React using Vite.</paragraph_t>",
+                "<paragraph_t_b>The mobile application has been developed with Kotlin.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "particles-system",
+            "title": "Particles System",
+            "duration": "1 month",
+            "date": "December 2021 - January 2022",
+            "imagesTooltip": [
+                {
+                    "id": "fireworks",
+                    "tooltip": "Fireworks"
+                },
+                {
+                    "id": "corals",
+                    "tooltip": "Corals"
+                },
+                {
+                    "id": "selection-menu",
+                    "tooltip": "Selection menu"
+                },
+                {
+                    "id": "snake",
+                    "tooltip": "Snake game"
+                },
+                {
+                    "id": "circle",
+                    "tooltip": "Circle"
+                }
+            ],
+            "description": [
+                "<paragraph_t>I worked on this project during my 1st year of BSc in Computer Science in a team of 2. This project has been developed in Go using the Ebiten library for the UI. The goal was to create a particle system.</paragraph_t>",
+                "<paragraph_t>The first part of this project consisted in basic configurations of particles (spawn rate, speed, size, gravity, color...).</paragraph_t>",
+                "<paragraph_t>The second part of this project consisted in creating scenes with particles such as fireworks, a fire, etc. as well as a selection menu to navigate between the scenes.</paragraph_t>",
+                "<paragraph_t_b>This project is a simple version of a particle system that could be used to create particle effects in games or animations.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "network-game",
+            "title": "Network Game",
+            "duration": "3 weeks",
+            "date": "November 2022 - December 2022",
+            "imagesTooltip": [
+                {
+                    "id": "players-connection",
+                    "tooltip": "Players connection"
+                },
+                {
+                    "id": "runner-selection",
+                    "tooltip": "Runner selection"
+                },
+                {
+                    "id": "race",
+                    "tooltip": "Race"
+                }
+            ],
+            "description": [
+                "<paragraph_t>I worked on this project during my 2nd year of BSc in Computer Science in a team of 2. This project has been developed in Go using the Ebiten library for the UI. The goal was to create a race game that could be played over a network, using a server/client architecture.</paragraph_t>",
+                "<paragraph_t>The first part of this project was to create a working version of the game that could be played by multiple players over the same network.</paragraph_t>",
+                [
+                    "list",
+                    "The server manages the connections, game state and replicates actions from one client to the others",
+                    "The client manages the UI and sends actions to the server"
+                ],
+                "<paragraph_t>The second part of this project was to improve the game:</paragraph_t>",
+                [
+                    "list_b",
+                    "Display the number of connected players",
+                    "See other players runner selection",
+                    "Making sure two players can't select the same runner",
+                    "..."
+                ]
+            ]
+        }
+    ]
+}
