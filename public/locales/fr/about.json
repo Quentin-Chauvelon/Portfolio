@@ -1,0 +1,132 @@
+{
+    "hero": {
+        "hi": "Bonjour 👋, je suis",
+        "name": "Quentin\nChauvelon",
+        "personal-statement": "Bienvenue sur mon portfolio dans lequel vous pourrez trouver des informations sur moi, mes projets, mes expériences...",
+        "personal-statement-secondary": "Je suis actuellement à la recherche d'un stage dans le développement informatique à partir du 26 mai 2025 (de 8 à 16 semaines)."
+    },
+    "skills": {
+        "section-title": "COMPETENCES TECHNIQUES",
+        "general-purpose": "LANGAGES GENERAUX",
+        "web-development": "DEVELOPPEMENT WEB",
+        "databases": "BASES DE DONNEES",
+        "frameworks": "FRAMEWORKS",
+        "others": "AUTRES"
+    },
+    "languages": {
+        "section-title": "LANGUES",
+        "data": [
+            {
+                "id": "french",
+                "name": "Français",
+                "level": "Natif"
+            },
+            {
+                "id": "english",
+                "name": "Anglais",
+                "level": "C1 - Compétence professionnelle complète"
+            },
+            {
+                "id": "spanish",
+                "name": "Espagnol",
+                "level": "B1 - Compétence professionnelle limitée"
+            }
+        ]
+    },
+    "hobbies": {
+        "section-title": "PASSIONS",
+        "data": [
+            {
+                "id": "game-dev",
+                "title": "DEVELOPPEMENT JEUX INDIE",
+                "description": [
+                    "4 jeux développés",
+                    "Joués plus de 35k fois",
+                    "Polyvalence"
+                ]
+            },
+            {
+                "id": "reading",
+                "title": "LECTURE",
+                "description": [
+                    "200+ romans lus",
+                    "Aventure, SF, Fantastique..."
+                ]
+            },
+            {
+                "id": "table-tennis",
+                "title": "TENNIS DE TABLE",
+                "description": [
+                    "8 ans",
+                    "Compétitions en équipe",
+                    "Tournois individuels"
+                ]
+            },
+            {
+                "id": "cycling",
+                "title": "VELO",
+                "description": [
+                    "4 ans",
+                    "~550 km/mois"
+                ]
+            },
+            {
+                "id": "traveling",
+                "title": "VOYAGE",
+                "description": [
+                    "6 pays",
+                    "6 cultures"
+                ]
+            }
+        ]
+    },
+    "credits": {
+        "section-title": "CREDITS",
+        "inspiration": "Ce portfolio a été inspiré par :",
+        "free-models": {
+            "description": "Bien que j'ai fait certains modèles 3D moi-même, j'ai dû utiliser des modèles gratuits pour les objects plus complexes. Merci à ces modélistes :",
+            "data": [
+                {
+                    "id": "keyboard",
+                    "modeler-name": "Felikin Ruslan",
+                    "model-name": "Clavier"
+                },
+                {
+                    "id": "mouse",
+                    "modeler-name": "Dimitri",
+                    "model-name": "Souris"
+                },
+                {
+                    "id": "trophy",
+                    "modeler-name": "Sedayuzlu",
+                    "model-name": "Trophée"
+                },
+                {
+                    "id": "graduation-hat",
+                    "modeler-name": "Faisal Alhaddad",
+                    "model-name": "Chapeau"
+                },
+                {
+                    "id": "plant",
+                    "modeler-name": "Paul Spooner",
+                    "model-name": "Plante"
+                },
+                {
+                    "id": "chair",
+                    "modeler-name": "AK Studio",
+                    "model-name": "Fauteuil"
+                },
+                {
+                    "id": "shop",
+                    "modeler-name": "Tunnie",
+                    "model-name": "Magasin"
+                },
+                {
+                    "id": "truck",
+                    "modeler-name": "Daniel Zhabotinsky",
+                    "model-name": "Camion"
+                }
+            ]
+        }
+    }
+}

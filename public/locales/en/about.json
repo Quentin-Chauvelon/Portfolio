@@ -1,0 +1,133 @@
+{
+    "hero": {
+        "hi": "Hi there 👋, I'm",
+        "name": "Quentin\nChauvelon",
+        "personal-statement": "Welcome to my portfolio website in which you can find all information about me, my projects, my experiences and more!",
+        "personal-statement-secondary": "I am currently seeking an internship in software development from May or June (for 8 to 16 weeks)."
+    },
+    "skills": {
+        "section-title": "SKILLS",
+        "general-purpose": "GENERAL PURPOSE",
+        "web-development": "WEB DEVELOPMENT",
+        "databases": "DATABASES",
+        "frameworks": "FRAMEWORKS",
+        "others": "OTHERS"
+    },
+    "languages": {
+        "section-title": "LANGUAGES",
+        "data": [
+            {
+                "id": "french",
+                "name": "French",
+                "level": "Native"
+            },
+            {
+                "id": "english",
+                "name": "English",
+                "level": "Full professional proficiency"
+            },
+            {
+                "id": "spanish",
+                "name": "Spanish",
+                "level": "Limited working proficiency"
+            }
+        ]
+    },
+    "hobbies": {
+        "section-title": "HOBBIES",
+        "data": [
+            {
+                "id": "game-dev",
+                "title": "INDIE GAME DEV",
+                "description": [
+                    "4 games developed",
+                    "35k+ plays",
+                    "Learned both technical and soft skills"
+                ]
+            },
+            {
+                "id": "reading",
+                "title": "READING",
+                "description": [
+                    "200+ novels read",
+                    "Adventure, SF, Fantasy"
+                ]
+            },
+            {
+                "id": "table-tennis",
+                "title": "TABLE TENNIS",
+                "description": [
+                    "8 years",
+                    "Competitions in teams",
+                    "Individual tournaments"
+                ]
+            },
+            {
+                "id": "cycling",
+                "title": "CYCLING",
+                "description": [
+                    "4 years",
+                    "~550 km/month"
+                ]
+            },
+            {
+                "id": "traveling",
+                "title": "TRAVELING",
+                "description": [
+                    "6 countries",
+                    "6 cultures"
+                ]
+            }
+        ]
+    },
+    "credits": {
+        "section-title": "CREDITS",
+        "inspiration": "This portfolio website has been inspired by:",
+        "free-models": {
+            "description": "Although I have made some models myself, I had to rely on free models for more complex objects. Thank you to these talented modelers:",
+            "data": [
+                {
+                    "id": "keyboard",
+                    "modeler-name": "Felikin Ruslan",
+                    "model-name": "Keyboard"
+                },
+                {
+                    "id": "mouse",
+                    "modeler-name": "Dimitri",
+                    "model-name": "Mouse"
+                },
+                {
+                    "id": "trophy",
+                    "modeler-name": "Sedayuzlu",
+                    "model-name": "Trophy"
+                },
+                {
+                    "id": "graduation-hat",
+                    "modeler-name": "Faisal Alhaddad",
+                    "model-name": "Graduation Hat"
+                },
+                {
+                    "id": "plant",
+                    "modeler-name": "Paul Spooner",
+                    "model-name": "Plant"
+                },
+                {
+                    "id": "chair",
+                    "modeler-name": "AK Studio",
+                    "model-name": "Chair"
+                },
+                {
+                    "id": "shop",
+                    "modeler-name": "Tunnie",
+                    "model-name": "Shop"
+                },
+                {
+                    "id": "truck",
+                    "modeler-name": "Daniel Zhabotinsky",
+                    "link": "https://sketchfab.com/3d-models/light-commercial-truck-07-low-poly-model-3be03b6a43aa41898c9ca806b8787052",
+                    "model-name": "Truck"
+                }
+            ]
+        }
+    }
+}
