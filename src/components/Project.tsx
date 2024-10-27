@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { Trans, useTranslation } from 'react-i18next';
 
 import { Slide, SlideDirection } from "../components/Animation"
 import PlaceholderImage from "../components/PlaceholderImage"
@@ -7,11 +8,16 @@ import PlaceholderImage from "../components/PlaceholderImage"
 import arrow from "../assets/images/arrow.svg"
 
 
+export type ProjectNavBarItemLocalizationProps = {
+    id: string,
+    name: string
+}
+
+
 type ProjectNavBarItem = {
     name: string,
     src: string,
     language: string,
-    languageColor: string
 }
 
 type ProjectNavBarProps = {
@@ -19,14 +25,16 @@ type ProjectNavBarProps = {
 }
 
 export const ProjectNavBar = ({ items }: ProjectNavBarProps) => {
+    const { t } = useTranslation(['project_navbar']);
+
     return (
         <>
-            <p className="hidden md:block mb-2 px-8 text-center text-xs md:text-sm xl:text-xs underline">Jump to project:</p>
+            <p className="hidden md:block mb-2 px-8 text-center text-xs md:text-sm xl:text-xs underline">{t("jump-to-project")}</p>
 
             <div className="hidden md:flex justify-evenly items-center mb-12">
                 {items.map((item, index) => (
                     <div key={index} className="flex flex-col gap-1 items-center w-[16%]">
-                        <h3 className="text-xs md:text-sm xl:text-xs font-semibold">{item.name}</h3>
+                        <h3 className="text-xs md:text-sm xl:text-xs font-semibold text-center">{item.name}</h3>
                         <PlaceholderImage
                             src={"/projects/" + item.src}
                             alt={item.name}
@@ -39,7 +47,7 @@ export const ProjectNavBar = ({ items }: ProjectNavBarProps) => {
                                 })
                             }}
                         />
-                        <ProjectTag name={item.language} color={item.languageColor} />
+                        <ProjectTag name={item.language} color={tagsList[item.language]} />
                     </div>
                 ))}
             </div>
@@ -47,6 +55,24 @@ export const ProjectNavBar = ({ items }: ProjectNavBarProps) => {
     )
 }
 
+
+const tagsList: { [key: string]: string } = {
+    "React": "bg-[#61dafb]",
+    "TypeScript": "bg-[#0376c6]",
+    "HTML": "bg-[#e96228]",
+    "Tailwind CSS": "bg-[#36b7f0]",
+    "React Three Fiber": "bg-[#367cff]",
+    "Three.js": "bg-[#000000]",
+    "Vite": "bg-[#8e68f7]",
+    "Framer Motion": "bg-[#e800b5]",
+    "Figma": "bg-[#09c97f]",
+    "Blender": "bg-[#e37200]",
+    "C#": "bg-[#9b4993]",
+    "Unity 3D": "bg-[#110b09]",
+    "Lua": "bg-[#000080]",
+    "Trello": "bg-[#ff9f1a]",
+    "Roblox Studio": "bg-[#3fa9f5]",
+}
 
 type ProjectTagProps = {
     name: string,
@@ -96,13 +122,28 @@ const ImageNumberIndicator = ({ expand }: ImageNumberIndicatorProps) => {
 }
 
 
+export type ProjectCardImageTooltipLocalizationProps = {
+    id: string,
+    tooltip: string
+}
+
+export type ProjectCardLocalizationProps = {
+    id: string,
+    title: string,
+    date: string,
+    duration: string,
+    imagesTooltip: ProjectCardImageTooltipLocalizationProps[],
+    description: (string | string[])[]
+}
+
+
 type ProjectCardProps = {
     title: string,
     date: string,
     duration?: string,
     github?: string,
     id?: string,
-    tags: ProjectTagProps[],
+    tags: string[],
     images: ImageProps[],
     children: JSX.Element
 }
@@ -138,12 +179,8 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
                 {children}
 
                 <div className="flex flex-wrap gap-2">
-                    {tags.map((tag, index) => (
-                        <ProjectTag
-                            key={index}
-                            name={tag.name}
-                            color={tag.color}
-                        />
+                    {tags.map((tag, i) => (
+                        <ProjectTag key={i} name={tag} color={tagsList[tag]} />
                     ))}
                 </div>
             </div>
@@ -203,27 +240,68 @@ type ProjectCardBodyProps = {
 
 
 type ProjectCardBodyParagraphProps = {
-    text: string
+    children?: string
 }
 
 
-export const ProjectCardBodyParagraph = ({ text, marginTop, marginBottom }: ProjectCardBodyParagraphProps & ProjectCardBodyProps) => {
+export const ProjectCardBodyParagraph = ({ marginTop, marginBottom, children }: ProjectCardBodyParagraphProps & ProjectCardBodyProps) => {
     return (
-        <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>{text}</p>
+        <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>
+            {children}
+        </p>
     )
 }
 
 
 type ProjectCardBodyListProps = {
-    listItems: string[]
+    children?: string[]
 }
 
-export const ProjectCardBodyList = ({ listItems, marginTop, marginBottom }: ProjectCardBodyListProps & ProjectCardBodyProps) => {
+export const ProjectCardBodyList = ({ marginTop, marginBottom, children }: ProjectCardBodyListProps & ProjectCardBodyProps) => {
     return (
         <ul className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " ml-4 space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>
-            {listItems.map((desc, index) => (
+            {children && children.map((desc, index) => (
                 <li key={index}>{desc}</li>
             ))}
         </ul>
+    )
+}
+
+
+type ProjectCardDescriptionProps = {
+    description: (string | string[])[]
+}
+
+
+export const ProjectCardDescription = ({ description }: ProjectCardDescriptionProps) => {
+    return (
+        <>
+            {
+                description.map((descriptionItem, i) => (
+                    // If the item is a string, then it is a paragraph, otherwise it is a list
+                    (typeof descriptionItem === "string")
+                        ? (
+                            // The translated paragraph is wrapped in one of the components below in the json file to add the proper margins easily
+                            <Trans key={i} i18nKey={descriptionItem} components={{
+                                paragraph: <ProjectCardBodyParagraph />,
+                                paragraph_t: <ProjectCardBodyParagraph marginTop />,
+                                paragraph_b: <ProjectCardBodyParagraph marginBottom />,
+                                paragraph_t_b: <ProjectCardBodyParagraph marginTop marginBottom />,
+                            }} />
+                        )
+                        : (
+                            // The first element of the array describes the margin
+                            <ProjectCardBodyList
+                                key={i}
+                                marginTop={descriptionItem[0].includes("_t") ? true : false}
+                                marginBottom={descriptionItem[0].includes("_b") ? true : false}
+                            >
+                                {/* The other elements are the list items that can be passed as children to the ProjectCardBodyList component */}
+                                {descriptionItem.slice(1)}
+                            </ProjectCardBodyList>
+                        )
+                ))
+            }
+        </>
     )
 }

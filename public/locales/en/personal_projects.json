@@ -1,0 +1,160 @@
+{
+    "section-title": "PERSONAL PROJECTS",
+    "introduction": "Since I started programming, it has really become a passion of mine. That's why I spend a lot of my free time working on personal projects, from a responsive web 3D portfolio to indie video games.",
+    "link-to-academic-projects": "If you want to see other projects I have worked on, you can check my <0>academic projects</0>",
+    "navbar": [
+        {
+            "id": "portfolio",
+            "name": "Portfolio"
+        },
+        {
+            "id": "3d-ball-maze",
+            "name": "Casual mobile and web game"
+        },
+        {
+            "id": "social-media-simulator",
+            "name": "RPG game"
+        },
+        {
+            "id": "zombie-invasion-survive",
+            "name": "Survival game"
+        },
+        {
+            "id": "reve-island",
+            "name": "RPG game"
+        }
+    ],
+    "data": [
+        {
+            "id": "portfolio",
+            "title": "Portfolio",
+            "duration": "",
+            "date": "September 2024 - Present",
+            "imagesTooltip": [],
+            "description": [
+                "<paragraph_t>This is the portfolio website I created to showcase my projects and skills.</paragraph_t>",
+                "<paragraph_t>Since I'm not a designer, I knew I wouldn't be able to stand out with a basic portfolio. After seeing some other 3D portfolios, which I think looked really good, I decided to create one myself.</paragraph_t>",
+                "<paragraph_t_b>This has been a very interesting project since it has allowed me to improve my web development skills as well as learn new technologies such as 3D rendering in the browser using React Three Fiber (a React renderer for Three.js) and frameworks/libraries like Tailwind CSS or Framer Motion.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "3d-ball-maze",
+            "title": "3D Ball Maze",
+            "date": "December 2023 - Present",
+            "duration": "",
+            "imagesTooltip": [
+                {
+                    "id": "prototype",
+                    "tooltip": "Prototype of the game (with temporary assets)"
+                }
+            ],
+            "description": [
+                "<paragraph_t>3D Ball Maze is an upcoming casual mobile and web game developed in C# using the Unity 3D game engine. As a solo developer on this project, I must work on all the aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
+                [
+                    "list_b",
+                    "Implemented main gameplay mechanics (maze movement, multiple obstacles, level completion, level fail, unlocking levels...)",
+                    "Implemented data persistence both locally and on the cloud to save the player's progress",
+                    "Implemented serialization/deserialization to load/save levels from/to JSON files",
+                    "Player customization (skins)",
+                    "Automatic level fetching from the cloud",
+                    "Automatic daily updates of new levels",
+                    "Daily rewards synchronized with the cloud",
+                    "Designed and implemented a responsive UI"
+                ]
+            ]
+        },
+        {
+            "id": "social-media-simulator",
+            "title": "Social Media Simulator",
+            "date": "February 2023 - December 2023",
+            "duration": "10 months",
+            "imagesTooltip": [
+                {
+                    "id": "podium",
+                    "tooltip": "Cross-server leaderboards podium"
+                },
+                {
+                    "id": "leaderboards",
+                    "tooltip": "Cross-server leaderboards"
+                },
+                {
+                    "id": "quests",
+                    "tooltip": "Quest system"
+                },
+                {
+                    "id": "shop",
+                    "tooltip": "In-app purchases (consumables and non-consumables)"
+                },
+                {
+                    "id": "start",
+                    "tooltip": "Gameplay"
+                }
+            ],
+            "description": [
+                "<paragraph_t>Social Media Simulator is a Roblox RPG game with over 30k plays and a like ratio of 85%. This project has been developed in Lua using the Roblox Studio game engine. As a solo developer on the project, I had to work on all aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
+                [
+                    "list_b",
+                    "Implemented all mechanics including data persistence, a quest system, daily rewards, customizations, pets, leaderboards...",
+                    "Designed the UI of the game and implemented server/client communication to handle player actions, as well as updating back the UI based on the server's requests",
+                    "Implemented cross-server leaderboards",
+                    "Implemented in-app purchases (both consumables and non consumables)",
+                    "Improved my project management and organization skills"
+                ]
+            ]
+        },
+        {
+            "id": "zombie-invasion-survive",
+            "title": "Zombie Invasion: Survive",
+            "date": "May 2022 - September 2022",
+            "duration": "4 months",
+            "imagesTooltip": [
+                {
+                    "id": "zombie-pathfinding",
+                    "tooltip": "Zombie pathfinding"
+                },
+                {
+                    "id": "party-system",
+                    "tooltip": "Party system"
+                },
+                {
+                    "id": "gameplay",
+                    "tooltip": "Gameplay"
+                }
+            ],
+            "description": [
+                "<paragraph_t>Zombie Invasion: Survive is a Roblox survival game. This project has been developed in Lua using the Roblox Studio game engine. As a solo developer on the project, I had to work on all aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
+                [
+                    "Implemented all mechanics including data persistence, zombies AI, inventory system, a weapon system, a round system, various upgrades and abilities...",
+                    "Designed the UI of the game and implemented server/client communication to handle player actions, as well as updating back the UI based on the server's requests",
+                    "Implemented cross-server leaderboards",
+                    "Implemented in-app purchases (both consumables and non consumables)",
+                    "Implemented a cross-server party system to play with friends and other players"
+                ],
+                "<paragraph_t>This project was really interesting since I faced a few challenges:</paragraph_t>",
+                [
+                    "list_b",
+                    "Creating a pathfinding system for the zombies that would be able to handle up to a few hundred zombies at the same time in a complex scene. Though not perfect, a few optimizations allowed me to make it work smoothly",
+                    "Implementing a cross-server party system (inviting players, waiting for their response, synchronizing the UI between servers, teleporting players to the same server...)",
+                    "Balancing the game. Although not coding-related, balancing a game is key and I realized how hard it is to make the waves challenging but not impossible as there are many factors to tweak (zombies (spawn rate, health, speed, damage...), weapons (damage, fire rate, reload time...), player (health, speed, defense, damage, upgrades, abilities...) and more)"
+                ]
+            ]
+        },
+        {
+            "id": "reve-island",
+            "title": "Reve Island",
+            "date": "April 2019 - May 2022",
+            "duration": "3 years",
+            "imagesTooltip": [],
+            "description": [
+                "<paragraph_t>Reve Island is a Roblox RPG game. This project has been developed in Lua using the Roblox Studio game engine. As a solo developer on the project, I had to work on all aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
+                [
+                    "Implemented all mechanics including data persistence, jobs/tasks system, leveling system, daily rewards, customizations...",
+                    "Designed the UI of the game and implemented server/client communication to handle player actions, as well as updating back the UI based on the server's requests",
+                    "Implemented cross-server leaderboards",
+                    "Implemented in-app purchases (both consumables and non consumables)"
+                ],
+                "<paragraph_t_b>This was my first project of this scale and although it was really interesting and allowed me to learn greatly, it was too ambitious.</paragraph_t_b>"
+            ]
+        }
+    ]
+}

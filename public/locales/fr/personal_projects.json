@@ -1,0 +1,161 @@
+{
+    "section-title": "PROJETS PERSONNELS",
+    "introduction": "Passioné par le développement informatique, je passe une grande partie de mon temps libre à travailler sur différents projets personnels, allant du développement d'un portfolio web 3D à la création de jeux vidéo.",
+    "link-to-academic-projects": "Si vous souhaitez découvrir d'autres projets sur lesquels j'ai travaillé, rendez-vous sur mes <0>projets académiques</0>",
+    "navbar": [
+        {
+            "id": "portfolio",
+            "name": "Portfolio"
+        },
+        {
+            "id": "3d-ball-maze",
+            "name": "Jeu mobile et web d'adresse"
+        },
+        {
+            "id": "social-media-simulator",
+            "name": "Jeu RPG"
+        },
+        {
+            "id": "zombie-invasion-survive",
+            "name": "Jeu de survie"
+        },
+        {
+            "id": "reve-island",
+            "name": "Jeu RPG"
+        }
+    ],
+    "data": [
+        {
+            "id": "portfolio",
+            "title": "Portfolio",
+            "duration": "",
+            "date": "Septembre 2024 - Actuellement",
+            "imagesTooltip": [],
+            "description": [
+                "<paragraph_t>J'ai décidé de créer un portfolio afin de présenter mes projets et compétences.</paragraph_t>",
+                "<paragraph_t>N'étant pas un designer, je savais que je ne pourrais pas créer un site classique intéressant. C'est pourquoi, après vu d'autres portfolios 3D qui m'ont beaucoup plu, j'ai choisi d'en faire un moi-même.</paragraph_t>",
+                "<paragraph_t_b>Ce projet a été très intéressant puisqu'il m'a permis d'améliorer mes compétences en développement web tout en découvrant de nouvelles technologies telles que les rendus 3D dans le navigateur en utilisant React Three Fiber (moteur de rendu React pour Three.js) ainsi que de nouveaux frameworks/librairies comme Tailwind CSS ou Framer Motion.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "3d-ball-maze",
+            "title": "3D Ball Maze",
+            "date": "Décembre 2023 - Actuellement",
+            "duration": "",
+            "imagesTooltip": [
+                {
+                    "id": "prototype",
+                    "tooltip": "Prototype du jeu (avec des assets temporaires)"
+                }
+            ],
+            "description": [
+                "<paragraph_t>3D Ball Maze is jeu mobile et web d'adresse grand public (casual) à venir. Le jeu est développé en C# en utilisant le moteur de jeu Unity 3D. Travaillant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre et de m'améliorer considérablement.</paragraph_t>",
+                [
+                    "list_b",
+                    "Implémentation des mécaniques de jeu principales (rotation du labyrinthe, obstacles multiples, échec et réussite du niveau, déblocage de nouveaux niveaux...)",
+                    "Implémentation de la sauvegar des données localement et sur le cloud",
+                    "Implémentation de la sérialisation/désérialisation pour charger/sauvegarder les niveaux depuis/vers des fichiers JSON",
+                    "Personnalisation du personnage (skins)",
+                    "Téléchargement automatique des niveaux depuis le cloud",
+                    "Mise à jour automatique des nouveaux niveaux quotidiennement",
+                    "Récompenses quotidiennes synchronisées avec le cloud",
+                    "Conception et implémentation d'une interface graphique"
+                ]
+            ]
+        },
+        {
+            "id": "social-media-simulator",
+            "title": "Social Media Simulator",
+            "date": "Février 2023 - Décembre 2023",
+            "duration": "10 mois",
+            "imagesTooltip": [
+                {
+                    "id": "podium",
+                    "tooltip": "podium du classement cross-serveur"
+                },
+                {
+                    "id": "leaderboards",
+                    "tooltip": "classement cross-serveur"
+                },
+                {
+                    "id": "quests",
+                    "tooltip": "système de quêtes"
+                },
+                {
+                    "id": "shop",
+                    "tooltip": " Boutique (In-App Purchases (consommables et non-consommables))"
+                },
+                {
+                    "id": "start",
+                    "tooltip": "Gameplay"
+                }
+            ],
+            "description": [
+                "<paragraph_t>Social Media Simulator est un jeu RPG sur Roblox, joué plus de 30k fois avec un ratio de likes de 85%. Le jeu a été développé en Lua avec le moteur de jeu Roblox Studio. Travaillant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre de m'améliorer considérablement.</paragraph_t>",
+                [
+                    "list_b",
+                    "Implémentation de toutes les mécaniques de jeu, y compris la persistance des données, un système de quêtes, des récompenses quotidiennes, personnalisations, animaux de compagnie...",
+                    "Conception de l'interface graphique du jeu et implémentation de la communication client/serveur pour gérer les actions des joueurs, ainsi que la mise à jour de l'interface graphique en retour",
+                    "Implémentation d'un classement cross-serveur",
+                    "Implémentation d'une boutique (In-App Purchases (consommables et non consommables))",
+                    "Amélioration de mes compétences d'organisation et en gestion de projet"
+                ]
+            ]
+        },
+        {
+            "id": "zombie-invasion-survive",
+            "title": "Zombie Invasion: Survive",
+            "date": "Mai 2022 - Septembre 2022",
+            "duration": "4 mois",
+            "imagesTooltip": [
+                {
+                    "id": "zombie-pathfinding",
+                    "tooltip": "Système de navigation des zombies (pathfinding)"
+                },
+                {
+                    "id": "party-system",
+                    "tooltip": "Système de groupe (party)"
+                },
+                {
+                    "id": "gameplay",
+                    "tooltip": "Gameplay"
+                }
+            ],
+            "description": [
+                "<paragraph_t>Zombie Invasion: Survive est un jeu de survie sur Roblox développé en Lua avec le moteur de jeu Roblox Studio. Etant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre de m'améliorer considérablement.</paragraph_t>",
+                [
+                    "Implémentation de toutes les mécaniques de jeu, y compris la persistance des données, l'IA des zombies, un système d'inventaire, un système d'armes, un système de vagues (rounds), diverses améliorations et capacités...",
+                    "Conception de l'interface graphique du jeu et implémentation de la communication client/serveur pour gérer les actions des joueurs, ainsi que la mise à jour de l'interface graphique en retour",
+                    "Implémentation d'un classement cross-serveur",
+                    "Implémentation d'une boutique (In-App Purchases (consommables et non consommables))",
+                    "Implémentation d'un système de groupe (party) cross-serveur pour jouer avec des amis et d'autres joueurs"
+                ],
+                "<paragraph_t>Ce projet fut très intéressant car j'ai dû faire face à quelques difficultés:</paragraph_t>",
+                [
+                    "list_b",
+                    "Création d'un système de navigation pour les zombies capable de gérer jusqu'à plusieurs centaines de zombies en même temps dans une scène complexe. Bien qu'il ne soit pas parfait, quelques optimisations m'ont permis de le faire fonctionner sans problème",
+                    "Implémentation d'un système de groupe cross-serveur (inviter des joueurs, attendre leur réponse, synchroniser l'interface utilisateur entre les serveurs, téléporter les joueurs sur le même serveur...)",
+                    "Équilibrage du jeu. Bien que ce ne soit pas lié à la programmation, l'équilibrage du jeu est essentiel et j'ai réalisé à quel point il est difficile de rendre les vagues (rounds) difficiles sans pour autant être impossible car il y a de nombreux facteurs à prendre en compte (zombies (taux d'apparition, vie, vitesse, dégâts...), armes (dégâts, cadence de tir, temps de rechargement...), joueur (vie, vitesse, défense, dégâts, améliorations, capacités...), etc...)"
+                ]
+            ]
+        },
+        {
+            "id": "reve-island",
+            "title": "Reve Island",
+            "date": "Avril 2019 - Mai 2022",
+            "duration": "3 ans",
+            "imagesTooltip": [],
+            "description": [
+                "<paragraph_t>Reve Islands est un jeu RPG sur Roblox développé en Lua avec le moteur de jeu Roblox Studio. Etant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre de m'améliorer considérablement.</paragraph_t>",
+                [
+                    "list_b",
+                    "Implémentation de toutes les mécaniques de jeu, y compris la persistance des données, un système de tâches/emplois, un système de niveaux, des récompenses quotidiennes, personnalisations...",
+                    "Conception de l'interface graphique du jeu et implémentation de la communication client/serveur pour gérer les actions des joueurs, ainsi que la mise à jour de l'interface graphique en retour",
+                    "Implémentation d'un classement cross-serveur",
+                    "Implémentation d'une boutique (In-App Purchases (consommables et non consommables))"
+                ],
+                "<paragraph_t_b>Ce projet fut le premier de cette envergure et bien qu'il ait été très intéressant et m'ait permis d'apprendre énormément, il était trop ambitieux.</paragraph_t_b>"
+            ]
+        }
+    ]
+}
