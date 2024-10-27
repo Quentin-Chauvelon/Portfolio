@@ -1,4 +1,4 @@
-import { DeviceOrientation, Timeline, TimelineItem, TimelineBodyParagraph, TimelineIemLocalizationProps, TimelineBodyList, TimelineDescription } from "../components/Timeline"
+import { DeviceOrientation, Timeline, TimelineItem, TimelineIemLocalizationProps, TimelineDescription } from "../components/Timeline"
 import SectionTitle from "../components/SectionTitle"
 import SkillsList from "../components/SkillsList"
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,6 @@ import cmu from "../assets/images/education/cmu.png"
 import ensimag from "../assets/images/education/ensimag.png"
 import polytech from "../assets/images/education/polytech.png"
 import iut from "../assets/images/education/iut.png"
-import { c, python, java, kotlin, go, php, html5, css3, javascript, sql, mongodb, react, linux, git, vscode, intellij } from "../assets/images/skills_icons"
 
 import "/src/assets/styles/education.css"
 
@@ -47,7 +46,7 @@ const Education = () => {
     return (
         <div className="min-h-[100vh]">
             <SectionTitle
-                title="EDUCATION"
+                title={t("section-title")}
                 topMargin={"mt-24"}
             />
 

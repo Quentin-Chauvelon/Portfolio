@@ -1,0 +1,50 @@
+{
+    "section-title": "EXPERIENCE",
+    "data": [
+        {
+            "id": "sepamat",
+            "title": "Stagiaire Développeur",
+            "heading": "SEPAMAT",
+            "subheading": "Orvault (44)",
+            "date": "Avril 2023 - Juin 2023",
+            "description": [
+                [
+                    "list_t_b",
+                    "Développement d'une application web en PHP et SQL pour 60 agences visant à faciliter, accélérer et permettre une meilleure organisation du processus d'assurances",
+                    "Développement d'une application en C# avec le framework .NET pour envoyer automatiquement par courrier les factures de plus 100 clients chaque mois",
+                    "Développement d'un tableau de bord en C# avec le framework ASP.NET pour contrôler les envois automatiques de factures",
+                    "Implémentation d'un nouveal tableau de bord fournissant diverses statistiques sur l'applicatif de ticketing utilisée par l'entreprise, en HTML, CSS et JavaScript avec la librairie Highcharts"
+                ]
+            ]
+        },
+        {
+            "id": "u_express",
+            "title": "Employé commercial",
+            "heading": "U Express Les Marines",
+            "subheading": "Saint-Hilaire-de-Riez (85)",
+            "date": "Tous les étés depuis 2020",
+            "description": [
+                [
+                    "list_t_b",
+                    "Mise en rayon",
+                    "Formation des nouveaux arrivants",
+                    "Responsable de mon rayon pendant 3 semaines en autonomie"
+                ]
+            ]
+        },
+        {
+            "id": "super_u_banchais",
+            "title": "Employé commercial",
+            "heading": "Super U Les Banchais",
+            "subheading": "Saint-Barthélemy-d'Anjou, France",
+            "date": "Octobre 2020 - Février 2021",
+            "description": [
+                "<paragraph_t>J'ai travaillé au Super U Les Banchais, en parallèle de mes études, le week-end et durant les vacances</paragraph_t>",
+                [
+                    "list_t_b",
+                    "Mise en rayon"
+                ]
+            ]
+        }
+    ]
+}
