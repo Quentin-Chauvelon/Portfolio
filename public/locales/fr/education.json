@@ -1,0 +1,76 @@
+{
+    "section-title": "EDUCATION",
+    "data": [
+        {
+            "id": "cmu",
+            "title": "Carnegie Mellon University",
+            "heading": "Echange d'un semestre - Informatique",
+            "subheading": "Pittsburgh, PA",
+            "date": "Janvier 2025 - Mai 2025",
+            "description": [
+                "<paragraph_t>Je vais effectuer un échange d'un semestre à Carnegie Mellon Unversity durant le 2ème semestre 2025.</paragraph_t>",
+                "<paragraph_t>Cours:</paragraph_t>",
+                [
+                    "list_b",
+                    "Algorithms and Advanced Data Structures (15351)",
+                    "Introduction to Machine Learning (10601)",
+                    "Computer Graphics (15462)"
+                ]
+            ]
+        },
+        {
+            "id": "ensimag",
+            "title": "Grenoble INP - ENSIMAG",
+            "heading": "Diplôme d'ingénieur en informatique et mathématiques appliquées",
+            "subheading": "Grenoble, France",
+            "date": "Septembre 2023 - Actuellement",
+            "description": [
+                "<paragraph_t>Sujets étudiés:</paragraph_t>",
+                [
+                    "list_b",
+                    "Algorithmes et structures de données",
+                    "Programmation (Java, C, Python...)",
+                    "Bases de données",
+                    "Réseaux et sécurité",
+                    "Systèmes d'exploitation",
+                    "Architecture des ordinateurs",
+                    "Recherche opérationnelle",
+                    "THéorie de l'information",
+                    "Théorie des langages et automates",
+                    "Algèbre linéaire, Analyse, Probabilités, Statistiques..."
+                ]
+            ]
+        },
+        {
+            "id": "polytech",
+            "title": "Polytech Nantes",
+            "heading": "Classe préparatoire intégrée en informatique et mathématiques",
+            "subheading": "Nantes, France",
+            "date": "2021 - 2023",
+            "description": [
+                "<paragraph_t_b>J'ai effectué une classe préparatoire intégrée en parallèle de mon BUT Informatique. Cela m'a permis d'acquérir des connaissances générales (en mathématiques notamment) comme dans une classe préparatoire classique tout en me permettant de développer mes compétences en informatique grâce à mon BUT et au stage que j'ai pu réaliser</paragraph_b>"
+            ]
+        },
+        {
+            "id": "iut",
+            "title": "IUT Nantes",
+            "heading": "BUT Informatique",
+            "subheading": "Nantes, France",
+            "date": "2021 - 2023",
+            "description": [
+                "<paragraph_t>Sujets étudiés:</paragraph_t>",
+                [
+                    "list_b",
+                    "Algorithmes et structures de données",
+                    "Programmation (Go, Kotlin, Python...)",
+                    "Bases de données (SQL, MongoDB)",
+                    "Réseaux et sécurité",
+                    "Systèmes d'exploitation",
+                    "Architecture des ordinateurs",
+                    "Théorie des langages et automates",
+                    "Mathématiques discrètes, Algèbre linéaire et Probabilités"
+                ]
+            ]
+        }
+    ]
+}

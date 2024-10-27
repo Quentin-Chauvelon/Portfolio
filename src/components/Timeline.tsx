@@ -1,3 +1,4 @@
+import { Trans } from "react-i18next"
 import { Slide, SlideDirection } from "./Animation"
 
 import "/src/assets/styles/timeline.css"
@@ -59,7 +60,7 @@ export type TimelineIemLocalizationProps = {
     heading: string,
     subheading: string,
     date: string,
-    description: string[]
+    description: (string | string[])[]
 }
 
 export const TimelineItem = ({ image, backgroundColor, ...props }: TimelineItemProps & TimelineItemContentContainerProps) => {
@@ -145,11 +146,6 @@ type TimelineItemBodyParagraphProps = {
 }
 
 
-// type TimelineItemBodyParagraphProps = {
-//     text?: string
-// }
-
-
 export const TimelineBodyParagraph = ({ marginTop, marginBottom, children }: TimelineItemBodyParagraphProps & TimelineItemBodyProps) => {
     return (
         <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>{children}</p>
@@ -157,23 +153,55 @@ export const TimelineBodyParagraph = ({ marginTop, marginBottom, children }: Tim
 }
 
 
-// export const TimelineBodyParagraph = ({ text, marginTop, marginBottom }: TimelineItemBodyParagraphProps & TimelineItemBodyProps) => {
-//     return (
-//         <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>{text}</p>
-//     )
-// }
-
-
 type TimelineItemBodyListProps = {
-    listItems: string[]
+    children?: string[]
 }
 
-export const TimelineBodyList = ({ listItems, marginTop, marginBottom }: TimelineItemBodyListProps & TimelineItemBodyProps) => {
+export const TimelineBodyList = ({ marginTop, marginBottom, children }: TimelineItemBodyListProps & TimelineItemBodyProps) => {
     return (
         <ul className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " ml-4 space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>
-            {listItems.map((desc, index) => (
+            {children && children.map((desc, index) => (
                 <li key={index}>{desc}</li>
             ))}
         </ul>
+    )
+}
+
+
+type TimelineDescriptionProps = {
+    description: (string | string[])[]
+}
+
+
+export const TimelineDescription = ({ description }: TimelineDescriptionProps) => {
+    return (
+        <>
+            {
+                description.map((descriptionItem, i) => (
+                    // If the item is a string, then it is a paragraph, otherwise it is a list
+                    (typeof descriptionItem === "string")
+                        ? (
+                            // The translated paragraph is wrapped in one of the components below in the json file to add the proper margins easily
+                            <Trans key={i} i18nKey={descriptionItem} components={{
+                                paragraph: <TimelineBodyParagraph />,
+                                paragraph_t: <TimelineBodyParagraph marginTop />,
+                                paragraph_b: <TimelineBodyParagraph marginBottom />,
+                                paragraph_t_b: <TimelineBodyParagraph marginTop marginBottom />,
+                            }} />
+                        )
+                        : (
+                            // The first element of the array describes the margin
+                            <TimelineBodyList
+                                key={i}
+                                marginTop={descriptionItem[0].includes("_t") ? true : false}
+                                marginBottom={descriptionItem[0].includes("_b") ? true : false}
+                            >
+                                {/* The other elements are the list items that can be passed as children to the TimelineBodyList component */}
+                                {descriptionItem.slice(1)}
+                            </TimelineBodyList>
+                        )
+                ))
+            }
+        </>
     )
 }

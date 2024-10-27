@@ -1,6 +1,6 @@
-import { DeviceOrientation, Timeline, TimelineItem, TimelineIemLocalizationProps, TimelineBodyParagraph } from "../components/Timeline"
+import { DeviceOrientation, Timeline, TimelineItem, TimelineIemLocalizationProps, TimelineDescription } from "../components/Timeline"
 import SectionTitle from "../components/SectionTitle"
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import axa from "../assets/images/certifications/axa.svg"
 import creditMutuel from "../assets/images/certifications/credit-mutuel.svg"
@@ -54,18 +54,9 @@ const Certifications = () => {
                             orientation={orientation}
                             even={i % 2 === 0}
                         >
-                            <>
-                                {
-                                    certification.description.map((paragraph) => (
-                                        <Trans i18nKey={paragraph} components={{
-                                            paragraph: <TimelineBodyParagraph />,
-                                            paragraph_t: <TimelineBodyParagraph marginTop />,
-                                            paragraph_b: <TimelineBodyParagraph marginBottom />,
-                                            paragraph_t_b: <TimelineBodyParagraph marginTop marginBottom />,
-                                        }} />
-                                    ))
-                                }
-                            </>
+                            <TimelineDescription
+                                description={certification.description}
+                            />
                         </TimelineItem>
                     ))
                 }
