@@ -1,0 +1,43 @@
+{
+    "section-title": "CERTIFICATIONS",
+    "data": [
+        {
+            "id": "axa",
+            "title": "Challenge du Meilleur Etudiant en Informatique de France 2024",
+            "heading": "Top Scorer",
+            "subheading": "Délivré par AXA",
+            "date": "Octobre 2024",
+            "description": [
+                "<paragraph_t_b>Challenge où il faut répondre à une série de questions sur différents thèmes (cybersécurité, développement, data, infrastructure, cloud, AI etc.) dans un temps limité.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "ets",
+            "title": "TOEFL iBT",
+            "heading": "109/120 (C1)",
+            "subheading": "Délivré par l'ETS",
+            "date": "Avril 2024",
+            "description": []
+        },
+        {
+            "id": "axa",
+            "title": "Challenge du Meilleur Etudiant en Informatique de France 2023",
+            "heading": "Top Scorer",
+            "subheading": "Délivré par AXA",
+            "date": "Novembre 2023",
+            "description": [
+                "<paragraph_t_b>Challenge où il faut répondre à une série de questions sur différents thèmes (cybersécurité, développement, data, infrastructure, cloud, AI etc.) dans un temps limité.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "euroInformation",
+            "title": "Concours de code Euro-Information",
+            "heading": "11ème sur 295",
+            "subheading": "Délivré par Euro-Information (Groupe Crédit Mutuel)",
+            "date": "Octobre 2023",
+            "description": [
+                "<paragraph_t_b>Concours de code où il faut résoudre jusqu'à 5 problèmes algorithmiques en 2 heures.</paragraph_t_b>"
+            ]
+        }
+    ]
+}

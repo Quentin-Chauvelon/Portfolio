@@ -1,5 +1,6 @@
-import { DeviceOrientation, Timeline, TimelineItem, TimelineBodyParagraph } from "../components/Timeline"
+import { DeviceOrientation, Timeline, TimelineItem, TimelineIemLocalizationProps, TimelineBodyParagraph } from "../components/Timeline"
 import SectionTitle from "../components/SectionTitle"
+import { useTranslation, Trans } from 'react-i18next';
 
 import axa from "../assets/images/certifications/axa.svg"
 import creditMutuel from "../assets/images/certifications/credit-mutuel.svg"
@@ -10,92 +11,64 @@ import "/src/assets/styles/certifications.css"
 
 const Certifications = () => {
     const orientation = window.innerWidth > 1024 ? DeviceOrientation.Landscape : DeviceOrientation.Portrait;
+    const { t } = useTranslation(['certifications']);
+
+    const certificationsImages: { [key: string]: string } = {
+        axa: axa,
+        euroInformation: creditMutuel,
+        ets: ets
+    }
+
+    const certificationsBackgroundColors: { [key: string]: string } = {
+        axa: "bg-[--axa-color]",
+        euroInformation: "bg-[--credit-mutuel-color]",
+        ets: "bg-[--ets-color]"
+    }
+
+    const certificationsBorderColors: { [key: string]: string } = {
+        axa: "border-[--axa-color]",
+        euroInformation: "border-[--credit-mutuel-color]",
+        ets: "border-[--ets-color]"
+    }
 
     return (
         <div className="min-h-[100vh]">
+
             <SectionTitle
-                title="CERTIFICATIONS"
-                topMargin={"mt-24"}
+                title={t("section-title")}
+                topMargin="mt-24"
             />
 
             <Timeline>
-                <TimelineItem
-                    image={axa}
-                    title="Best French Computer Science Student 2024"
-                    heading="Top Scorer"
-                    subHeading="Issued by AXA Group"
-                    date="October 2024"
-                    backgroundColor="bg-[--axa-color]"
-                    borderColor="border-[--axa-color]"
-                    orientation={orientation}
-                    even={true}
-                >
-                    <>
-                        <TimelineBodyParagraph
-                            text="This is a challenge where you have to answers a series of questions about various topics (Cybersecurity, Programming, Data, Cloud, etc.) in a limited time."
-                            marginTop
-                            marginBottom
-                        />
-                    </>
-                </TimelineItem>
-
-                <TimelineItem
-                    image={ets}
-                    title="TOEFL iBT"
-                    heading="109/120 (C1 - Full professional proficiency)"
-                    subHeading="Issued by ETS"
-                    date="April 2024"
-                    backgroundColor="bg-[--ets-color]"
-                    borderColor="border-[--ets-color]"
-                    orientation={orientation}
-                    even={false}
-                >
-                    <></>
-                </TimelineItem>
-
-                <TimelineItem
-                    image={axa}
-                    title="Best French Computer Science Student 2023"
-                    heading="Top Scorer"
-                    subHeading="Issued by AXA Group"
-                    date="November 2023"
-                    backgroundColor="bg-[--axa-color]"
-                    borderColor="border-[--axa-color]"
-                    orientation={orientation}
-                    even={true}
-                >
-                    <>
-                        <TimelineBodyParagraph
-                            text="This is a challenge where you have to answers a series of questions about various topics (Cybersecurity, Programming, Data, Cloud, etc.) in a limited time."
-                            marginTop
-                            marginBottom
-                        />
-                    </>
-                </TimelineItem>
-
-                <TimelineItem
-                    image={creditMutuel}
-                    title="Euro-Information Code Contest"
-                    heading="Ranked 11th out of 295"
-                    subHeading="Issued by Euro-Information (Crédit Mutuel Group)"
-                    date="October 2023"
-                    backgroundColor="bg-[--credit-mutuel-color]"
-                    borderColor="border-[--credit-mutuel-color]"
-                    orientation={orientation}
-                    even={false}
-                >
-                    <>
-                        <TimelineBodyParagraph
-                            text="Competitive programming contest where you have to solve up to 5 algorithmic problems in 2 hours."
-                            marginTop
-                        />
-
-                        <TimelineBodyParagraph
-                            text="This contest has been organized by Euro-Information, the IT subsidiary of the Crédit Mutuel Group."
-                            marginBottom
-                        />
-                    </>
-                </TimelineItem>
+                {
+                    t<'data', { returnObjects: true }, TimelineIemLocalizationProps[]>("data", { returnObjects: true }).map((certification, i) => (
+                        < TimelineItem
+                            key={i}
+                            image={certificationsImages[certification.id]}
+                            title={certification.title}
+                            heading={certification.heading}
+                            subHeading={certification.subheading}
+                            date={certification.date}
+                            backgroundColor={certificationsBackgroundColors[certification.id]}
+                            borderColor={certificationsBorderColors[certification.id]}
+                            orientation={orientation}
+                            even={i % 2 === 0}
+                        >
+                            <>
+                                {
+                                    certification.description.map((paragraph) => (
+                                        <Trans i18nKey={paragraph} components={{
+                                            paragraph: <TimelineBodyParagraph />,
+                                            paragraph_t: <TimelineBodyParagraph marginTop />,
+                                            paragraph_b: <TimelineBodyParagraph marginBottom />,
+                                            paragraph_t_b: <TimelineBodyParagraph marginTop marginBottom />,
+                                        }} />
+                                    ))
+                                }
+                            </>
+                        </TimelineItem>
+                    ))
+                }
             </Timeline>
         </div>
     )

@@ -1,0 +1,46 @@
+{
+    "section-title": "CERTIFICATIONS",
+    "data": [
+        {
+            "id": "axa",
+            "title": "Best French Computer Science Student Challenge 2024",
+            "heading": "Top Scorer",
+            "subheading": "Issued by AXA Group",
+            "date": "October 2024",
+            "description": [
+                "<paragraph_t_b>This is a challenge where you have to answers a series of questions about various topics (Cybersecurity, Programming, Data, Cloud, etc.) in a limited time.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "ets",
+            "title": "TOEFL iBT",
+            "heading": "109/120 (C1 - Full professional proficiency)",
+            "subheading": "Issued by ETS",
+            "date": "April 2024",
+            "description": [
+                "<paragraph_t_b>The TOEFL is a major standardized test to measure the English language ability of non-native speakers.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "axa",
+            "title": "Best French Computer Science Student Challenge 2023",
+            "heading": "Top Scorer",
+            "subheading": "Issued by AXA Group",
+            "date": "November 2023",
+            "description": [
+                "<paragraph_t_b>This is a challenge where you have to answers a series of questions about various topics (Cybersecurity, Programming, Data, Cloud, etc.) in a limited time.</paragraph_t_b>"
+            ]
+        },
+        {
+            "id": "euroInformation",
+            "title": "Euro-Information Code Contest",
+            "heading": "Ranked 11th out of 295",
+            "subheading": "Issued by Euro-Information (Crédit Mutuel Group)",
+            "date": "October 2023",
+            "description": [
+                "<paragraph_t>Competitive programming contest where you have to solve up to 5 algorithmic problems in 2 hours.</paragraph_t>",
+                "<paragraph_b>This contest has been organized by Euro-Information, the IT subsidiary of the Crédit Mutuel Group.</paragraph_b>"
+            ]
+        }
+    ]
+}

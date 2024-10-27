@@ -52,6 +52,16 @@ type TimelineItemProps = {
     backgroundColor: string
 }
 
+
+export type TimelineIemLocalizationProps = {
+    id: string,
+    title: string,
+    heading: string,
+    subheading: string,
+    date: string,
+    description: string[]
+}
+
 export const TimelineItem = ({ image, backgroundColor, ...props }: TimelineItemProps & TimelineItemContentContainerProps) => {
     return (
         <div className={"flex justify-center " + (props.orientation === DeviceOrientation.Landscape && props.even ? "flex-row-reverse" : "flex-row") + " gap-1 md:gap-3 p-3"}>
@@ -131,15 +141,27 @@ type TimelineItemBodyProps = {
 
 
 type TimelineItemBodyParagraphProps = {
-    text: string
+    children?: string
 }
 
 
-export const TimelineBodyParagraph = ({ text, marginTop, marginBottom }: TimelineItemBodyParagraphProps & TimelineItemBodyProps) => {
+// type TimelineItemBodyParagraphProps = {
+//     text?: string
+// }
+
+
+export const TimelineBodyParagraph = ({ marginTop, marginBottom, children }: TimelineItemBodyParagraphProps & TimelineItemBodyProps) => {
     return (
-        <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>{text}</p>
+        <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>{children}</p>
     )
 }
+
+
+// export const TimelineBodyParagraph = ({ text, marginTop, marginBottom }: TimelineItemBodyParagraphProps & TimelineItemBodyProps) => {
+//     return (
+//         <p className={(marginTop ? "mt-3 " : "") + (marginBottom ? " mb-3 " : "") + " space-y-2 text-xs md:text-base xl:text-xs leading-5 font-extralight list-disc"}>{text}</p>
+//     )
+// }
 
 
 type TimelineItemBodyListProps = {
