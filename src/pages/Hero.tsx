@@ -7,7 +7,7 @@ import "/src/assets/styles/hero.css"
 
 import picture1 from "/src/assets/images/picture-1.png"
 import picture2 from "/src/assets/images/picture-2.png"
-
+import { useTranslation } from 'react-i18next'
 
 type HeroLinkProps = {
     link: string,
@@ -35,6 +35,8 @@ type HeroProps = {
 }
 
 const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
+    const { t } = useTranslation(['hero'])
+
     function cameraToDeskAnimation() {
         if (window.innerHeight > window.innerWidth * 1.5) {
             // TODO: use toast instead of alert?
@@ -92,8 +94,8 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
         <>
             <section id="hero-section-container" className="relative flex flex-col gap-8 justify-between xl:justify-normal items-center xl:items-stretch xl:top-[--hero-section-top] xl:left-[--hero-section-left] w-full xl:w-[--hero-section-width] h-full xl:h-[calc(100%-var(--hero-section-top))] text-[#f4faff] font-extrabold leading-none">
                 <div className='flex flex-wrap w-full text-4xl md:text-6xl mt-4 xl:mt-0 pl-12 xl:pl-0'>
-                    <h1 id="hero-title-1" className='w-full'>Hi, I'm</h1>
-                    <h1 id="hero-title-2" className="ml-2 xl:ml-0 bg-gradient-to-r gradient-bp bg-clip-text text-transparent [text-shadow:_-7px_-7px_#e9f0f7] xl:[text-shadow:_0_0_rgba(0,0,0,0)] shadow-white;">Quentin</h1>
+                    <h1 id="hero-title-1" className='w-full'>{t("title.hi")}</h1>
+                    <h1 id="hero-title-2" className="ml-2 xl:ml-0 bg-gradient-to-r gradient-bp bg-clip-text text-transparent [text-shadow:_-7px_-7px_#e9f0f7] xl:[text-shadow:_0_0_rgba(0,0,0,0)] shadow-white;">{t("title.name")}</h1>
                     <h1 id="hero-title-3" className="wave">&nbsp;👋</h1>
                 </div>
 
@@ -111,7 +113,7 @@ const Hero = ({ cameraManagerRef, portfolioOpened }: HeroProps) => {
                         <div className='bottom-8 left-1/2 px-4 py-2 bg-[--hero-bg-color] rounded-full'>
                             <h2 className="gradient-animation font-bold bg-gradient-to-r from-[--bg-gradient-from] to-[--bg-gradient-to] bg-clip-text text-transparent text-base md:text-2xl rounded-2xl">
                                 <i className="fa fa-regular fa-user pl-1 pr-3"></i>
-                                VIEW PORTFOLIO
+                                {t("view-portfolio")}
                             </h2>
                         </div>
                     </button>
