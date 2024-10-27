@@ -1,14 +1,16 @@
 import { Text } from '@react-three/drei'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
-// The second letter must be doubled, otherwise it is skipped for some reason
-const text = "Click on an item outlined in yellow to learn more";
 const speed = 80;
 
 const InstructionsText = () => {
     const [instructionText, setInstructionText] = useState("")
     const [caret, setCaret] = useState(false)
     const [lastCaretChange, setLastCaretChange] = useState(0)
+    const { t } = useTranslation(['scene']);
+
+    const text = t("instructions-text");
 
     useEffect(() => {
         let i = 0;
