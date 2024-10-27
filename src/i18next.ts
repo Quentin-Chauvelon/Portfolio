@@ -14,3 +14,16 @@ i18n
             escapeValue: false
         },
     });
+
+
+enum Language {
+    English = "en",
+    French = "fr"
+}
+
+const getCurrentLanguage = () => {
+    return i18n.language.includes(Language.French) ? Language.French : Language.English;
+}
+
+export { getCurrentLanguage, Language };
+export default i18n;

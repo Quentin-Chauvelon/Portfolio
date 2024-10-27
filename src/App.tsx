@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom"
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Scene from "./pages/Scene";
@@ -33,49 +33,51 @@ function App() {
                 <Scene
                     hasLanguageChanged={hasLanguageChanged}
                 />
-                <section className="relative overflow-auto overflow-x-hidden bg-[--bg-color] text-[--color]">
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={<></>}
-                        />
-                        <Route
-                            path="/about"
-                            element={<About />}
-                        />
-                        <Route
-                            path="/resume"
-                            element={<Resume />}
-                        />
-                        <Route
-                            path="/experience"
-                            element={<Experience />}
-                        />
-                        <Route
-                            path="/education"
-                            element={<Education />}
-                        />
-                        <Route
-                            path="/certifications"
-                            element={<Certifications />}
-                        />
-                        <Route
-                            path="/personal-projects"
-                            element={<PersonalProjects />}
-                        />
-                        <Route
-                            path="/academic-projects"
-                            element={<AcademicProjects />}
-                        />
-                        <Route
-                            path="*"
-                            element={<NotFound />}
-                        />
-                    </Routes>
-                </section>
-                <LanguageSwitcher
-                    changeLanguage={changeLanguage}
-                />
+                <Suspense fallback={null}>
+                    <section className="relative overflow-auto overflow-x-hidden bg-[--bg-color] text-[--color]">
+                        <Routes>
+                            <Route
+                                path="/"
+                                element={<></>}
+                            />
+                            <Route
+                                path="/about"
+                                element={<About />}
+                            />
+                            <Route
+                                path="/resume"
+                                element={<Resume />}
+                            />
+                            <Route
+                                path="/experience"
+                                element={<Experience />}
+                            />
+                            <Route
+                                path="/education"
+                                element={<Education />}
+                            />
+                            <Route
+                                path="/certifications"
+                                element={<Certifications />}
+                            />
+                            <Route
+                                path="/personal-projects"
+                                element={<PersonalProjects />}
+                            />
+                            <Route
+                                path="/academic-projects"
+                                element={<AcademicProjects />}
+                            />
+                            <Route
+                                path="*"
+                                element={<NotFound />}
+                            />
+                        </Routes>
+                    </section>
+                    <LanguageSwitcher
+                        changeLanguage={changeLanguage}
+                    />
+                </Suspense>
             </BrowserRouter >
         </>
     )
