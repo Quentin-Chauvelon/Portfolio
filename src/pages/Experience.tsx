@@ -6,7 +6,6 @@ import "/src/assets/styles/experience.css"
 
 import sepamat from "/src/assets/images/experience/sepamat.png"
 import uExpress from "/src/assets/images/experience/u-express.png"
-import { php, cSharp, html5, css3, javascript, dotnetCore, git, vscode, postman, sqlServer, visualStudio } from "../assets/images/skills_icons"
 
 
 const Experience = () => {
@@ -45,19 +44,7 @@ const Experience = () => {
                     />
 
                         <SkillsList
-                            skills={{
-                                ["SQL Server"]: sqlServer,
-                                ["PHP"]: php,
-                                ["HTML5"]: html5,
-                                ["CSS3"]: css3,
-                                ["JavaScript"]: javascript,
-                                ["C#"]: cSharp,
-                                [".NET Core"]: dotnetCore,
-                                ["Visual Studio Code"]: vscode,
-                                ["Visual Studio"]: visualStudio,
-                                ["Git"]: git,
-                                ["Postman"]: postman,
-                            }}
+                            skills={["SQL Server", "PHP", "HTML5", "CSS3", "JavaScript", "C#", ".NET Core", "Visual Studio Code", "Visual Studio", "Git", "Postman"]}
                             borderColor="border-[--sepamat-color]"
                         />
                     </>

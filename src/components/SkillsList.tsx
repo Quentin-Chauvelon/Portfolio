@@ -1,7 +1,42 @@
 import { Fade } from "./Animation"
 
+import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, sql, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, agile, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
+
+const skillsList: { [key: string]: string } = {
+    ["Lua"]: lua,
+    ["C"]: c,
+    ["C#"]: cSharp,
+    ["Python"]: python,
+    ["Java"]: java,
+    ["Kotlin"]: kotlin,
+    ["Go"]: go,
+    ["PHP"]: php,
+    ["HTML5"]: html5,
+    ["CSS3"]: css3,
+    ["JavaScript"]: javascript,
+    ["TypeScript"]: typescript,
+    ["SQL"]: sql,
+    ["MySQL"]: mysql,
+    ["SQL Server"]: sqlServer,
+    ["SQLite"]: sqlite,
+    ["MongoDB"]: mongodb,
+    [".NET Core"]: dotnetCore,
+    ["React"]: react,
+    ["Tailwind CSS"]: tailwindCss,
+    ["CodeIgniter"]: codeigniter,
+    ["Linux"]: linux,
+    ["Git"]: git,
+    ["Agile"]: agile,
+    ["VS Code"]: vscode,
+    ["IntelliJ IDEA"]: intellij,
+    ["Postman"]: postman,
+    ["Vite"]: vite,
+    ["Bash"]: bash,
+    ["Node.js"]: nodejs
+}
+
 type SkillsListProps = {
-    skills: { [string: string]: string },
+    skills: string[],
     borderColor: string,
     align?: "justify-center" | "justify-start" | "justify-end"
 }
@@ -10,7 +45,7 @@ const SkillsList = ({ skills, borderColor, align }: SkillsListProps) => {
     return (
         <div className={"flex " + (align ? align : "justify-center") + " w-full"} >
             {
-                Object.keys(skills).map((skill, i) => (
+                Object.keys(skills.reduce((acc, skill) => ({ ...acc, [skill]: skillsList[skill] }), {})).map((skill, i) => (
                     <Fade
                         fromValue={0}
                         toValue={1}
@@ -19,7 +54,7 @@ const SkillsList = ({ skills, borderColor, align }: SkillsListProps) => {
                         styles={"flex justify-center items-center -mx-1 p-[0.35rem] aspect-square rounded-full border-2 bg-[--white] w-[48px] " + borderColor + " tooltip"}
                         data={{ ["data-tooltip"]: skill }}
                     >
-                        <img src={skills[skill] as string} alt={skill} className={"w-full h-full"} />
+                        <img src={skillsList[skill] as string} alt={skill} className={"w-full h-full"} />
                     </Fade>
                 ))
             }

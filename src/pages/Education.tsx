@@ -23,25 +23,6 @@ const Education = () => {
         iut: iut
     }
 
-    const skills: { [key: string]: string } = {
-        ["Python"]: python,
-        ["Java"]: java,
-        ["C"]: c,
-        ["Kotlin"]: kotlin,
-        ["Go"]: go,
-        ["PHP"]: php,
-        ["HTML5"]: html5,
-        ["CSS3"]: css3,
-        ["JavaScript"]: javascript,
-        ["SQL"]: sql,
-        ["MongoDB"]: mongodb,
-        ["React"]: react,
-        ["Linux"]: linux,
-        ["Git"]: git,
-        ["VS Code"]: vscode,
-        ["IntelliJ IDEA"]: intellij
-    }
-
     const educationSkills: { [key: string]: string[] } = {
         cmu: [],
         ensimag: ["Python", "Java", "C", "SQL", "Git", "Linux", "VS Code"],
@@ -91,7 +72,7 @@ const Education = () => {
                                 />
 
                                 <SkillsList
-                                    skills={educationSkills[education.id].reduce((acc, skill) => ({ ...acc, [skill]: skills[skill] }), {})}
+                                    skills={educationSkills[education.id]}
                                     borderColor={educationBorderColors[education.id]}
                                 />
                             </>

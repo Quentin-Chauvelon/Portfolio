@@ -18,7 +18,6 @@ import book from "../assets/images/hobbies/book.svg"
 import tableTennis from "../assets/images/hobbies/table-tennis.svg"
 import bicycle from "../assets/images/hobbies/bicycle.svg"
 import plane from "../assets/images/hobbies/plane.svg"
-import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, agile, vscode, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
 
 
 type LinkProps = {
@@ -41,7 +40,7 @@ type SkillsCardProps = {
     textColor: string,
     borderColor: string,
     icon: IconDefinition,
-    skills: { [string: string]: string },
+    skills: string[],
 }
 
 const SkillsCard = ({ title, backgroundColor, textColor, borderColor, icon, skills }: SkillsCardProps) => {
@@ -251,15 +250,7 @@ const Skills = () => {
                     textColor="text-[--skills-general-color] dark:text-[--skills-general-color-dark]"
                     borderColor="border-[--skills-general-color] dark:border-[--skills-general-color-dark]"
                     icon={faCode}
-                    skills={{
-                        ["Lua"]: lua,
-                        ["C"]: c,
-                        ["C#"]: cSharp,
-                        ["Python"]: python,
-                        ["Java"]: java,
-                        ["Kotlin"]: kotlin,
-                        ["Go"]: go,
-                    }}
+                    skills={["Lua", "C", "C#", "Python", "Java", "Kotlin", "Go"]}
                 />
                 <SkillsCard
                     title={t("skills.web-development")}
@@ -267,13 +258,7 @@ const Skills = () => {
                     textColor="text-[--skills-web-color] dark:text-[--skills-web-color-dark]"
                     borderColor="border-[--skills-web-color] dark:border-[--skills-web-color-dark]"
                     icon={faGlobe}
-                    skills={{
-                        ["PHP"]: php,
-                        ["HTML5"]: html5,
-                        ["CSS3"]: css3,
-                        ["JavaScript"]: javascript,
-                        ["TypeScript"]: typescript,
-                    }}
+                    skills={["PHP", "HTML5", "CSS3", "JavaScript", "TypeScript"]}
                 />
                 <SkillsCard
                     title={t("skills.databases")}
@@ -281,12 +266,7 @@ const Skills = () => {
                     textColor="text-[--skills-databases-color] dark:text-[--skills-databases-color-dark]"
                     borderColor="border-[--skills-databases-color] dark:border-[--skills-databases-color-dark]"
                     icon={faDatabase}
-                    skills={{
-                        ["MySQL"]: mysql,
-                        ["SQL Server"]: sqlServer,
-                        ["SQLite"]: sqlite,
-                        ["MongoDB"]: mongodb,
-                    }}
+                    skills={["MySQL", "SQL Server", "SQLite", "MongoDB"]}
                 />
                 <SkillsCard
                     title={t("skills.frameworks")}
@@ -294,12 +274,7 @@ const Skills = () => {
                     textColor="text-[--skills-frameworks-color] dark:text-[--skills-frameworks-color-dark]"
                     borderColor="border-[--skills-frameworks-color] dark:border-[--skills-frameworks-color-dark]"
                     icon={faCertificate}
-                    skills={{
-                        [".NET Core"]: dotnetCore,
-                        ["ReactJS"]: react,
-                        ["TailwindCSS"]: tailwindCss,
-                        ["CodeIgniter4"]: codeigniter,
-                    }}
+                    skills={[".NET Core", "React", "Tailwind CSS", "CodeIgniter"]}
                 />
                 <SkillsCard
                     title={t("skills.others")}
@@ -307,17 +282,7 @@ const Skills = () => {
                     textColor="text-[--skills-others-color] dark:text-[--skills-others-color-dark]"
                     borderColor="border-[--skills-others-color] dark:border-[--skills-others-color-dark]"
                     icon={faComputer}
-                    skills={{
-                        ["Linux"]: linux,
-                        ["Git"]: git,
-                        ["Agile"]: agile,
-                        ["VS Code"]: vscode,
-                        ["IntelliJ"]: intellij,
-                        ["Postman"]: postman,
-                        ["Vite"]: vite,
-                        ["Bash"]: bash,
-                        ["NodeJS"]: nodejs,
-                    }}
+                    skills={["Linux", "Git", "Agile", "VS Code", "IntelliJ IDEA", "Postman", "Vite", "Bash", "Node.js"]}
                 />
             </div>
         </>
