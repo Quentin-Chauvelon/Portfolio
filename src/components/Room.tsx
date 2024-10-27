@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { Box, useGLTF, Text } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
+import { useTranslation } from 'react-i18next';
 
 import roomScene from "../assets/models/Portfolio.glb";
 import ClickableItem from './ClickableItem';
@@ -237,6 +238,7 @@ type RoomProps = {
 
 const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
+  const { t } = useTranslation(['scene']);
 
   const scaleZero = new THREE.Vector3(0, 0, 0);
   const scaleOne = new THREE.Vector3(1, 1, 1);
@@ -1399,7 +1401,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
         rotation={[Math.PI / 2, 3.2, -1]}
         maxWidth={1}
       >
-        Seeking a summer 2025 internship in software development
+        {t("paper-text")}
       </Text>
     </a.group>
   )
