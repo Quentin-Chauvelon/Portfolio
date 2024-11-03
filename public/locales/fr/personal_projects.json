@@ -28,7 +28,7 @@
         {
             "id": "portfolio",
             "title": "Portfolio",
-            "duration": "",
+            "duration": "~250 heures",
             "date": "Septembre 2024 - Actuellement",
             "imagesTooltip": [],
             "description": [
@@ -41,7 +41,7 @@
             "id": "3d-ball-maze",
             "title": "3D Ball Maze",
             "date": "Décembre 2023 - Actuellement",
-            "duration": "",
+            "duration": "~600 heures",
             "imagesTooltip": [
                 {
                     "id": "prototype",
@@ -67,7 +67,7 @@
             "id": "social-media-simulator",
             "title": "Social Media Simulator",
             "date": "Février 2023 - Décembre 2023",
-            "duration": "10 mois",
+            "duration": "10 mois (~500 heures)",
             "imagesTooltip": [
                 {
                     "id": "podium",
@@ -106,7 +106,7 @@
             "id": "zombie-invasion-survive",
             "title": "Zombie Invasion: Survive",
             "date": "Mai 2022 - Septembre 2022",
-            "duration": "4 mois",
+            "duration": "4 mois (~500 heures)",
             "imagesTooltip": [
                 {
                     "id": "zombie-pathfinding",
@@ -143,7 +143,7 @@
             "id": "reve-island",
             "title": "Reve Island",
             "date": "Avril 2019 - Mai 2022",
-            "duration": "3 ans",
+            "duration": "3 ans (1500-2000 heures)",
             "imagesTooltip": [],
             "description": [
                 "<paragraph_t>Reve Islands est un jeu RPG sur Roblox développé en Lua avec le moteur de jeu Roblox Studio. Etant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre de m'améliorer considérablement.</paragraph_t>",

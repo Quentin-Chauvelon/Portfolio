@@ -27,7 +27,7 @@
         {
             "id": "ui-widget-library",
             "title": "Librairie Graphique",
-            "duration": "1 mois",
+            "duration": "1 mois (~120 heures)",
             "date": "Avril 2024 - Mai 2024",
             "imagesTooltip": [
                 {
@@ -67,7 +67,7 @@
         {
             "id": "hot-genre",
             "title": "Hot Genre",
-            "duration": "2 mois",
+            "duration": "2 mois (~300 heures)",
             "date": "Novembre 2022 - Janvier 2023",
             "imagesTooltip": [
                 {
@@ -119,7 +119,7 @@
         {
             "id": "schedule-track",
             "title": "Schedule Track",
-            "duration": "2 semaines",
+            "duration": "2 semaines (~75 heures)",
             "date": "Avril 2023 - Avril 2023",
             "imagesTooltip": [
                 {
@@ -156,7 +156,7 @@
         {
             "id": "particles-system",
             "title": "Système de particules",
-            "duration": "1 mois",
+            "duration": "1 mois (~100 heures)",
             "date": "Décembre 2021 - Janvier 2022",
             "imagesTooltip": [
                 {
@@ -190,7 +190,7 @@
         {
             "id": "network-game",
             "title": "Jeu de course en Réseau",
-            "duration": "3 semaines",
+            "duration": "3 semaines (50-75 heures)",
             "date": "Novembre 2022 - Décembre 2022",
             "imagesTooltip": [
                 {
