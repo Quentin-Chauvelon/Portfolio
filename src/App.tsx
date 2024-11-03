@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom"
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 
 import Scene from "./pages/Scene";

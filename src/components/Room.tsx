@@ -13,7 +13,7 @@ import resume from "/src/assets/images/Resume.jpg";
 
 import coding from "../assets/images/monitor/coding.png"
 import big_o from "../assets/images/monitor/big_o.png"
-import leetcode from "../assets/images/monitor/leetcode.png"
+// import leetcode from "../assets/images/monitor/leetcode.png"
 import craking_the_coding_interview from "../assets/images/monitor/cracking_the_coding_interview.png"
 
 type GLTFResult = GLTF & {

@@ -121,9 +121,9 @@ const HobbyCard = ({ title, icon, description, backgroundColor }: HobbyProps) =>
         <Slide
             direction={SlideDirection.Top}
             translationValue={150}
-            styles="flex aspect-[1.8/1] md:aspect-[2.11/1] justify-between gap-6 w-4/5 md:w-2/5 2xl:w-1/4 px-4 py-4 bg-[--white] rounded-lg card-shadow text-sm md:text-lg font-semibold"
+            styles="flex aspect-[1.8/1] md:aspect-[2/1] justify-between gap-6 w-4/5 md:w-2/5 2xl:w-1/4 px-4 py-4 bg-[--white] rounded-lg card-shadow text-sm md:text-lg font-semibold"
         >
-            <div className="flex flex-col min-w-[55%]">
+            <div className="flex flex-col min-w-[55%] md:min-w-[60%] lg:min-w-[55%]">
                 <h3 className="text-sm md:text-lg xl:text-base">{title}</h3>
 
                 <ul className="my-auto list-disc font-extralight text-xs md:text-base xl:text-xs ml-8">
@@ -133,7 +133,7 @@ const HobbyCard = ({ title, icon, description, backgroundColor }: HobbyProps) =>
                 </ul>
             </div>
 
-            <div className={"flex justify-center items-center m-6 md:m-5 2xl:m-6 p-4 aspect-square bg-[" + backgroundColor + "] rounded-full"}>
+            <div className={"flex justify-center items-center m-6 md:mr-8 md:my-8 2xl:m-6 p-4 aspect-square bg-[" + backgroundColor + "] rounded-full"}>
                 <img src={icon} alt={title} className="object-contain" />
             </div>
         </Slide>
@@ -415,8 +415,9 @@ const Credits = () => {
                 <p>{t("credits.free-models.description")}</p>
                 <ul>
                     {
-                        t<'credits.free-models.data', { returnObjects: true }, CreditsLocalizationProps[]>("credits.free-models.data", { returnObjects: true }).map((model) => (
+                        t<'credits.free-models.data', { returnObjects: true }, CreditsLocalizationProps[]>("credits.free-models.data", { returnObjects: true }).map((model, i) => (
                             <CreditsModelLink
+                                key={i}
                                 name={model["modeler-name"]}
                                 modelName={model["model-name"]}
                                 link={links[model.id]}

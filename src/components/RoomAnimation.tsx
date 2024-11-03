@@ -77,7 +77,7 @@ const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted,
     // Use an object to store the stopTween property so that we can pass it by reference
     // Otherwise, when the tween is running, it doesn't have access to the updated state
     // values(eg: hasRoomAnimationEnded)
-    const [stopTween, setStopTween] = useState({ stop: false });
+    const [stopTween, _] = useState({ stop: false });
 
     if (hasRoomAnimationEnded && !stopTween.stop) {
         stopTween.stop = true;
