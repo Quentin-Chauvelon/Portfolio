@@ -11,6 +11,11 @@ import { Item } from '../Items';
 import roomScene from "../assets/models/Portfolio.glb";
 import resume from "/src/assets/images/Resume.jpg";
 
+import coding from "../assets/images/monitor/coding.png"
+import big_o from "../assets/images/monitor/big_o.png"
+import leetcode from "../assets/images/monitor/leetcode.png"
+import craking_the_coding_interview from "../assets/images/monitor/cracking_the_coding_interview.png"
+
 type GLTFResult = GLTF & {
   nodes: {
     BackWall: THREE.Mesh
@@ -230,22 +235,41 @@ const posterMaterials: THREE.Material[] = [
   whiteMaterial
 ];
 
+const monitorImages = [coding, big_o, craking_the_coding_interview];
+let monitorTextures = monitorImages.map(image => new THREE.TextureLoader().load(image));
+
+for (let i = 0; i < monitorTextures.length; i++) {
+  monitorTextures[i].minFilter = THREE.LinearFilter;
+}
+
 
 type RoomProps = {
   group: JSX.IntrinsicElements['group'],
   portfolioOpened: boolean,
+  firstItemSelected: boolean,
   objectScales: ObjectAnimationProperties,
   hasRoomAnimationStarted: boolean,
   hasRoomAnimationEnded: boolean,
 }
 
 
-const Room = ({ group, portfolioOpened, objectScales, hasRoomAnimationStarted, hasRoomAnimationEnded }: RoomProps) => {
+const Room = ({ group, portfolioOpened, firstItemSelected, objectScales, hasRoomAnimationStarted, hasRoomAnimationEnded }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
   const { t } = useTranslation(['scene']);
 
   const vector3Zero = new THREE.Vector3(0, 0, 0);
   const vector3One = new THREE.Vector3(1, 1, 1);
+
+  const monitorTexture = monitorTextures[Math.floor(Math.random() * monitorTextures.length)];
+
+  const monitorMaterials: THREE.Material[] = [
+    whiteMaterial,
+    whiteMaterial,
+    new THREE.MeshBasicMaterial({ map: monitorTexture }),
+    whiteMaterial,
+    whiteMaterial,
+    whiteMaterial,
+  ];
 
   return (
     <a.group {...group} dispose={null}>
@@ -1365,6 +1389,13 @@ const Room = ({ group, portfolioOpened, objectScales, hasRoomAnimationStarted, h
         material={posterMaterials}
         position={[-6.81, 2.585, 4.567]}
         // rotation={[0, -0.262, -Math.PI / 2]}
+      />
+      <Box
+        visible={portfolioOpened && firstItemSelected}
+        scale={new THREE.Vector3(2.8, 0.1, 1.65)}
+        material={monitorMaterials}
+        position={[-5.597, -1.05, -0.85]}
+        rotation={[Math.PI / 2, 0, -1.8]}
       />
       <mesh
         name="BackWall"

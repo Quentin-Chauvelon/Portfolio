@@ -135,6 +135,7 @@ const Scene = () => {
                                 rotation: [0.7 * Math.PI / 4, -Math.PI / 4, 0]
                                 }}
                                 portfolioOpened={portfolioOpened}
+                                firstItemSelected={firstItemSelected}
                                 objectScales={objectScales}
                                 hasRoomAnimationStarted={hasRoomAnimationStarted}
                                 hasRoomAnimationEnded={hasRoomAnimationEnded}
