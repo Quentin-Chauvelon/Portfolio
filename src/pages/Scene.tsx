@@ -16,19 +16,30 @@ import RoomAnimation from '../components/RoomAnimation'
 import NavBar from '../components/NavBar'
 import InstructionsText from '../components/InstructionsText'
 
-import { Item, ItemsRoutesMap } from '../Items'
+import { Item, ItemsRoutesMap, ObjectsList } from '../Items'
 
 
 const ItemClickedContext = createContext<(item: Item) => void>(() => { });
 
-type SceneProps = {
-    hasLanguageChanged: boolean;
-}
+export type ObjectAnimationProperties = {
+    [key: string]: THREE.Vector3
+};
 
-const Scene = ({ hasLanguageChanged }: SceneProps) => {
+const Scene = () => {
     const [portfolioOpened, setPortfolioOpened] = useState(false);
     const [firstItemSelected, setFirstItemSelected] = useState(false);
     const [selectedItem, setSelectedItem] = useState(Item.None);
+
+    // Save the scale and position of each object in the scene when animating them
+    // This prevents issues where re-rendering the scene would reset the scale and
+    // position of the objects (eg: when changing the language)
+    const [objectScales, setObjectScales] = useState<ObjectAnimationProperties>(
+        ObjectsList.reduce((acc, object) => {
+            acc[object as string] = new THREE.Vector3(1, 1, 1);
+            return acc;
+        }, {} as ObjectAnimationProperties)
+    );
+
     const cameraManager = useRef<CameraRefType>();
     const navigate = useNavigate();
 
@@ -36,7 +47,7 @@ const Scene = ({ hasLanguageChanged }: SceneProps) => {
         setPortfolioOpened(true);
     }
 
-    const skipRoomAnimation = false || hasLanguageChanged;
+    const skipRoomAnimation = false;
 
     const onItemSelected = (item: Item) => {
         if (!firstItemSelected && item !== Item.None) {
@@ -59,7 +70,12 @@ const Scene = ({ hasLanguageChanged }: SceneProps) => {
                 shadows={true}
                 linear={true}
             >
-                {!portfolioOpened && !skipRoomAnimation && <RoomAnimation />}
+                {!portfolioOpened && !skipRoomAnimation &&
+                    <RoomAnimation
+                        objectScales={objectScales}
+                        setObjectScales={setObjectScales}
+                    />
+                }
 
                 <CameraManager {...{
                     portfolioOpened: portfolioOpened,
@@ -98,9 +114,9 @@ const Scene = ({ hasLanguageChanged }: SceneProps) => {
                             group={{
                                 position: [0, 0, -15],
                                 rotation: [0.7 * Math.PI / 4, -Math.PI / 4, 0]
-                            }}
-                                playAnimation={!portfolioOpened && !skipRoomAnimation}
+                                }}
                                 portfolioOpened={portfolioOpened}
+                                objectScales={objectScales}
                         />
 
                         </SelectionTest>

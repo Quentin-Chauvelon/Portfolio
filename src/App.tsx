@@ -19,20 +19,15 @@ import LanguageSwitcher from "./components/LanguageSwitcher";
 
 function App() {
     const { i18n } = useTranslation()
-    const [hasLanguageChanged, setHasLanguageChanged] = useState(false);
-
 
     const changeLanguage = (lng: string) => {
-        setHasLanguageChanged(true);
         i18n.changeLanguage(lng)
     }
 
     return (
         <>
             <BrowserRouter>
-                <Scene
-                    hasLanguageChanged={hasLanguageChanged}
-                />
+                <Scene />
                 <Suspense fallback={null}>
                     <section className="relative overflow-auto overflow-x-hidden bg-[--bg-color] text-[--color]">
                         <Routes>

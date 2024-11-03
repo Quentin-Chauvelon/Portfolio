@@ -4,6 +4,8 @@ import { useProgress } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { Easing, Group, Tween } from '@tweenjs/tween.js';
 
+import { ObjectAnimationProperties } from "../pages/Scene";
+
 
 enum ObjectsToTween {
     Floor = "Floor",
@@ -59,8 +61,15 @@ const defaultDuration = 500;
 const vector3Zero = new THREE.Vector3(0, 0, 0);
 
 
-const RoomAnimation = () => {
+type RoomAnimationProps = {
+    objectScales: ObjectAnimationProperties,
+    setObjectScales: (objectScales: ObjectAnimationProperties) => void,
+}
+
+
+const RoomAnimation = ({ objectScales, setObjectScales }: RoomAnimationProps) => {
     const [isAnimationReady, setIsAnimationReady] = useState(false);
+    const [hasRoomAnimationStarted, setHasRoomAnimationStarted] = useState(false);
 
     const { active } = useProgress();
     const { scene } = useThree();
@@ -69,7 +78,7 @@ const RoomAnimation = () => {
         if (!active) {
             setTimeout(() => {
                 setupObjectsToTween();
-            }, 1500)
+            }, 750)
         }
 
         if (isAnimationReady) {
@@ -86,6 +95,13 @@ const RoomAnimation = () => {
             .easing(easing)
             .onUpdate(() => {
                 object.object.scale.set(scale.x, scale.y, scale.z);
+
+                let objectScale = objectScales[object.object.name];
+                objectScale.x = scale.x;
+                objectScale.y = scale.y;
+                objectScale.z = scale.z;
+
+                setObjectScales({ ...objectScales });
             });
     }
 
@@ -95,11 +111,6 @@ const RoomAnimation = () => {
         object.object.position.setY(object.position.y + object.translation.y);
         object.object.position.setZ(object.position.z + object.translation.z);
 
-        if (object.object.name == "Papers") {
-            console.log(object.object.position, object.position);
-
-        }
-
         const values = { x: 0, y: 0, z: 0, pX: object.object.position.x, pY: object.object.position.y, pZ: object.object.position.z };
 
         return new Tween(values)
@@ -108,6 +119,13 @@ const RoomAnimation = () => {
             .onUpdate(() => {
                 object.object.scale.set(values.x, values.y, values.z);
                 object.object.position.set(values.pX, values.pY, values.pZ);
+
+                let objectScale = objectScales[object.object.name];
+                objectScale.x = values.x;
+                objectScale.y = values.y;
+                objectScale.z = values.z;
+
+                setObjectScales({ ...objectScales });
             });
     }
 
@@ -173,6 +191,12 @@ const RoomAnimation = () => {
 
 
     const startAnimation = () => {
+        if (hasRoomAnimationStarted) {
+            return;
+        }
+
+        setHasRoomAnimationStarted(true);
+
         const group = initTween();
 
         // Start the first 3 tweens (other ones are chained together)

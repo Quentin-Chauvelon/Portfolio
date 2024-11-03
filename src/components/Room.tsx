@@ -4,9 +4,11 @@ import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
 import { useTranslation } from 'react-i18next';
 
-import roomScene from "../assets/models/Portfolio.glb";
+import { ObjectAnimationProperties } from '../pages/Scene';
 import ClickableItem from './ClickableItem';
 import { Item } from '../Items';
+
+import roomScene from "../assets/models/Portfolio.glb";
 import resume from "/src/assets/images/Resume.jpg";
 
 type GLTFResult = GLTF & {
@@ -231,24 +233,21 @@ const posterMaterials: THREE.Material[] = [
 
 type RoomProps = {
   group: JSX.IntrinsicElements['group'],
-  playAnimation: boolean,
   portfolioOpened: boolean,
+  objectScales: ObjectAnimationProperties,
 }
 
 
-const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
+const Room = ({ group, portfolioOpened, objectScales }: RoomProps) => {
   const { nodes, materials } = useGLTF(roomScene) as GLTFResult
   const { t } = useTranslation(['scene']);
-
-  const scaleZero = new THREE.Vector3(0, 0, 0);
-  const scaleOne = new THREE.Vector3(1, 1, 1);
 
   return (
     <a.group {...group} dispose={null}>
       <ClickableItem
         item={Item.Certifications}
       >
-        <group name="Trophy" scale={playAnimation ? scaleZero : scaleOne} position={[-5.937, -2.397, -6.067]} rotation={[Math.PI / 2, 0, -1.067]}>
+        <group name="Trophy" scale={objectScales["Trophy"]} position={[-5.937, -2.397, -6.067]} rotation={[Math.PI / 2, 0, -1.067]}>
           <mesh
             castShadow
             receiveShadow
@@ -302,7 +301,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.Education}
       >
-        <group name="GraduationHat" scale={playAnimation ? scaleZero : scaleOne} position={[-3.437, -2.169, -5.624]}>
+        <group name="GraduationHat" scale={objectScales["GraduationHat"]} position={[-3.437, -2.169, -5.624]}>
           <mesh
             castShadow
             receiveShadow
@@ -356,7 +355,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           />
         </group>
       </ClickableItem>
-      <group name="Plant" scale={playAnimation ? scaleZero : scaleOne} position={[-0.345, 0, 6.993]} rotation={[Math.PI / 2, 0, 0]}>
+      <group name="Plant" scale={objectScales["Plant"]} position={[-0.345, 0, 6.993]} rotation={[Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, -0.576, -Math.PI]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
             <group position={[0, 0, -1.392]}>
@@ -470,14 +469,14 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       </group>
       <mesh
         name="Floor"
-        scale={playAnimation ? scaleZero : scaleOne}
+        scale={objectScales["Floor"]}
         castShadow
         receiveShadow
         geometry={nodes.Floor.geometry}
         material={materials.Floor}
         position={[0.173, -7.065, 0.212]}
       />
-      <group name="Monitors" scale={playAnimation ? scaleZero : scaleOne} position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
+      <group name="Monitors" scale={objectScales["Monitors"]} position={[-1.459, 4, 0.015]} rotation={[0, 0.262, 0]}>
         <mesh
           castShadow
           receiveShadow
@@ -509,7 +508,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           rotation={[0, 1.571, 0]}
         />
       </group>
-      <group name="Keyboard" scale={playAnimation ? scaleZero : scaleOne} position={[-3.19, -2.296, -2.293]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
+      <group name="Keyboard" scale={objectScales["Keyboard"]} position={[-3.19, -2.296, -2.293]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
         <mesh
           castShadow
           receiveShadow
@@ -527,7 +526,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           rotation={[-1.443, -Math.PI / 2, 0]}
         />
       </group>
-      <group name="Mouse" scale={playAnimation ? scaleZero : scaleOne} position={[-3.165, -2.349, -4.127]} rotation={[0, Math.PI / 2, 0]}>
+      <group name="Mouse" scale={objectScales["Mouse"]} position={[-3.165, -2.349, -4.127]} rotation={[0, Math.PI / 2, 0]}>
         <mesh
           castShadow
           receiveShadow
@@ -541,7 +540,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           material={materials.Monitor}
         />
       </group>
-      <group name="Desk" scale={playAnimation ? scaleZero : scaleOne} position={[0, 4, 0]}>
+      <group name="Desk" scale={objectScales["Desk"]} position={[0, 4, 0]}>
         <mesh
           castShadow
           receiveShadow
@@ -578,7 +577,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           />
         </group>
       </group>
-      <group name="Books" scale={playAnimation ? scaleZero : scaleOne} position={[-6.308, 1.111, -6.305]}>
+      <group name="Books" scale={objectScales["Books"]} position={[-6.308, 1.111, -6.305]}>
         <group position={[0.003, 0.095, -0.378]}>
           <mesh
             castShadow
@@ -653,7 +652,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.PersonalProjects}
       >
-        <group name="PersonalProjects" scale={playAnimation ? scaleZero : scaleOne} position={[-6.412, 1.066, 0.847]} rotation={[-Math.PI, 0, -2.313]}>
+        <group name="PersonalProjects" scale={objectScales["PersonalProjects"]} position={[-6.412, 1.066, 0.847]} rotation={[-Math.PI, 0, -2.313]}>
           <mesh
             castShadow
             receiveShadow
@@ -700,7 +699,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           />
         </group>
       </ClickableItem>
-      <group name="Papers" scale={playAnimation ? scaleZero : scaleOne} position={[-3.58, -2.336, 0.553]}>
+      <group name="Papers" scale={objectScales["Papers"]} position={[-3.58, -2.336, 0.553]}>
         <mesh
           castShadow
           receiveShadow
@@ -725,7 +724,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           rotation={[0.028, 0.486, -0.014]}
         />
       </group>
-      <group name="PenHolder" scale={playAnimation ? scaleZero : scaleOne} position={[-5.135, -2.107, 1.325]}>
+      <group name="PenHolder" scale={objectScales["PenHolder"]} position={[-5.135, -2.107, 1.325]}>
         <group position={[-0.095, 0.235, -0.151]} rotation={[-0.109, -0.11, 0.099]}>
           <mesh
             castShadow
@@ -833,7 +832,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           material={materials.Maze}
         />
       </group>
-      <group name="Chair" scale={playAnimation ? scaleZero : scaleOne} position={[-0.929, -3.607, -2.356]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
+      <group name="Chair" scale={objectScales["Chair"]} position={[-0.929, -3.607, -2.356]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
         <mesh
           castShadow
           receiveShadow
@@ -961,7 +960,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
           />
         </group>
       </group>
-      <group name="Clock" scale={playAnimation ? scaleZero : scaleOne} position={[-6.716, 3.973, -2.322]}>
+      <group name="Clock" scale={objectScales["Clock"]} position={[-6.716, 3.973, -2.322]}>
         <mesh
           castShadow
           receiveShadow
@@ -1003,7 +1002,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       </group>
       <mesh
         name="Window"
-        scale={playAnimation ? scaleZero : scaleOne}
+        scale={objectScales["Window"]}
         castShadow
         receiveShadow
         geometry={nodes.Window.geometry}
@@ -1012,7 +1011,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       />
       <mesh
         name="Mat"
-        scale={playAnimation ? scaleZero : scaleOne}
+        scale={objectScales["Mat"]}
         castShadow
         receiveShadow
         geometry={nodes.Mat.geometry}
@@ -1022,7 +1021,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.About}
       >
-        <group name="About" scale={playAnimation ? scaleZero : scaleOne} position={[-6.122, 0.742, -1.688]}>
+        <group name="About" scale={objectScales["About"]} position={[-6.122, 0.742, -1.688]}>
           <mesh
             castShadow
             receiveShadow
@@ -1042,7 +1041,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.AcademicProjects}
       >
-        <group name="AcademicProjects" scale={playAnimation ? scaleZero : scaleOne} position={[-6.288, 1.117, -4.172]} rotation={[0, Math.PI / 2, 0]}>
+        <group name="AcademicProjects" scale={objectScales["AcademicProjects"]} position={[-6.288, 1.117, -4.172]} rotation={[0, Math.PI / 2, 0]}>
           <mesh
             castShadow
             receiveShadow
@@ -1222,7 +1221,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       <ClickableItem
         item={Item.Experience}
       >
-        <group name="Experience" scale={playAnimation ? scaleZero : scaleOne} position={[-4.333, -1.979, -2.446]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
+        <group name="Experience" scale={objectScales["Experience"]} position={[-4.333, -1.979, -2.446]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
           <mesh
             castShadow
             receiveShadow
@@ -1341,7 +1340,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       >
         <Box
           name="Resume"
-          scale={playAnimation ? scaleZero : new THREE.Vector3(1.6, 0.1, 1.14)}
+          scale={objectScales["Resume"]}
           castShadow
           receiveShadow
           material={resumeMaterials}
@@ -1351,7 +1350,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       </ClickableItem>
       <Box
         name="Poster"
-        scale={playAnimation ? scaleZero : new THREE.Vector3(0.1, 4, 3)}
+        scale={objectScales["Poster"]}
         castShadow
         receiveShadow
         material={posterMaterials}
@@ -1360,7 +1359,7 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       />
       <mesh
         name="BackWall"
-        scale={playAnimation ? scaleZero : scaleOne}
+        scale={objectScales["BackWall"]}
         castShadow
         receiveShadow
         geometry={nodes.BackWall.geometry}
@@ -1369,14 +1368,14 @@ const Room = ({ group, playAnimation, portfolioOpened }: RoomProps) => {
       />
       <mesh
         name="RightWall"
-        scale={playAnimation ? scaleZero : scaleOne}
+        scale={objectScales["RightWall"]}
         castShadow
         receiveShadow
         geometry={nodes.RightWall.geometry}
         material={materials.Wall}
         position={[-5.827, -0.065, -6.988]}
       />
-      <group name="Shelf" scale={playAnimation ? scaleZero : scaleOne} position={[-6.227, 0.521, -2.288]}>
+      <group name="Shelf" scale={objectScales["Shelf"]} position={[-6.227, 0.521, -2.288]}>
         <mesh
           castShadow
           receiveShadow
