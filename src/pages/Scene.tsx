@@ -49,6 +49,10 @@ const Scene = () => {
         setPortfolioOpened(true);
     }
 
+    if (location.pathname === "/" && selectedItem !== Item.None) {
+        setSelectedItem(Item.None);
+    }
+
     const skipRoomAnimation = false;
 
     if (skipRoomAnimation && !hasRoomAnimationEnded) {
@@ -71,7 +75,6 @@ const Scene = () => {
 
         setPortfolioOpened(visible);
     }
-
 
     return (
         <>
