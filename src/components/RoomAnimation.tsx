@@ -149,15 +149,15 @@ const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted,
         const backWallTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.BackWall], 1000, Easing.Back.Out);
         const rightWallTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.RightWall], 1000, Easing.Back.Out);
         const windowTween = initScaleTween(objectsToTween[ObjectsToTween.Window], defaultDuration, Easing.Back.Out);
-        const deskTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.Desk], defaultDuration, Easing.Back.Out);
-        const plantTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.Plant], defaultDuration, Easing.Back.Out);
+        const deskTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.Desk], defaultDuration, Easing.Back.Out).delay(200);
+        const plantTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.Plant], defaultDuration, Easing.Back.Out).delay(400);
         const posterTween = initScaleTween(objectsToTween[ObjectsToTween.Poster], defaultDuration, Easing.Back.Out, { x: 0.1, y: 4, z: 3 }).delay(200);
         const clockTween = initScaleTween(objectsToTween[ObjectsToTween.Clock], defaultDuration, Easing.Back.Out).delay(400);
         const matTween = initScaleTween(objectsToTween[ObjectsToTween.Mat], defaultDuration, Easing.Back.Out).delay(600);
         const monitorsTween = initScaleFromPositionTween(objectsToTween[ObjectsToTween.Monitors], defaultDuration, Easing.Back.Out);
-        const keyboardTween = initScaleTween(objectsToTween[ObjectsToTween.Keyboard], defaultDuration, Easing.Back.Out);
-        const mouseTween = initScaleTween(objectsToTween[ObjectsToTween.Mouse], defaultDuration, Easing.Back.Out).delay(200);
-        const resumeTween = initScaleTween(objectsToTween[ObjectsToTween.Resume], defaultDuration, Easing.Back.Out, { x: 1.6, y: 0.1, z: 1.14 }).delay(400);
+        const keyboardTween = initScaleTween(objectsToTween[ObjectsToTween.Keyboard], defaultDuration, Easing.Back.Out).delay(200);
+        const mouseTween = initScaleTween(objectsToTween[ObjectsToTween.Mouse], defaultDuration, Easing.Back.Out).delay(400);
+        const resumeTween = initScaleTween(objectsToTween[ObjectsToTween.Resume], defaultDuration, Easing.Back.Out, { x: 1.6, y: 0.1, z: 1.14 }).delay(600);
         const paperTween = initScaleTween(objectsToTween[ObjectsToTween.Papers], defaultDuration, Easing.Back.Out);
         const penHolderTween = initScaleTween(objectsToTween[ObjectsToTween.PenHolder], defaultDuration, Easing.Back.Out).delay(200);
         const experienceTween = initScaleTween(objectsToTween[ObjectsToTween.Experience], defaultDuration, Easing.Back.Out).delay(400);
@@ -181,15 +181,13 @@ const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted,
                 objectsToTween[ObjectsToTween.Chair].object.rotation.set(Math.PI / 2, 0, 9 * Math.PI / 2);
             });
 
-        floorTween.chain(windowTween)
-        windowTween.chain(deskTween);
-        deskTween.chain(plantTween, posterTween, clockTween, matTween);
-        posterTween.chain(monitorsTween);
-        monitorsTween.chain(keyboardTween, mouseTween, resumeTween);
+        floorTween.chain(windowTween, deskTween, plantTween)
+        windowTween.chain(posterTween, clockTween, matTween);
+        posterTween.chain(monitorsTween, keyboardTween, mouseTween, resumeTween);
         mouseTween.chain(paperTween, penHolderTween, experienceTween, graduationHatTween, trophyTween);
-        trophyTween.chain(shelfTween);
+        experienceTween.chain(shelfTween);
         shelfTween.chain(personalProjectsTween, aboutTween, academicProjectsTween, booksTween);
-        booksTween.chain(chairTween);
+        aboutTween.chain(chairTween);
         chairTween.chain(chairRotationTween);
 
         // Put all the tweens in a group so we can call update on that group
