@@ -55,7 +55,7 @@ const Scene = () => {
 
     const skipRoomAnimation = false;
 
-    if (skipRoomAnimation && !hasRoomAnimationEnded) {
+    if ((skipRoomAnimation || portfolioOpened) && !hasRoomAnimationEnded) {
         setHasRoomAnimationEnded(true);
     }
 
