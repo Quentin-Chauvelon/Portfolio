@@ -64,12 +64,24 @@ const vector3Zero = new THREE.Vector3(0, 0, 0);
 type RoomAnimationProps = {
     objectScales: ObjectAnimationProperties,
     setObjectScales: (objectScales: ObjectAnimationProperties) => void,
+    hasRoomAnimationStarted: boolean,
+    setHasRoomAnimationStarted: (hasRoomAnimationStarted: boolean) => void,
+    hasRoomAnimationEnded: boolean,
+    setHasRoomAnimationEnded: (hasRoomAnimationEnded: boolean) => void,
 }
 
 
-const RoomAnimation = ({ objectScales, setObjectScales }: RoomAnimationProps) => {
+const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted, setHasRoomAnimationStarted, hasRoomAnimationEnded, setHasRoomAnimationEnded }: RoomAnimationProps) => {
     const [isAnimationReady, setIsAnimationReady] = useState(false);
-    const [hasRoomAnimationStarted, setHasRoomAnimationStarted] = useState(false);
+
+    // Use an object to store the stopTween property so that we can pass it by reference
+    // Otherwise, when the tween is running, it doesn't have access to the updated state
+    // values(eg: hasRoomAnimationEnded)
+    const [stopTween, setStopTween] = useState({ stop: false });
+
+    if (hasRoomAnimationEnded && !stopTween.stop) {
+        stopTween.stop = true;
+    }
 
     const { active } = useProgress();
     const { scene } = useThree();
@@ -164,6 +176,9 @@ const RoomAnimation = ({ objectScales, setObjectScales }: RoomAnimationProps) =>
             .easing(Easing.Exponential.Out)
             .onUpdate(() => {
                 objectsToTween[ObjectsToTween.Chair].object.rotation.set(Math.PI / 2, 0, rotation.z);
+            })
+            .onStop(() => {
+                objectsToTween[ObjectsToTween.Chair].object.rotation.set(Math.PI / 2, 0, 9 * Math.PI / 2);
             });
 
         floorTween.chain(windowTween)
@@ -189,7 +204,6 @@ const RoomAnimation = ({ objectScales, setObjectScales }: RoomAnimationProps) =>
         return group;
     };
 
-
     const startAnimation = () => {
         if (hasRoomAnimationStarted) {
             return;
@@ -212,7 +226,14 @@ const RoomAnimation = ({ objectScales, setObjectScales }: RoomAnimationProps) =>
         // Setup the animation loop.
         function animate(time: number | undefined) {
             if (group.allStopped()) {
+                setHasRoomAnimationEnded(true);
                 return;
+            }
+
+            if (stopTween.stop) {
+                for (const tween of group.getAll()) {
+                    tween.update(10000000)
+                }
             }
 
             group.update(time)

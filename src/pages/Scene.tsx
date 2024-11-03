@@ -29,13 +29,15 @@ const Scene = () => {
     const [portfolioOpened, setPortfolioOpened] = useState(false);
     const [firstItemSelected, setFirstItemSelected] = useState(false);
     const [selectedItem, setSelectedItem] = useState(Item.None);
+    const [hasRoomAnimationStarted, setHasRoomAnimationStarted] = useState(false);
+    const [hasRoomAnimationEnded, setHasRoomAnimationEnded] = useState(false);
 
     // Save the scale and position of each object in the scene when animating them
     // This prevents issues where re-rendering the scene would reset the scale and
     // position of the objects (eg: when changing the language)
     const [objectScales, setObjectScales] = useState<ObjectAnimationProperties>(
         ObjectsList.reduce((acc, object) => {
-            acc[object as string] = new THREE.Vector3(1, 1, 1);
+            acc[object as string] = new THREE.Vector3(0, 0, 0);
             return acc;
         }, {} as ObjectAnimationProperties)
     );
@@ -49,6 +51,10 @@ const Scene = () => {
 
     const skipRoomAnimation = false;
 
+    if (skipRoomAnimation && !hasRoomAnimationEnded) {
+        setHasRoomAnimationEnded(true);
+    }
+
     const onItemSelected = (item: Item) => {
         if (!firstItemSelected && item !== Item.None) {
             setFirstItemSelected(true);
@@ -56,6 +62,14 @@ const Scene = () => {
 
         setSelectedItem(item);
         navigate(ItemsRoutesMap[item]);
+    }
+
+    const portfolioOpenedClicked = (visible: boolean) => {
+        if (!hasRoomAnimationEnded) {
+            setHasRoomAnimationEnded(visible);
+        }
+
+        setPortfolioOpened(visible);
     }
 
 
@@ -70,12 +84,14 @@ const Scene = () => {
                 shadows={true}
                 linear={true}
             >
-                {!portfolioOpened && !skipRoomAnimation &&
-                    <RoomAnimation
-                        objectScales={objectScales}
-                        setObjectScales={setObjectScales}
-                    />
-                }
+                <RoomAnimation
+                    objectScales={objectScales}
+                    setObjectScales={setObjectScales}
+                    hasRoomAnimationStarted={hasRoomAnimationStarted}
+                    setHasRoomAnimationStarted={setHasRoomAnimationStarted}
+                    hasRoomAnimationEnded={hasRoomAnimationEnded}
+                    setHasRoomAnimationEnded={setHasRoomAnimationEnded}
+                />
 
                 <CameraManager {...{
                     portfolioOpened: portfolioOpened,
@@ -117,6 +133,8 @@ const Scene = () => {
                                 }}
                                 portfolioOpened={portfolioOpened}
                                 objectScales={objectScales}
+                                hasRoomAnimationStarted={hasRoomAnimationStarted}
+                                hasRoomAnimationEnded={hasRoomAnimationEnded}
                         />
 
                         </SelectionTest>
@@ -135,7 +153,7 @@ const Scene = () => {
             {!portfolioOpened &&
                 <Hero
                     cameraManagerRef={cameraManager}
-                    portfolioOpened={setPortfolioOpened}
+                portfolioOpened={portfolioOpenedClicked}
                 />
             }
 
