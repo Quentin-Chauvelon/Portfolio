@@ -22,6 +22,10 @@ enum Language {
 }
 
 const getCurrentLanguage = () => {
+    if (!i18n || !i18n.language) {
+        return Language.English;
+    }
+
     return i18n.language.includes(Language.French) ? Language.French : Language.English;
 }
 
