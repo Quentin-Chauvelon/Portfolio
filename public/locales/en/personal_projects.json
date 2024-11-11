@@ -91,7 +91,7 @@
                 }
             ],
             "description": [
-                "<paragraph_t>Social Media Simulator is a Roblox RPG game with over 30k plays and a like ratio of 85%. This project has been developed in Lua using the Roblox Studio game engine. As a solo developer on the project, I had to work on all aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
+                "<paragraph_t>Social Media Simulator is a Roblox clicker game with over 30k plays and a like ratio of 85%. This project has been developed in Lua using the Roblox Studio game engine. As a solo developer on the project, I had to work on all aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
                 [
                     "list_b",
                     "Implemented all mechanics including data persistence, a quest system, daily rewards, customizations, pets, leaderboards...",

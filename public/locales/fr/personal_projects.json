@@ -91,7 +91,7 @@
                 }
             ],
             "description": [
-                "<paragraph_t>Social Media Simulator est un jeu RPG sur Roblox, joué plus de 30k fois avec un ratio de likes de 85%. Le jeu a été développé en Lua avec le moteur de jeu Roblox Studio. Travaillant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre de m'améliorer considérablement.</paragraph_t>",
+                "<paragraph_t>Social Media Simulator est un jeu incrémental sur Roblox, joué plus de 30k fois avec un ratio de likes de 85%. Le jeu a été développé en Lua avec le moteur de jeu Roblox Studio. Travaillant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre de m'améliorer considérablement.</paragraph_t>",
                 [
                     "list_b",
                     "Implémentation de toutes les mécaniques de jeu, y compris la persistance des données, un système de quêtes, des récompenses quotidiennes, personnalisations, animaux de compagnie...",
