@@ -3,13 +3,15 @@ import { Box, useGLTF, Text } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { a } from '@react-spring/three'
 import { useTranslation } from 'react-i18next';
+import { Language, getCurrentLanguage } from "../i18next"
 
 import { ObjectAnimationProperties } from '../pages/Scene';
 import ClickableItem from './ClickableItem';
 import { Item } from '../Items';
 
 import roomScene from "../assets/models/Portfolio.glb";
-import resume from "/src/assets/images/Resume.jpg";
+import resumeEn from "/src/assets/images/Resume.jpg";
+import resumeFr from "/src/assets/images/Resume2.jpg";
 
 import coding from "../assets/images/monitor/coding.png"
 import big_o from "../assets/images/monitor/big_o.png"
@@ -214,17 +216,30 @@ const whiteMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 whiteMaterial.transparent = true;
 whiteMaterial.opacity = 0;
 
-const resumeTexture = new THREE.TextureLoader().load(resume);
-const posterTexture = new THREE.TextureLoader().load("/posters/Poster_" + (Math.floor(Math.random() * 5) + 1) + ".jpg");
 
-const resumeMaterials: THREE.Material[] = [
+const resumeTextureEn = new THREE.TextureLoader().load(resumeEn);
+const resumeTextureFr = new THREE.TextureLoader().load(resumeFr);
+
+const resumeMaterialsEn: THREE.Material[] = [
   whiteMaterial,
   whiteMaterial,
-  new THREE.MeshBasicMaterial({ map: resumeTexture }),
+  new THREE.MeshBasicMaterial({ map: resumeTextureEn }),
   whiteMaterial,
   whiteMaterial,
   whiteMaterial
 ];
+
+const resumeMaterialsFr: THREE.Material[] = [
+  whiteMaterial,
+  whiteMaterial,
+  new THREE.MeshBasicMaterial({ map: resumeTextureFr }),
+  whiteMaterial,
+  whiteMaterial,
+  whiteMaterial
+];
+
+
+const posterTexture = new THREE.TextureLoader().load("/posters/Poster_" + (Math.floor(Math.random() * 5) + 1) + ".jpg");
 
 const posterMaterials: THREE.Material[] = [
   new THREE.MeshBasicMaterial({ map: posterTexture }),
@@ -1376,7 +1391,7 @@ const Room = ({ group, portfolioOpened, firstItemSelected, objectScales, hasRoom
           scale={!hasRoomAnimationStarted ? vector3Zero : (hasRoomAnimationEnded ? new THREE.Vector3(1.6, 0.1, 1.14) : objectScales["Resume"])}
           castShadow
           receiveShadow
-          material={resumeMaterials}
+          material={getCurrentLanguage() === Language.English ? resumeMaterialsEn : resumeMaterialsFr}
           position={[-5.597, -1.067, -3.785]}
           rotation={[0, -0.262, -Math.PI / 2]}
         />
