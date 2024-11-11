@@ -71,6 +71,16 @@
                     "Mathématiques discrètes, Algèbre linéaire et Probabilités"
                 ]
             ]
+        },
+        {
+            "id": "saintAubin",
+            "title": "Lycée Saint Aubin La Salle",
+            "heading": "Baccalauréat STI2D",
+            "subheading": "Verrières en Anjou, France",
+            "date": "2019 - 2021",
+            "description": [
+                "<paragraph_t_b>Baccalauréat Mention Très Bien</paragraph_t_b>"
+            ]
         }
     ]
 }

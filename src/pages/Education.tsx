@@ -7,6 +7,7 @@ import cmu from "../assets/images/education/cmu.jpg"
 import ensimag from "../assets/images/education/ensimag.png"
 import polytech from "../assets/images/education/polytech.png"
 import iut from "../assets/images/education/iut.png"
+import saintAubin from "../assets/images/education/saint-aubin.jpg"
 
 import "/src/assets/styles/education.css"
 
@@ -19,28 +20,32 @@ const Education = () => {
         cmu: cmu,
         ensimag: ensimag,
         polytech: polytech,
-        iut: iut
+        iut: iut,
+        saintAubin: saintAubin
     }
 
     const educationSkills: { [key: string]: string[] } = {
         cmu: [],
         ensimag: ["Python", "Java", "C", "SQL", "Git", "Linux", "VS Code"],
         polytech: [],
-        iut: ["Go", "Kotlin", "Python", "SQL", "MongoDB", "PHP", "HTML5", "CSS3", "JavaScript", "React", "Git", "IntelliJ IDEA"]
+        iut: ["Go", "Kotlin", "Python", "SQL", "MongoDB", "PHP", "HTML5", "CSS3", "JavaScript", "React", "Git", "IntelliJ IDEA"],
+        saintAubin: []
     }
 
     const educationBackgroundColors: { [key: string]: string } = {
         cmu: "bg-[--cmu-color]",
         ensimag: "bg-[--ensimag-color]",
         polytech: "bg-[--polytech-color]",
-        iut: "bg-[--iut-color]"
+        iut: "bg-[--iut-color]",
+        saintAubin: "bg-[--saint-aubin-color]"
     }
 
     const educationBorderColors: { [key: string]: string } = {
         cmu: "border-[--cmu-color]",
         ensimag: "border-[--ensimag-color]",
         polytech: "border-[--polytech-color]",
-        iut: "border-[--iut-color]"
+        iut: "border-[--iut-color]",
+        saintAubin: "border-[--saint-aubin-color]"
     }
 
     return (

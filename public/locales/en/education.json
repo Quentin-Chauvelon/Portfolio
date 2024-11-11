@@ -72,6 +72,16 @@
                     "Discrete Mathematics, Calculus, Linear Algebra and Probability"
                 ]
             ]
+        },
+        {
+            "id": "saintAubin",
+            "title": "Saint Aubin La Salle High School",
+            "heading": "High School Diploma",
+            "subheading": "Verrières en Anjou, France",
+            "date": "2019 - 2021",
+            "description": [
+                "<paragraph_t_b>High School Diploma (Baccalaureate) with High Honors</paragraph_t_b>"
+            ]
         }
     ]
 }
