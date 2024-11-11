@@ -3,7 +3,7 @@ import SectionTitle from "../components/SectionTitle"
 import SkillsList from "../components/SkillsList"
 import { useTranslation } from 'react-i18next';
 
-import cmu from "../assets/images/education/cmu.png"
+import cmu from "../assets/images/education/cmu.jpg"
 import ensimag from "../assets/images/education/ensimag.png"
 import polytech from "../assets/images/education/polytech.png"
 import iut from "../assets/images/education/iut.png"

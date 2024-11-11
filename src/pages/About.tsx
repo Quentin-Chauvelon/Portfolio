@@ -161,7 +161,7 @@ const CreditsInspirationImage = ({ name, image, link, slideDirection }: CreditsI
             translationValue={150}
             styles="relative w-4/5 md:w-2/5 rounded-lg shadow-lg overflow-hidden"
         >
-            <img src={image} alt={name} className="object-contain" />
+            <img src={image} alt={name} className="w-full h-full object-contain" />
             <a href={link} target="_blank" className="flex justify-center items-end absolute bottom-0 w-full h-full pb-4 opacity-0 hover:opacity-100 text-xl text-[--white] hover:text-[--white] text-center bg-gradient-to-t from-[--gray-600] to-transparent underline transition-opacity">{name}</a>
         </Slide >
     )

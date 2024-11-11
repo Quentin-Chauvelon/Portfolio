@@ -13,10 +13,10 @@ import roomScene from "../assets/models/Portfolio.glb";
 import resumeEn from "/src/assets/images/Resume.jpg";
 import resumeFr from "/src/assets/images/Resume2.jpg";
 
-import coding from "../assets/images/monitor/coding.png"
-import big_o from "../assets/images/monitor/big_o.png"
-// import leetcode from "../assets/images/monitor/leetcode.png"
-import craking_the_coding_interview from "../assets/images/monitor/cracking_the_coding_interview.png"
+import coding from "../assets/images/monitor/coding.jpg"
+import big_o from "../assets/images/monitor/big_o.jpg"
+import leetcode from "../assets/images/monitor/leetcode.jpg"
+import craking_the_coding_interview from "../assets/images/monitor/cracking_the_coding_interview.jpg"
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -250,7 +250,8 @@ const posterMaterials: THREE.Material[] = [
   whiteMaterial
 ];
 
-const monitorImages = [coding, big_o, craking_the_coding_interview];
+
+const monitorImages = [coding, big_o, craking_the_coding_interview, leetcode];
 let monitorTextures = monitorImages.map(image => new THREE.TextureLoader().load(image));
 
 for (let i = 0; i < monitorTextures.length; i++) {
@@ -275,12 +276,10 @@ const Room = ({ group, portfolioOpened, firstItemSelected, objectScales, hasRoom
   const vector3Zero = new THREE.Vector3(0, 0, 0);
   const vector3One = new THREE.Vector3(1, 1, 1);
 
-  const monitorTexture = monitorTextures[Math.floor(Math.random() * monitorTextures.length)];
-
   const monitorMaterials: THREE.Material[] = [
     whiteMaterial,
     whiteMaterial,
-    new THREE.MeshBasicMaterial({ map: monitorTexture }),
+    new THREE.MeshBasicMaterial({ map: monitorTextures[Math.floor(Math.random() * monitorTextures.length)] }),
     whiteMaterial,
     whiteMaterial,
     whiteMaterial,
