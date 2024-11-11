@@ -8,11 +8,11 @@ const PersonalProjects = () => {
     const { t } = useTranslation(['personal_projects']);
 
     const projectNavBarItems: { [key: string]: { src: string, language: string } } = {
-        ["portfolio"]: { src: "portfolio/hero-section.png", language: "React" },
-        ["3d-ball-maze"]: { src: "3d-ball-maze/game.png", language: "C#" },
-        ["social-media-simulator"]: { src: "social-media-simulator/start.gif", language: "Lua" },
-        ["zombie-invasion-survive"]: { src: "zombie-invasion-survive/thumbnail.png", language: "Lua" },
-        ["reve-island"]: { src: "reve-island/thumbnail.jpg", language: "Lua" }
+        ["portfolio"]: { src: "portfolio/hero-section-thumbnail.jpg", language: "React" },
+        ["3d-ball-maze"]: { src: "3d-ball-maze/game-thumbnail.jpg", language: "C#" },
+        ["social-media-simulator"]: { src: "social-media-simulator/start-thumbnail.jpg", language: "Lua" },
+        ["zombie-invasion-survive"]: { src: "zombie-invasion-survive/thumbnail-thumbnail.jpg", language: "Lua" },
+        ["reve-island"]: { src: "reve-island/thumbnail-thumbnail.jpg", language: "Lua" }
     }
 
     const projectsRepositories: { [key: string]: string } = {
@@ -31,25 +31,25 @@ const PersonalProjects = () => {
         ["reve-island"]: ["Lua", "Roblox Studio", "Trello"]
     }
 
-    const projectsImages: { [key: string]: { id: string, src: string }[] } = {
+    const projectsImages: { [key: string]: { id: string, src: string, srcTmp?: string }[] } = {
         ["portfolio"]: [
-            { id: "hero-section", src: "portfolio/hero-section.png" }
+            { id: "hero-section", src: "portfolio/hero-section.jpg" }
         ],
         ["3d-ball-maze"]: [
-            { id: "prototype", src: "3d-ball-maze/game.png" }
+            { id: "prototype", src: "3d-ball-maze/game.jpg" }
         ],
         ["social-media-simulator"]: [
-            { id: "podium", src: "social-media-simulator/podium.gif" },
-            { id: "leaderboards", src: "social-media-simulator/leaderboards.png" },
-            { id: "quests", src: "social-media-simulator/quests.gif" },
-            { id: "shop", src: "social-media-simulator/shop.png" },
-            { id: "start", src: "social-media-simulator/start.gif" },
+            { id: "podium", src: "social-media-simulator/podium.gif", srcTmp: "social-media-simulator/podium-loader.jpg" },
+            { id: "leaderboards", src: "social-media-simulator/leaderboards.jpg" },
+            { id: "quests", src: "social-media-simulator/quests.gif", srcTmp: "social-media-simulator/quests-loader.jpg" },
+            { id: "shop", src: "social-media-simulator/shop.jpg" },
+            { id: "start", src: "social-media-simulator/start.gif", srcTmp: "social-media-simulator/start-loader.jpg" },
         ],
         ["zombie-invasion-survive"]: [
-            { id: "thumbnail", src: "zombie-invasion-survive/thumbnail.png" },
-            { id: "zombie-pathfinding", src: "zombie-invasion-survive/zombie-pathfinding.gif" },
-            { id: "party-system", src: "zombie-invasion-survive/party-system.gif" },
-            { id: "gameplay", src: "zombie-invasion-survive/gameplay.gif" },
+            { id: "thumbnail", src: "zombie-invasion-survive/thumbnail.jpg" },
+            { id: "zombie-pathfinding", src: "zombie-invasion-survive/zombie-pathfinding.gif", srcTmp: "zombie-invasion-survive/zombie-pathfinding-loader.jpg" },
+            { id: "party-system", src: "zombie-invasion-survive/party-system.gif", srcTmp: "zombie-invasion-survive/party-system-loader.jpg" },
+            { id: "gameplay", src: "zombie-invasion-survive/gameplay.gif", srcTmp: "zombie-invasion-survive/gameplay-loader.jpg" },
         ],
         ["reve-island"]: [
             { id: "thumbnail", src: "reve-island/thumbnail.jpg" },
@@ -103,6 +103,7 @@ const PersonalProjects = () => {
                             images={projectsImages[project.id].map((image) => ({
                                 id: image.id,
                                 src: image.src,
+                                srcTmp: image.srcTmp,
                                 tooltip: project.imagesTooltip.find((tooltip) => tooltip.id === image.id)?.tooltip || ""
                             }))}
                         >

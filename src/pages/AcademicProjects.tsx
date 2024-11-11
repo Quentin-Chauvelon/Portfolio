@@ -9,11 +9,11 @@ const AcademicProjects = () => {
     const { t } = useTranslation(['academic_projects']);
 
     const projectNavBarItems: { [key: string]: { src: string, language: string } } = {
-        ["ui-widget-library"]: { src: "ui-widget-library/2048.gif", language: "C" },
-        ["hot-genre"]: { src: "hot-genre/add-to-cart.gif", language: "PHP" },
-        ["schedule-track"]: { src: "schedule-track/schedule.gif", language: "React" },
-        ["particles-system"]: { src: "particles/corals.gif", language: "Go" },
-        ["network-game"]: { src: "network-race/race.gif", language: "Go" },
+        ["ui-widget-library"]: { src: "ui-widget-library/2048-thumbnail.jpg", language: "C" },
+        ["hot-genre"]: { src: "hot-genre/add-to-cart-thumbnail.jpg", language: "PHP" },
+        ["schedule-track"]: { src: "schedule-track/schedule-thumbnail.jpg", language: "React" },
+        ["particles-system"]: { src: "particles/corals-thumbnail.jpg", language: "Go" },
+        ["network-game"]: { src: "network-race/race-thumbnail.jpg", language: "Go" },
     }
 
     const projectsRepositories: { [key: string]: string } = {
@@ -37,40 +37,40 @@ const AcademicProjects = () => {
         ["reve-island"]: ["Lua", "Roblox Studio", "Trello"]
     }
 
-    const projectsImages: { [key: string]: { id: string, src: string }[] } = {
+    const projectsImages: { [key: string]: { id: string, src: string, srcTmp?: string }[] } = {
         ["ui-widget-library"]: [
-            { id: "minesweeper", src: "ui-widget-library/minesweeper.gif" },
-            { id: "2048", src: "ui-widget-library/2048.gif" },
-            { id: "puzzle", src: "ui-widget-library/puzzle.gif" },
-            { id: "grid-geometry-manager", src: "ui-widget-library/grid.png" },
-            { id: "text-field", src: "ui-widget-library/text-field.gif" },
+            { id: "minesweeper", src: "ui-widget-library/minesweeper.gif", srcTmp: "ui-widget-library/minesweeper-loader.jpg" },
+            { id: "2048", src: "ui-widget-library/2048.gif", srcTmp: "ui-widget-library/2048-loader.jpg" },
+            { id: "puzzle", src: "ui-widget-library/puzzle.gif", srcTmp: "ui-widget-library/puzzle-loader.jpg" },
+            { id: "grid-geometry-manager", src: "ui-widget-library/grid.jpg" },
+            { id: "text-field", src: "ui-widget-library/text-field.gif", srcTmp: "ui-widget-library/text-field-loader.jpg" },
         ],
         ["hot-genre"]: [
-            { id: "account-creation", src: "hot-genre/account-creation.gif" },
-            { id: "add-to-cart", src: "hot-genre/add-to-cart.gif" },
-            { id: "admin-products-management", src: "hot-genre/admin-products-management.gif" },
-            { id: "home-page", src: "hot-genre/home-page.gif" },
-            { id: "order", src: "hot-genre/order.gif" },
-            { id: "order-summary", src: "hot-genre/order-summary.png" },
-            { id: "products", src: "hot-genre/products.png" },
+            { id: "account-creation", src: "hot-genre/account-creation.gif", srcTmp: "hot-genre/account-creation-loader.jpg" },
+            { id: "add-to-cart", src: "hot-genre/add-to-cart.gif", srcTmp: "hot-genre/add-to-cart-loader.jpg" },
+            { id: "admin-products-management", src: "hot-genre/admin-products-management.gif", srcTmp: "hot-genre/admin-products-management-loader.jpg" },
+            { id: "home-page", src: "hot-genre/home-page.gif", srcTmp: "hot-genre/home-page-loader.jpg" },
+            { id: "order", src: "hot-genre/order.gif", srcTmp: "hot-genre/order-loader.jpg" },
+            { id: "order-summary", src: "hot-genre/order-summary.jpg" },
+            { id: "products", src: "hot-genre/products.jpg" },
         ],
         ["schedule-track"]: [
-            { id: "schedule-view", src: "schedule-track/schedule.gif" },
-            { id: "directions", src: "schedule-track/directions.gif" },
-            { id: "rooms", src: "schedule-track/rooms.gif" },
-            { id: "professors", src: "schedule-track/professors.gif" },
+            { id: "schedule-view", src: "schedule-track/schedule.gif", srcTmp: "schedule-track/schedule-loader.jpg" },
+            { id: "directions", src: "schedule-track/directions.gif", srcTmp: "schedule-track/directions-loader.jpg" },
+            { id: "rooms", src: "schedule-track/rooms.gif", srcTmp: "schedule-track/rooms-loader.jpg" },
+            { id: "professors", src: "schedule-track/professors.gif", srcTmp: "schedule-track/professors-loader.jpg" },
         ],
         ["particles-system"]: [
-            { id: "fireworks", src: "particles/fireworks.gif" },
-            { id: "corals", src: "particles/corals.gif" },
-            { id: "selection-menu", src: "particles/selection-menu.png" },
-            { id: "snake", src: "particles/snake.gif" },
-            { id: "circle", src: "particles/circle.gif" },
+            { id: "fireworks", src: "particles/fireworks.gif", srcTmp: "particles/fireworks-loader.jpg" },
+            { id: "corals", src: "particles/corals.gif", srcTmp: "particles/corals-loader.jpg" },
+            { id: "selection-menu", src: "particles/selection-menu.jpg" },
+            { id: "snake", src: "particles/snake.gif", srcTmp: "particles/snake-loader.jpg" },
+            { id: "circle", src: "particles/circle.gif", srcTmp: "particles/circle-loader.jpg" },
         ],
         ["network-game"]: [
-            { id: "players-connection", src: "network-race/players-connection.gif" },
-            { id: "runner-selection", src: "network-race/runner-selection.gif" },
-            { id: "race", src: "network-race/race.gif" },
+            { id: "race", src: "network-race/race.gif", srcTmp: "network-race/race-loader.jpg" },
+            { id: "players-connection", src: "network-race/players-connection.gif", srcTmp: "network-race/players-connection-loader.jpg" },
+            { id: "runner-selection", src: "network-race/runner-selection.gif", srcTmp: "network-race/runner-selection-loader.jpg" },
         ],
     }
 
@@ -114,6 +114,7 @@ const AcademicProjects = () => {
                             images={projectsImages[project.id].map((image) => ({
                                 id: image.id,
                                 src: image.src,
+                                srcTmp: image.srcTmp,
                                 tooltip: project.imagesTooltip.find((tooltip) => tooltip.id === image.id)?.tooltip || ""
                             }))}
                         >

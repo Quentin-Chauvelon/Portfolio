@@ -38,7 +38,7 @@ export const ProjectNavBar = ({ items }: ProjectNavBarProps) => {
                         <PlaceholderImage
                             src={"/projects/" + item.src}
                             alt={item.name}
-                            styles="rounded-md cursor-pointer"
+                            styles="w-full h-full rounded-md cursor-pointer"
                             onClickCallback={() => {
                                 document.getElementById("projects-container")?.children[index].scrollIntoView({
                                     behavior: 'smooth',
@@ -109,6 +109,7 @@ enum Direction {
 
 type ImageProps = {
     src: string,
+    srcTmp?: string,
     tooltip?: string
 }
 
@@ -204,6 +205,7 @@ export const ProjectCard = ({ title, date, duration, github, tags, images, child
             <div className="2xl:absolute 2xl:top-1/2 2xl:-translate-y-1/2 2xl:-right-[15%] 2xl:rotate-3 self-center w-4/5 md:w-3/5 2xl:w-[50%] aspect-video relative mt-4 mb-4 md:mb-6 xl:mb-4 2xl:mt-0 2xl:mb-0 rounded-lg card-shadow bg-[--gray-400]">
                 <PlaceholderImage
                     src={"/projects/" + images[currentImage].src}
+                    srcTmp={images[currentImage].srcTmp ? "/projects/" + images[currentImage].srcTmp : undefined}
                     alt={title}
                     styles={"w-full h-full object-fill " + (images[currentImage].tooltip ? "rounded-t-lg" : "rounded-lg")}
                 />
