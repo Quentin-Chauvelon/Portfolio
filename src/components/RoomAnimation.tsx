@@ -68,16 +68,22 @@ type RoomAnimationProps = {
     setHasRoomAnimationStarted: (hasRoomAnimationStarted: boolean) => void,
     hasRoomAnimationEnded: boolean,
     setHasRoomAnimationEnded: (hasRoomAnimationEnded: boolean) => void,
+    setAnimationError: (animationError: boolean) => void,
 }
 
 
-const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted, setHasRoomAnimationStarted, hasRoomAnimationEnded, setHasRoomAnimationEnded }: RoomAnimationProps) => {
+const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted, setHasRoomAnimationStarted, hasRoomAnimationEnded, setHasRoomAnimationEnded, setAnimationError }: RoomAnimationProps) => {
     const [isAnimationReady, setIsAnimationReady] = useState(false);
 
     // Use an object to store the stopTween property so that we can pass it by reference
     // Otherwise, when the tween is running, it doesn't have access to the updated state
     // values(eg: hasRoomAnimationEnded)
-    const [stopTween, _] = useState({ stop: false });
+    const [stopTween] = useState({ stop: false });
+
+    // Use an object to store the retryCount property so that we can pass it by reference
+    // Otherwise, once the retryCount is updated, the value used in the setTimeout
+    // function is not the updated one
+    const [retryCount] = useState({ count: 0 });
 
     if (hasRoomAnimationEnded && !stopTween.stop) {
         stopTween.stop = true;
@@ -269,6 +275,22 @@ const RoomAnimation = ({ objectScales, setObjectScales, hasRoomAnimationStarted,
             // and would even cause an error (Too many re-renders)
             if (Object.keys(objectsToTween).length >= Object.keys(ObjectsToTween).length) {
                 setIsAnimationReady(true);
+            }
+            // If the objects have not been loaded yet, wait a bit and try again
+            else {
+                if (retryCount.count >= 8) {
+                    console.log("Failed to load the model");
+
+                    setAnimationError(true);
+                    return;
+                }
+
+                setTimeout(() => {
+                    console.log("Retrying to load the model");
+
+                    retryCount.count++;
+                    setupObjectsToTween();
+                }, 250)
             }
         }
     }

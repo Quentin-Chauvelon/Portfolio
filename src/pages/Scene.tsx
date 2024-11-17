@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import { EffectComposer } from '@react-three/postprocessing'
+import { useTranslation } from 'react-i18next';
 
 import Hero from '../pages/Hero'
 import { LoadingScreen } from '../pages/LoadingScreen'
@@ -31,6 +32,8 @@ const Scene = () => {
     const [selectedItem, setSelectedItem] = useState(Item.None);
     const [hasRoomAnimationStarted, setHasRoomAnimationStarted] = useState(false);
     const [hasRoomAnimationEnded, setHasRoomAnimationEnded] = useState(false);
+    const [animationError, setAnimationError] = useState(false);
+    const { t } = useTranslation(['scene']);
 
     // Save the scale and position of each object in the scene when animating them
     // This prevents issues where re-rendering the scene would reset the scale and
@@ -94,6 +97,7 @@ const Scene = () => {
                     setHasRoomAnimationStarted={setHasRoomAnimationStarted}
                     hasRoomAnimationEnded={hasRoomAnimationEnded}
                     setHasRoomAnimationEnded={setHasRoomAnimationEnded}
+                    setAnimationError={setAnimationError}
                 />
 
                 <CameraManager {...{
@@ -159,6 +163,11 @@ const Scene = () => {
                     cameraManagerRef={cameraManager}
                 portfolioOpened={portfolioOpenedClicked}
                 />
+            }
+
+            {
+                !portfolioOpened && animationError &&
+                <div className="absolute top-1/2 px-8 xl:px-0 xl:right-16 w-full xl:w-[40%] font-bold text-[--white] text-md text-center">{t("animation-error")}</div>
             }
 
             <ItemClickedContext.Provider value={onItemSelected}>
