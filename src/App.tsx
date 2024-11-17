@@ -1,6 +1,7 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom"
 import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
+import "./i18next"
 
 import Scene from "./pages/Scene";
 import About from "./pages/About";
@@ -14,7 +15,6 @@ import NotFound from "./pages/NotFound";
 
 import "./App.css"
 
-import "./i18next"
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
 function App() {
