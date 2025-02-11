@@ -1,0 +1,40 @@
+name: Build and deploy portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.2.2
+      with:
+        path: portfolio
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Checkout deployments repository
+      uses: actions/checkout@v4.2.2
+      with:
+        repository: 'Quentin-Chauvelon/Portfolio_Deployment'
+        path: deployment
+        token: ${{ secrets.PORTFOLIO_DEPLOYMENT_REPOSITORY_TOKEN }}
+
+    - name: Copy build to deployment
+      run: cp -fR portfolio/dist deployment
+
+    - name: Commit and push
+      run: |
+        cd deployment
+        git config user.name 'Quentin Chauvelon (via GitHub Actions)'
+        git config user.email 'quentin.chauvelon@gmail.com'
+        git add .
+        git commit -m "Update portfolio"
+        git push
