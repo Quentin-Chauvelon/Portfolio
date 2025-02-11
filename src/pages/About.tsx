@@ -250,7 +250,7 @@ const Skills = () => {
                     textColor="text-[--skills-general-color] dark:text-[--skills-general-color-dark]"
                     borderColor="border-[--skills-general-color] dark:border-[--skills-general-color-dark]"
                     icon={faCode}
-                    skills={["Lua", "C", "C#", "Python", "Java", "Kotlin", "Go"]}
+                    skills={["Lua", "C", "C++", "C#", "Python", "Java", "Kotlin", "Go"]}
                 />
                 <SkillsCard
                     title={t("skills.web-development")}
@@ -282,7 +282,7 @@ const Skills = () => {
                     textColor="text-[--skills-others-color] dark:text-[--skills-others-color-dark]"
                     borderColor="border-[--skills-others-color] dark:border-[--skills-others-color-dark]"
                     icon={faComputer}
-                    skills={["Linux", "Git", "Agile", "VS Code", "IntelliJ IDEA", "Postman", "Vite", "Bash", "Node.js"]}
+                    skills={["Linux", "Git", "Agile", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "Machine Learning", "Github Actions", "Postman"]}
                 />
             </div>
         </>

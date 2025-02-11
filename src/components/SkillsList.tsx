@@ -1,6 +1,6 @@
 import { Fade } from "./Animation"
 
-import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, sql, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, agile, vscode, visualStudio, intellij, postman, vite, bash, nodejs } from "../assets/images/skills_icons"
+import { lua, c, cSharp, python, java, kotlin, go, php, html5, css3, javascript, typescript, sql, mysql, sqlServer, sqlite, mongodb, dotnetCore, react, tailwindCss, codeigniter, linux, git, agile, vscode, visualStudio, intellij, postman, vite, bash, nodejs, cpp, aws, azure, gcp, docker, terraform, kubernetes, githubActions, ml } from "../assets/images/skills_icons"
 
 const skillsList: { [key: string]: string } = {
     ["Lua"]: lua,
@@ -33,7 +33,16 @@ const skillsList: { [key: string]: string } = {
     ["Postman"]: postman,
     ["Vite"]: vite,
     ["Bash"]: bash,
-    ["Node.js"]: nodejs
+    ["Node.js"]: nodejs,
+    ["C++"]: cpp,
+    ["AWS"]: aws,
+    ["Azure"]: azure,
+    ["GCP"]: gcp,
+    ["Docker"]: docker,
+    ["Terraform"]: terraform,
+    ["Kubernetes"]: kubernetes,
+    ["Github Actions"]: githubActions,
+    ["Machine Learning"]: ml
 }
 
 type SkillsListProps = {

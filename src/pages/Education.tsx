@@ -25,7 +25,7 @@ const Education = () => {
     }
 
     const educationSkills: { [key: string]: string[] } = {
-        cmu: [],
+        cmu: ["C++", "AWS", "Azure", "GCP", "Docker", "Terraform", "Kubernetes", "Github Actions", "Machine Learning"],
         ensimag: ["Python", "Java", "C", "SQL", "Git", "Linux", "VS Code"],
         polytech: [],
         iut: ["Go", "Kotlin", "Python", "SQL", "MongoDB", "PHP", "HTML5", "CSS3", "JavaScript", "React", "Git", "IntelliJ IDEA"],
