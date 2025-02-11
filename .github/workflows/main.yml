@@ -24,7 +24,7 @@ jobs:
         cd portfolio
         npm run build
 
-    - name: Checkout deployments repository
+    - name: Checkout deployment repository
       uses: actions/checkout@v4.2.2
       with:
         repository: 'Quentin-Chauvelon/Portfolio_Deployment'
@@ -32,7 +32,7 @@ jobs:
         token: ${{ secrets.PORTFOLIO_DEPLOYMENT_REPOSITORY_TOKEN }}
 
     - name: Copy build to deployment
-      run: cp -fR portfolio/dist deployment
+      run: cp -fR portfolio/dist/. deployment
 
     - name: Commit and push
       run: |
