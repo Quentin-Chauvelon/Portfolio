@@ -16,7 +16,7 @@ const PersonalProjects = () => {
     }
 
     const projectsRepositories: { [key: string]: string } = {
-        ["portfolio"]: "",
+        ["portfolio"]: "https://github.com/Quentin-Chauvelon/Portfolio",
         ["3d-ball-maze"]: "https://github.com/Quentin-Chauvelon/3D-Ball-Maze",
         ["social-media-simulator"]: "https://github.com/Quentin-Chauvelon/Social_Media_Simulator",
         ["zombie-invasion-survive"]: "https://github.com/Quentin-Chauvelon/Zombie_Invasion_Survive",

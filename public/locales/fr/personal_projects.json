@@ -29,11 +29,11 @@
             "id": "portfolio",
             "title": "Portfolio",
             "duration": "~250 heures",
-            "date": "Septembre 2024 - Actuellement",
+            "date": "Septembre 2024 - Novembre 2024",
             "imagesTooltip": [],
             "description": [
                 "<paragraph_t>J'ai décidé de créer un portfolio afin de présenter mes projets et compétences.</paragraph_t>",
-                "<paragraph_t>N'étant pas un designer, je savais que je ne pourrais pas créer un site classique intéressant. C'est pourquoi, après vu d'autres portfolios 3D qui m'ont beaucoup plu, j'ai choisi d'en faire un moi-même.</paragraph_t>",
+                "<paragraph_t>N'étant pas un designer, je savais que je ne pourrais pas créer un site classique intéressant. C'est pourquoi, après avoir vu d'autres portfolios 3D qui m'ont beaucoup plu, j'ai choisi d'en faire un moi-même.</paragraph_t>",
                 "<paragraph_t_b>Ce projet a été très intéressant puisqu'il m'a permis d'améliorer mes compétences en développement web tout en découvrant de nouvelles technologies telles que les rendus 3D dans le navigateur en utilisant React Three Fiber (moteur de rendu React pour Three.js) ainsi que de nouveaux frameworks/librairies comme Tailwind CSS ou Framer Motion.</paragraph_t_b>"
             ]
         },
@@ -53,7 +53,7 @@
                 [
                     "list_b",
                     "Implémentation des mécaniques de jeu principales (rotation du labyrinthe, obstacles multiples, échec et réussite du niveau, déblocage de nouveaux niveaux...)",
-                    "Implémentation de la sauvegar des données localement et sur le cloud",
+                    "Implémentation de la sauvegarde des données localement et sur le cloud",
                     "Implémentation de la sérialisation/désérialisation pour charger/sauvegarder les niveaux depuis/vers des fichiers JSON",
                     "Personnalisation du personnage (skins)",
                     "Téléchargement automatique des niveaux depuis le cloud",
@@ -71,15 +71,15 @@
             "imagesTooltip": [
                 {
                     "id": "podium",
-                    "tooltip": "podium du classement cross-serveur"
+                    "tooltip": "Podium du classement cross-serveur"
                 },
                 {
                     "id": "leaderboards",
-                    "tooltip": "classement cross-serveur"
+                    "tooltip": "Classement cross-serveur"
                 },
                 {
                     "id": "quests",
-                    "tooltip": "système de quêtes"
+                    "tooltip": "Système de quêtes"
                 },
                 {
                     "id": "shop",
