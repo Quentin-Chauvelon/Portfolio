@@ -33,7 +33,7 @@
             "imagesTooltip": [],
             "description": [
                 "<paragraph_t>J'ai décidé de créer un portfolio afin de présenter mes projets et compétences.</paragraph_t>",
-                "<paragraph_t>N'étant pas un designer, je savais que je ne pourrais pas créer un site classique intéressant. C'est pourquoi, après avoir vu d'autres portfolios 3D qui m'ont beaucoup plu, j'ai choisi d'en faire un moi-même.</paragraph_t>",
+                "<paragraph_t>Comme je ne souhaitais pas faire un site statique et après avoir vu quelques portfolios 3D, j'ai décidé de créer le mien. Chaque section de ce portfolio (éducation, expérience, projets...) est représenté par un object cliquable dans une scène 3D dans votre navigateur.</paragraph_t>",
                 "<paragraph_t_b>Ce projet a été très intéressant puisqu'il m'a permis d'améliorer mes compétences en développement web tout en découvrant de nouvelles technologies telles que les rendus 3D dans le navigateur en utilisant React Three Fiber (moteur de rendu React pour Three.js) ainsi que de nouveaux frameworks/librairies comme Tailwind CSS ou Framer Motion.</paragraph_t_b>"
             ]
         },

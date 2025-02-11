@@ -33,7 +33,7 @@
             "imagesTooltip": [],
             "description": [
                 "<paragraph_t>This is the portfolio website I created to showcase my projects and skills.</paragraph_t>",
-                "<paragraph_t>Since I'm not a designer, I knew I wouldn't be able to stand out with a basic portfolio. After seeing some other 3D portfolios, which I think looked really good, I decided to create one myself.</paragraph_t>",
+                "<paragraph_t>Since I didn't want to make a static website and after seeing other 3D portfolios, I decided to make my own. Each section of this portfolio (education, experience, projects...) comes in the form of an interactable item in a 3D scene right in your browser.</paragraph_t>",
                 "<paragraph_t_b>This has been a very interesting project since it has allowed me to improve my web development skills as well as learn new technologies such as 3D rendering in the browser using React Three Fiber (a React renderer for Three.js) and frameworks/libraries like Tailwind CSS or Framer Motion.</paragraph_t_b>"
             ]
         },
