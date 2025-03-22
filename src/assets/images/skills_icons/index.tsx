@@ -39,3 +39,5 @@ export { default as terraform } from "./terraform.svg";
 export { default as kubernetes } from "./kubernetes.svg";
 export { default as githubActions } from "./github-actions.svg";
 export { default as ml } from "./ml.svg";
+export { default as rust } from "./rust.svg";
+export { default as redis } from "./redis.svg";

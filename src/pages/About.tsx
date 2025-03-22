@@ -250,7 +250,7 @@ const Skills = () => {
                     textColor="text-[--skills-general-color] dark:text-[--skills-general-color-dark]"
                     borderColor="border-[--skills-general-color] dark:border-[--skills-general-color-dark]"
                     icon={faCode}
-                    skills={["Lua", "C", "C++", "C#", "Python", "Java", "Kotlin", "Go"]}
+                    skills={["Lua", "C", "C++", "C#", "Python", "Java", "Kotlin", "Go", "Rust"]}
                 />
                 <SkillsCard
                     title={t("skills.web-development")}
@@ -266,7 +266,7 @@ const Skills = () => {
                     textColor="text-[--skills-databases-color] dark:text-[--skills-databases-color-dark]"
                     borderColor="border-[--skills-databases-color] dark:border-[--skills-databases-color-dark]"
                     icon={faDatabase}
-                    skills={["MySQL", "SQL Server", "SQLite", "MongoDB"]}
+                    skills={["MySQL", "SQL Server", "SQLite", "MongoDB", "Redis"]}
                 />
                 <SkillsCard
                     title={t("skills.frameworks")}
