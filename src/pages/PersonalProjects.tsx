@@ -9,7 +9,7 @@ const PersonalProjects = () => {
 
     const projectNavBarItems: { [key: string]: { src: string, language: string } } = {
         ["portfolio"]: { src: "portfolio/hero-section-thumbnail.jpg", language: "React" },
-        ["3d-ball-maze"]: { src: "3d-ball-maze/game-thumbnail.jpg", language: "C#" },
+        ["3d-ball-maze"]: { src: "3d-ball-maze/main-menu-thumbnail.jpg", language: "C#" },
         ["social-media-simulator"]: { src: "social-media-simulator/start-thumbnail.jpg", language: "Lua" },
         ["zombie-invasion-survive"]: { src: "zombie-invasion-survive/thumbnail-thumbnail.jpg", language: "Lua" },
         ["reve-island"]: { src: "reve-island/thumbnail-thumbnail.jpg", language: "Lua" }
@@ -36,20 +36,25 @@ const PersonalProjects = () => {
             { id: "hero-section", src: "portfolio/hero-section.jpg" }
         ],
         ["3d-ball-maze"]: [
-            { id: "prototype", src: "3d-ball-maze/game.jpg" }
+            { id: "main-menu", src: "3d-ball-maze/main-menu.png", srcTmp: "3d-ball-maze/main-menu-loader.jpg" },
+            { id: "gameplay", src: "3d-ball-maze/gameplay.gif", srcTmp: "3d-ball-maze/gameplay-loader.jpg" },
+            { id: "maze-deserialization", src: "3d-ball-maze/maze-deserialization.gif", srcTmp: "3d-ball-maze/maze-deserialization-loader.gif" },
+            { id: "level-completed", src: "3d-ball-maze/level-completed.gif", srcTmp: "3d-ball-maze/level-completed-loader.gif" },
+            { id: "level-failed", src: "3d-ball-maze/level-failed.gif", srcTmp: "3d-ball-maze/level-failed-loader.gif" },
+            { id: "skins", src: "3d-ball-maze/skins.gif", srcTmp: "3d-ball-maze/skins-loader.gif" },
         ],
         ["social-media-simulator"]: [
+            { id: "start", src: "social-media-simulator/start.gif", srcTmp: "social-media-simulator/start-loader.jpg" },
             { id: "podium", src: "social-media-simulator/podium.gif", srcTmp: "social-media-simulator/podium-loader.jpg" },
             { id: "leaderboards", src: "social-media-simulator/leaderboards.jpg" },
             { id: "quests", src: "social-media-simulator/quests.gif", srcTmp: "social-media-simulator/quests-loader.jpg" },
             { id: "shop", src: "social-media-simulator/shop.jpg" },
-            { id: "start", src: "social-media-simulator/start.gif", srcTmp: "social-media-simulator/start-loader.jpg" },
         ],
         ["zombie-invasion-survive"]: [
             { id: "thumbnail", src: "zombie-invasion-survive/thumbnail.jpg" },
+            { id: "gameplay", src: "zombie-invasion-survive/gameplay.gif", srcTmp: "zombie-invasion-survive/gameplay-loader.jpg" },
             { id: "zombie-pathfinding", src: "zombie-invasion-survive/zombie-pathfinding.gif", srcTmp: "zombie-invasion-survive/zombie-pathfinding-loader.jpg" },
             { id: "party-system", src: "zombie-invasion-survive/party-system.gif", srcTmp: "zombie-invasion-survive/party-system-loader.jpg" },
-            { id: "gameplay", src: "zombie-invasion-survive/gameplay.gif", srcTmp: "zombie-invasion-survive/gameplay-loader.jpg" },
         ],
         ["reve-island"]: [
             { id: "thumbnail", src: "reve-island/thumbnail.jpg" },

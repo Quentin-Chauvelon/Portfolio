@@ -40,16 +40,36 @@
         {
             "id": "3d-ball-maze",
             "title": "3D Ball Maze",
-            "date": "December 2023 - Present",
+            "date": "December 2023 - September 2024",
             "duration": "~600 hours",
             "imagesTooltip": [
                 {
-                    "id": "prototype",
-                    "tooltip": "Prototype of the game (with temporary assets)"
+                    "id": "main-menu",
+                    "tooltip": "Main menu"
+                },
+                {
+                    "id": "gameplay",
+                    "tooltip": "Gameplay (some assets are temporary)"
+                },
+                {
+                    "id": "maze-deserialization",
+                    "tooltip": "Deserialization of the maze from a JSON file"
+                },
+                {
+                    "id": "level-completed",
+                    "tooltip": "Level completion (some assets are temporary)"
+                },
+                {
+                    "id": "level-failed",
+                    "tooltip": "Level failed (some assets are temporary)"
+                },
+                {
+                    "id": "skins",
+                    "tooltip": "Skins customization (some assets are temporary)"
                 }
             ],
             "description": [
-                "<paragraph_t>3D Ball Maze is an upcoming casual mobile and web game developed in C# using the Unity 3D game engine. As a solo developer on this project, I must work on all the aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
+                "<paragraph_t>3D Ball Maze is a casual game developed in C# using the Unity 3D game engine. As a solo developer on this project, I had to work on all the aspects of the game: planning, coding, UI designing, 3D modeling, testing, fixing bugs... which allowed me to learn and improve a lot.</paragraph_t>",
                 [
                     "list_b",
                     "Implemented main gameplay mechanics (maze movement, multiple obstacles, level completion, level fail, unlocking levels...)",
@@ -59,7 +79,7 @@
                     "Automatic level fetching from the cloud",
                     "Automatic daily updates of new levels",
                     "Daily rewards synchronized with the cloud",
-                    "Designed and implemented a responsive UI"
+                    "Designed and implemented the UI"
                 ]
             ]
         },

@@ -40,16 +40,36 @@
         {
             "id": "3d-ball-maze",
             "title": "3D Ball Maze",
-            "date": "Décembre 2023 - Actuellement",
+            "date": "Décembre 2023 - Septembre 2024",
             "duration": "~600 heures",
             "imagesTooltip": [
                 {
-                    "id": "prototype",
-                    "tooltip": "Prototype du jeu (avec des assets temporaires)"
+                    "id": "main-menu",
+                    "tooltip": "Menu principal"
+                },
+                {
+                    "id": "gameplay",
+                    "tooltip": "Gameplay (certains assets sont temporaires)"
+                },
+                {
+                    "id": "maze-deserialization",
+                    "tooltip": "Désérialisation du labyrinthe depuis un fichier JSON"
+                },
+                {
+                    "id": "level-completed",
+                    "tooltip": "Complétion du niveau (certains assets sont temporaires)"
+                },
+                {
+                    "id": "level-failed",
+                    "tooltip": "Echec du niveau (certains assets sont temporaires)"
+                },
+                {
+                    "id": "skins",
+                    "tooltip": "Customisation du personnage (skins)"
                 }
             ],
             "description": [
-                "<paragraph_t>3D Ball Maze is jeu mobile et web d'adresse grand public (casual) à venir. Le jeu est développé en C# en utilisant le moteur de jeu Unity 3D. Travaillant seul sur ce projet, je dois m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc... me permettant d'apprendre et de m'améliorer considérablement.</paragraph_t>",
+                "<paragraph_t>3D Ball Maze est un jeu grand public (casual). Le jeu est développé en C# en utilisant le moteur de jeu Unity 3D. Travaillant seul sur ce projet, j'ai du m'occuper de tous les aspects du jeu: planification, programmation, design de l'interface graphique (UI), modélisation 3D, tests, correction de bugs, etc..., ce qui m'a permis d'apprendre et de m'améliorer considérablement.</paragraph_t>",
                 [
                     "list_b",
                     "Implémentation des mécaniques de jeu principales (rotation du labyrinthe, obstacles multiples, échec et réussite du niveau, déblocage de nouveaux niveaux...)",
