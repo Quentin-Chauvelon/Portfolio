@@ -3,7 +3,7 @@
         "hi": "Bonjour 👋, je suis",
         "name": "Quentin\nChauvelon",
         "personal-statement": "Bienvenue sur mon portfolio dans lequel vous pourrez trouver des informations sur moi, mes projets, mes expériences...",
-        "personal-statement-secondary": "Je suis actuellement à la recherche d'un stage dans le développement informatique à partir du 26 mai 2025 (de 10 à 16 semaines)."
+        "personal-statement-secondary": ""
     },
     "skills": {
         "section-title": "COMPETENCES TECHNIQUES",
@@ -67,7 +67,7 @@
                 "title": "VELO",
                 "description": [
                     "4 ans",
-                    "~550 km/mois"
+                    "~500 km/mois"
                 ]
             },
             {

@@ -8,13 +8,15 @@
             "subheading": "Pittsburgh, PA",
             "date": "Janvier 2025 - Mai 2025",
             "description": [
-                "<paragraph_t>J'effectue un échange d'un semestre à Carnegie Mellon Unversity en de janvier à mai 2025.</paragraph_t>",
+                "<paragraph_t>Echange d'un semestre à Carnegie Mellon Unversity de janvier à mai 2025.</paragraph_t>",
+                "<paragraph_t>Moyenne : 4.0/4.0 GPA (A)</paragraph_t>",
                 "<paragraph_t>Cours:</paragraph_t>",
                 [
                     "list_b",
                     "Introduction to Machine Learning (10301) (Classification, Régression, Neural Networks, Deep Learning...)",
                     "Cloud Computing (15319) (AWS, Azure, GCP, Docker, Kubernetes, Terraform, Github Actions, Spark...)",
-                    "Computer Graphics (15362)"
+                    "Computer Graphics (15362)",
+                    "Introduction to Rust (98008)"
                 ]
             ]
         },
